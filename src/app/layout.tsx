@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Outfit, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+import SmoothScrollProvider from "@/components/shared/SmoothScrollProvider";
+import CustomCursor from "@/components/shared/CustomCursor";
 
 /* ─── Fonts ────────────────────────────────────────────────── */
 const outfit = Outfit({
@@ -56,26 +58,27 @@ export const metadata: Metadata = {
     description:
       "Full Stack Developer specialising in React, Next.js and AI-powered applications.",
   },
-  robots: {
-    index: true,
-    follow: true,
-  },
+  robots: { index: true, follow: true },
 };
 
 /* ─── Root Layout ──────────────────────────────────────────── */
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html
       lang="en"
       className={`${outfit.variable} ${inter.variable} ${jetbrainsMono.variable} dark`}
       suppressHydrationWarning
     >
-      <body className="min-h-screen overflow-x-hidden antialiased">
-        {children}
+      <body className="min-h-screen overflow-x-hidden antialiased bg-[#080810]">
+        {/* Custom cursor — desktop only, client component */}
+        <CustomCursor />
+
+        {/* Lenis smooth scroll + GSAP sync wrapper */}
+        <SmoothScrollProvider>
+          {children}
+        </SmoothScrollProvider>
       </body>
     </html>
   );
