@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Outfit, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import SmoothScrollProvider from "@/components/shared/SmoothScrollProvider";
+import Navbar from "@/components/shared/Navbar";
 import CustomCursor from "@/components/shared/CustomCursor";
 
 /* ─── Fonts ────────────────────────────────────────────────── */
@@ -74,6 +75,9 @@ export default function RootLayout({
       <body className="min-h-screen overflow-x-hidden antialiased bg-[#080810]">
         {/* Custom cursor — desktop only, client component */}
         <CustomCursor />
+
+        {/* Global navigation */}
+        <Navbar />
 
         {/* Lenis smooth scroll + GSAP sync wrapper */}
         <SmoothScrollProvider>
