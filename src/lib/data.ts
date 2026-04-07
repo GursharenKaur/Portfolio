@@ -30,10 +30,11 @@ exploring AI-native applications and 3D web experiences.`,
 
 /* ── Navigation ──────────────────────────────────────────── */
 export const navLinks: NavLink[] = [
-  { label: "Home", href: "/" },
-  { label: "Work", href: "#work" },
-  { label: "About", href: "#about" },
+  { label: "Home", href: "#home" },
+  { label: "Education", href: "#education" },
   { label: "Skills", href: "#skills" },
+  { label: "Projects", href: "#work" },
+  { label: "Experience", href: "#experience" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -91,6 +92,20 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/GursharenKaur/Portfolio",
     featured: false,
     year: 2026,
+    isOngoing: false,
+  },
+  {
+    id: "ai-quant-trading",
+    title: "AI Quant Trading Bot",
+    tagline: "Ongoing Research — RL for derivative strategies",
+    description: "Developing a deep reinforcement learning agent to optimize options trading strategies using historical Indian market data and real-time news sentiment indicators. Still in the active research and backtesting phase.",
+    tags: ["AI", "Full-Stack"],
+    techStack: ["Python", "TensorFlow", "FastAPI", "React", "PineScript"],
+    image: "/images/quant-bot.png",
+    githubUrl: "https://github.com/GursharenKaur",
+    featured: true,
+    year: 2026,
+    isOngoing: true,
   },
 ];
 

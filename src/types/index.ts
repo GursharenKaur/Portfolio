@@ -28,6 +28,7 @@ export interface Project {
   githubUrl?: string;
   featured: boolean;
   year: number;
+  isOngoing?: boolean;
 }
 
 /* ── Skills / Tech Stack ─────────────────────────────────── */
