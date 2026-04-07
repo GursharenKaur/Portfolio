@@ -15,6 +15,7 @@ import type {
 export const personalInfo = {
   name: "Gursharen Kaur Suri",
   role: "Full Stack Developer",
+  roles: ["Full Stack Developer", "AI/ML Engineer"],
   tagline: "Building fast, beautiful, AI-powered web experiences.",
   bio: `I'm a Full Stack Developer passionate about crafting seamless digital
 experiences — from pixel-perfect UIs to scalable backend systems. I love

@@ -30,11 +30,11 @@ const jetbrainsMono = JetBrains_Mono({
 /* ─── Metadata ─────────────────────────────────────────────── */
 export const metadata: Metadata = {
   title: {
-    default: "Gursharen Kaur Suri — Full Stack Developer",
+    default: "Gursharen Kaur Suri | AI/ML Engineer & Quant Strategist",
     template: "%s | Gursharen Kaur Suri",
   },
   description:
-    "Full Stack Developer specialising in React, Next.js and AI-powered applications. Open to opportunities in 2026.",
+    "Full Stack Developer & AI/ML Engineer specialising in React, Next.js and Quantitative Financial applications.",
   keywords: [
     "Gursharen Kaur Suri",
     "Full Stack Developer",
@@ -48,16 +48,15 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    title: "Gursharen Kaur Suri — Full Stack Developer",
+    title: "Gursharen Kaur Suri — AI/ML & Quant Developer",
     description:
-      "Full Stack Developer specialising in React, Next.js and AI-powered applications.",
-    siteName: "Gursharen Kaur Suri Portfolio",
+      "Full Stack Developer & AI/ML Engineer specialising in React, Next.js and Quantitative Finance.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Gursharen Kaur Suri — Full Stack Developer",
+    title: "Gursharen Kaur Suri — AI/ML & Quant Developer",
     description:
-      "Full Stack Developer specialising in React, Next.js and AI-powered applications.",
+      "Full Stack Developer & AI/ML Engineer specialising in React, Next.js and Quantitative Finance.",
   },
   robots: { index: true, follow: true },
 };

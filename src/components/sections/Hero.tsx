@@ -192,18 +192,25 @@ export default function Hero() {
           <AnimatedName text={personalInfo.name} />
         </h1>
 
-        {/* Role badge */}
+        {/* Role button panel */}
         <motion.div
           variants={fadeUp}
-          className="flex items-center gap-2 px-5 py-2.5 rounded-full glass border border-white/10"
+          className="flex flex-wrap items-center justify-center gap-3 mt-1"
         >
-          <span
-            className="w-2 h-2 rounded-full animate-pulse"
-            style={{ background: "#8b5cf6" }}
-          />
-          <span className="text-[var(--color-text-secondary)] text-sm font-medium tracking-wide">
-            {personalInfo.role}
-          </span>
+          {personalInfo.roles.map((role) => (
+            <div
+              key={role}
+              className="flex items-center gap-2.5 px-4 py-2 rounded-full glass border border-white/5 hover:border-violet-500/30 transition-all duration-300 group hover:-translate-y-0.5"
+            >
+              <span
+                className="w-1.5 h-1.5 rounded-full group-hover:scale-125 transition-transform duration-300 shadow-[0_0_8px_rgba(139,92,246,0.6)]"
+                style={{ background: "#8b5cf6" }}
+              />
+              <span className="text-[var(--color-text-secondary)] group-hover:text-[var(--color-text-primary)] text-[11px] uppercase font-bold tracking-[0.1em] transition-colors">
+                {role}
+              </span>
+            </div>
+          ))}
         </motion.div>
 
         {/* Tagline */}
