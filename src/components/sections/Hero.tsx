@@ -4,7 +4,7 @@ import dynamic from "next/dynamic";
 import Link from "next/link";
 import { motion, type Variants } from "motion/react";
 import { ArrowDown, ArrowRight, Sparkles, Eye } from "lucide-react";
-import { personalInfo, socialLinks, stats } from "@/lib/data";
+import { personalInfo, socialLinks } from "@/lib/data";
 
 /* Lazy-load 3D canvas — never SSR */
 const ParticleCanvas = dynamic(
@@ -249,22 +249,7 @@ export default function Hero() {
           </motion.a>
         </motion.div>
 
-        {/* Stats row */}
-        <motion.div
-          variants={fadeUp}
-          className="grid grid-cols-2 sm:grid-cols-4 gap-6 mt-8 w-full max-w-2xl"
-        >
-          {stats.map((s) => (
-            <div key={s.label} className="flex flex-col items-center gap-1 group">
-              <span className="font-heading font-black text-3xl gradient-text group-hover:scale-110 transition-transform duration-200">
-                {s.value}
-              </span>
-              <span className="text-xs text-[var(--color-text-muted)] uppercase tracking-widest">
-                {s.label}
-              </span>
-            </div>
-          ))}
-        </motion.div>
+
       </motion.div>
 
       {/* ── Scroll indicator ──────────────────────────────── */}

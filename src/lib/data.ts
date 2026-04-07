@@ -182,10 +182,4 @@ export const funFacts = [
   { emoji: "📚", text: "Currently reading: Deep Work by Cal Newport" },
 ];
 
-/* ── Stats ───────────────────────────────────────────────── */
-export const stats = [
-  { value: "10+", label: "Projects Built" },
-  { value: "2+", label: "Years Coding" },
-  { value: "5+", label: "Tech Stack" },
-  { value: "100%", label: "Passion" },
-];
+
