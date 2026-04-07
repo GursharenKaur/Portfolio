@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "motion/react";
-import { Menu, X, Eye, Sparkles } from "lucide-react";
+import { Menu, X, MessageSquare, Sparkles } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { navLinks, personalInfo } from "@/lib/data";
 
@@ -143,22 +143,21 @@ export default function Navbar() {
             </div>
 
             {/* Resume button */}
-            <motion.a
-              href={personalInfo.resumeUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ scale: 1.04 }}
-              whileTap={{ scale: 0.96 }}
-              className={cn(
-                "flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-semibold",
-                "bg-violet-600 hover:bg-violet-500 text-white",
-                "transition-colors duration-200",
-                "shadow-[0_0_16px_rgba(139,92,246,0.35)] hover:shadow-[0_0_24px_rgba(139,92,246,0.55)]"
-              )}
-            >
-              <Eye className="w-3.5 h-3.5" />
-              Resume
-            </motion.a>
+            <Link href="#contact">
+              <motion.span
+                whileHover={{ scale: 1.04 }}
+                whileTap={{ scale: 0.96 }}
+                className={cn(
+                  "flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-semibold cursor-pointer",
+                  "bg-violet-600 hover:bg-violet-500 text-white",
+                  "transition-colors duration-200",
+                  "shadow-[0_0_16px_rgba(139,92,246,0.35)] hover:shadow-[0_0_24px_rgba(139,92,246,0.55)]"
+                )}
+              >
+                <MessageSquare className="w-3.5 h-3.5" />
+                Let&apos;s Talk
+              </motion.span>
+            </Link>
           </div>
 
           {/* ── Mobile hamburger ─────────────────────────── */}
@@ -259,16 +258,14 @@ export default function Navbar() {
                     {personalInfo.availabilityNote}
                   </span>
                 </div>
-                <a
-                  href={personalInfo.resumeUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  href="#contact"
                   onClick={() => setMobileOpen(false)}
-                  className="flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-violet-600 hover:bg-violet-500 text-white font-semibold text-sm transition-colors"
+                  className="flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-violet-600 hover:bg-violet-500 text-white font-semibold text-sm transition-colors cursor-pointer"
                 >
-                  <Eye className="w-4 h-4" />
-                  View Resume
-                </a>
+                  <MessageSquare className="w-4 h-4" />
+                  Let&apos;s Talk
+                </Link>
               </div>
             </motion.div>
           </>

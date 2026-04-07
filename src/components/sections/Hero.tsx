@@ -3,7 +3,7 @@
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import { motion, type Variants } from "motion/react";
-import { ArrowDown, ArrowRight, Sparkles } from "lucide-react";
+import { ArrowDown, ArrowRight, Sparkles, Eye } from "lucide-react";
 import { personalInfo, socialLinks, stats } from "@/lib/data";
 
 /* Lazy-load 3D canvas — never SSR */
@@ -242,8 +242,9 @@ export default function Hero() {
             rel="noopener noreferrer"
             whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.96 }}
-            className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl font-semibold text-[var(--color-text-primary)] text-sm glass border border-white/10 hover:border-violet-500/40 transition-colors"
+            className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl font-semibold text-[var(--color-text-primary)] text-sm glass border border-white/10 hover:border-violet-500/40 transition-colors cursor-pointer"
           >
+            <Eye className="w-4 h-4" />
             View Resume
           </motion.a>
         </motion.div>
