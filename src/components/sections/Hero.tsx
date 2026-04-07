@@ -159,21 +159,7 @@ export default function Hero() {
         animate="show"
         className="relative z-10 container-portfolio flex flex-col items-center text-center gap-6 pt-24"
       >
-        {/* Availability badge */}
-        <motion.div variants={fadeIn} className="flex items-center gap-2">
-          <div
-            className="flex items-center gap-2.5 px-4 py-2 rounded-full border text-sm font-medium"
-            style={{
-              background: "rgba(74,222,128,0.08)",
-              borderColor: "rgba(74,222,128,0.2)",
-              color: "#4ade80",
-            }}
-          >
-            <span className="availability-dot" />
-            {personalInfo.availabilityNote}
-            <Sparkles className="w-3.5 h-3.5 opacity-70" />
-          </div>
-        </motion.div>
+
 
         {/* Greeting */}
         <motion.p

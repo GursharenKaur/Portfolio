@@ -134,13 +134,7 @@ export default function Navbar() {
 
           {/* ── Desktop CTA ──────────────────────────────── */}
           <div className="hidden md:flex items-center gap-3">
-            {/* Availability badge */}
-            <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20">
-              <span className="availability-dot" />
-              <span className="text-xs font-medium text-emerald-400">
-                Available
-              </span>
-            </div>
+
 
             {/* Resume button */}
             <Link href="#contact">
@@ -252,12 +246,7 @@ export default function Navbar() {
 
               {/* Availability + resume */}
               <div className="flex flex-col gap-3 pt-4 border-t border-white/[0.06]">
-                <div className="flex items-center gap-2">
-                  <span className="availability-dot" />
-                  <span className="text-sm text-emerald-400 font-medium">
-                    {personalInfo.availabilityNote}
-                  </span>
-                </div>
+
                 <Link
                   href="#contact"
                   onClick={() => setMobileOpen(false)}
