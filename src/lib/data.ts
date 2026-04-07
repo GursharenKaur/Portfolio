@@ -129,6 +129,20 @@ export const skills: Skill[] = [
   { name: "LangChain", icon: "🔗", level: "Learning", category: "AI/ML" },
 ];
 
+/* ── Marquee Skills ────────────────────────────────────────── */
+export const marqueeSkills = [
+  { name: "Next.js", icon: "▲" },
+  { name: "TypeScript", icon: "🔷" },
+  { name: "Three.js", icon: "🌐" },
+  { name: "Framer Motion", icon: "🎭" },
+  { name: "OpenAI", icon: "✨" },
+  { name: "Node.js", icon: "🟩" },
+  { name: "Python", icon: "🐍" },
+  { name: "Tailwind", icon: "💨" },
+  { name: "PostgreSQL", icon: "🐘" },
+  { name: "Vercel SDK", icon: "🤖" },
+];
+
 /* ── Currently Learning ──────────────────────────────────── */
 export const currentlyLearning = [
   { name: "React Three Fiber", icon: "🌐" },

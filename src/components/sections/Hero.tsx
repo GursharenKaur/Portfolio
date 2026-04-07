@@ -4,7 +4,7 @@ import dynamic from "next/dynamic";
 import Link from "next/link";
 import { motion, type Variants } from "motion/react";
 import { ArrowDown, ArrowRight, Sparkles, Eye } from "lucide-react";
-import { personalInfo, socialLinks } from "@/lib/data";
+import { personalInfo, socialLinks, marqueeSkills } from "@/lib/data";
 
 /* Lazy-load 3D canvas — never SSR */
 const ParticleCanvas = dynamic(
@@ -249,6 +249,40 @@ export default function Hero() {
           </motion.a>
         </motion.div>
 
+        {/* Tech Marquee replacement for stats */}
+        <motion.div
+          variants={fadeUp}
+          className="mt-12 w-full max-w-2xl overflow-hidden relative group"
+        >
+          {/* Gradient Masks for smooth edges */}
+          <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none" />
+          <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" />
+          
+          <motion.div
+            initial={{ x: 0 }}
+            animate={{ x: "-50%" }}
+            transition={{
+              duration: 35,
+              repeat: Infinity,
+              ease: "linear",
+            }}
+            className="flex gap-4 w-max"
+          >
+            {/* Multiplied array for seamless looping */}
+            {[...marqueeSkills, ...marqueeSkills, ...marqueeSkills, ...marqueeSkills].map((skill, i) => (
+              <div
+                key={`${skill.name}-${i}`}
+                className="flex items-center gap-3 px-5 py-2.5 rounded-xl glass border border-white/5 whitespace-nowrap hover:border-violet-500/30 transition-colors"
+                style={{ background: "rgba(255,255,255,0.03)" }}
+              >
+                <span className="text-base select-none">{skill.icon}</span>
+                <span className="text-[10px] uppercase font-bold tracking-[0.2em] text-[var(--color-text-muted)] group-hover:text-[var(--color-text-secondary)] transition-colors">
+                  {skill.name}
+                </span>
+              </div>
+            ))}
+          </motion.div>
+        </motion.div>
 
       </motion.div>
 
