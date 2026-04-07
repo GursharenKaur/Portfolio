@@ -45,13 +45,8 @@ export const socialLinks: SocialLink[] = [
   },
   {
     label: "LinkedIn",
-    href: "https://linkedin.com/in/gursharen-kaur",  // ← update
+    href: "https://www.linkedin.com/in/gursharen-kaur-suri",  // ← update
     icon: "linkedin",
-  },
-  {
-    label: "Twitter",
-    href: "https://twitter.com/gursharen",            // ← update
-    icon: "twitter",
   },
 ];
 
