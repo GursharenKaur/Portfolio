@@ -72,7 +72,7 @@ export default function RootLayout({
       className={`${outfit.variable} ${inter.variable} ${jetbrainsMono.variable} dark`}
       suppressHydrationWarning
     >
-      <body className="min-h-screen overflow-x-hidden antialiased bg-[#080810]">
+      <body className="min-h-screen overflow-x-hidden antialiased bg-[#000000]">
         {/* Custom cursor — desktop only, client component */}
         <CustomCursor />
 

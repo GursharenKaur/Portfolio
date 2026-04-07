@@ -4,7 +4,7 @@
 @custom-variant dark (&:is(.dark *));
 
 /* ─── Design Tokens ────────────────────────────────────────── */
-@theme inline {
+@theme {
   /* Shadcn semantic mappings */
   --color-background:              var(--background);
   --color-foreground:              var(--foreground);
@@ -60,38 +60,38 @@
   --color-text-muted: #52525b;
 }
 
-/* ─── Root (Dark-first portfolio) ─────────────────────────── */
-:root {
+/* ─── Root (Pure Black Portfolio) ─────────────────────────── */
+:root, .dark {
   color-scheme: dark;
 
-  /* Shadcn dark tokens */
-  --background:              #080810;
+  /* Shadcn black tokens */
+  --background:              #000000;
   --foreground:              #f4f4f5;
-  --card:                    #16161d;
+  --card:                    #0a0a0a;
   --card-foreground:         #f4f4f5;
-  --popover:                 #1e1e28;
+  --popover:                 #0a0a0a;
   --popover-foreground:      #f4f4f5;
-  --primary:                 #8b5cf6;
+  --primary:                 #7c3aed;
   --primary-foreground:      #ffffff;
-  --secondary:               #1e1e28;
+  --secondary:               #0a0a0a;
   --secondary-foreground:    #f4f4f5;
-  --muted:                   #27272a;
-  --muted-foreground:        #71717a;
-  --accent:                  #1e1e28;
+  --muted:                   #0a0a0a;
+  --muted-foreground:        #a1a1aa;
+  --accent:                  #0a0a0a;
   --accent-foreground:       #f4f4f5;
-  --destructive:             oklch(0.577 0.245 27.325);
-  --border:                  rgba(255, 255, 255, 0.08);
-  --input:                   rgba(255, 255, 255, 0.06);
-  --ring:                    #8b5cf6;
+  --destructive:             #ef4444;
+  --border:                  rgba(255, 255, 255, 0.1);
+  --input:                   rgba(255, 255, 255, 0.05);
+  --ring:                    #7c3aed;
   --radius:                  0.75rem;
-  --sidebar:                 #16161d;
+  --sidebar:                 #0a0a0a;
   --sidebar-foreground:      #f4f4f5;
-  --sidebar-primary:         #8b5cf6;
+  --sidebar-primary:         #7c3aed;
   --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent:          #1e1e28;
+  --sidebar-accent:          #0a0a0a;
   --sidebar-accent-foreground: #f4f4f5;
-  --sidebar-border:          rgba(255, 255, 255, 0.08);
-  --sidebar-ring:            #8b5cf6;
+  --sidebar-border:          rgba(255, 255, 255, 0.1);
+  --sidebar-ring:            #7c3aed;
 }
 
 /* ─── Base Styles ──────────────────────────────────────────── */
@@ -142,7 +142,7 @@
   width: 5px;
 }
 ::-webkit-scrollbar-track {
-  background: #080810;
+  background: #000000;
 }
 ::-webkit-scrollbar-thumb {
   background: #3f3f46;
@@ -283,10 +283,10 @@
   .animated-bg {
     background: linear-gradient(
       -45deg,
-      #080810,
-      #0f0a1e,
-      #080810,
-      #0a0f1e
+      #000000,
+      #050505,
+      #000000,
+      #030308
     );
     background-size: 400% 400%;
     animation: gradient-shift 15s ease infinite;
