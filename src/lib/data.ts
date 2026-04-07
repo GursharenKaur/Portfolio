@@ -29,10 +29,10 @@ exploring AI-native applications and 3D web experiences.`,
 
 /* ── Navigation ──────────────────────────────────────────── */
 export const navLinks: NavLink[] = [
-  { label: "Home",    href: "/" },
-  { label: "Work",    href: "#work" },
-  { label: "About",   href: "#about" },
-  { label: "Skills",  href: "#skills" },
+  { label: "Home", href: "/" },
+  { label: "Work", href: "#work" },
+  { label: "About", href: "#about" },
+  { label: "Skills", href: "#skills" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -101,45 +101,45 @@ export const projects: Project[] = [
 /* ── Skills ──────────────────────────────────────────────── */
 export const skills: Skill[] = [
   // Languages
-  { name: "TypeScript",   icon: "🔷", level: "Expert",     category: "Language" },
-  { name: "JavaScript",   icon: "🟡", level: "Expert",     category: "Language" },
-  { name: "Python",       icon: "🐍", level: "Proficient", category: "Language" },
-  { name: "HTML/CSS",     icon: "🎨", level: "Expert",     category: "Language" },
+  { name: "TypeScript", icon: "🔷", level: "Expert", category: "Language" },
+  { name: "JavaScript", icon: "🟡", level: "Expert", category: "Language" },
+  { name: "Python", icon: "🐍", level: "Proficient", category: "Language" },
+  { name: "HTML/CSS", icon: "🎨", level: "Expert", category: "Language" },
 
   // Frontend
-  { name: "React",        icon: "⚛️", level: "Expert",     category: "Frontend" },
-  { name: "Next.js",      icon: "▲",  level: "Expert",     category: "Frontend" },
-  { name: "Tailwind CSS", icon: "💨", level: "Expert",     category: "Frontend" },
-  { name: "Framer Motion",icon: "🎭", level: "Proficient", category: "Frontend" },
-  { name: "GSAP",         icon: "🟢", level: "Proficient", category: "Frontend" },
-  { name: "Three.js",     icon: "🌐", level: "Learning",   category: "Frontend" },
+  { name: "React", icon: "⚛️", level: "Expert", category: "Frontend" },
+  { name: "Next.js", icon: "▲", level: "Expert", category: "Frontend" },
+  { name: "Tailwind CSS", icon: "💨", level: "Expert", category: "Frontend" },
+  { name: "Framer Motion", icon: "🎭", level: "Proficient", category: "Frontend" },
+  { name: "GSAP", icon: "🟢", level: "Proficient", category: "Frontend" },
+  { name: "Three.js", icon: "🌐", level: "Learning", category: "Frontend" },
 
   // Backend
-  { name: "Node.js",      icon: "🟩", level: "Proficient", category: "Backend" },
-  { name: "REST APIs",    icon: "🔗", level: "Expert",     category: "Backend" },
+  { name: "Node.js", icon: "🟩", level: "Proficient", category: "Backend" },
+  { name: "REST APIs", icon: "🔗", level: "Expert", category: "Backend" },
 
   // Database
-  { name: "PostgreSQL",   icon: "🐘", level: "Proficient", category: "Database" },
-  { name: "SQLite",       icon: "📦", level: "Proficient", category: "Database" },
-  { name: "MongoDB",      icon: "🍃", level: "Proficient", category: "Database" },
+  { name: "PostgreSQL", icon: "🐘", level: "Proficient", category: "Database" },
+  { name: "SQLite", icon: "📦", level: "Proficient", category: "Database" },
+  { name: "MongoDB", icon: "🍃", level: "Proficient", category: "Database" },
 
   // DevOps
-  { name: "Git",          icon: "🔀", level: "Expert",     category: "DevOps" },
-  { name: "Vercel",       icon: "▲",  level: "Expert",     category: "DevOps" },
-  { name: "Docker",       icon: "🐳", level: "Learning",   category: "DevOps" },
+  { name: "Git", icon: "🔀", level: "Expert", category: "DevOps" },
+  { name: "Vercel", icon: "▲", level: "Expert", category: "DevOps" },
+  { name: "Docker", icon: "🐳", level: "Learning", category: "DevOps" },
 
   // AI/ML
-  { name: "Vercel AI SDK",icon: "🤖", level: "Proficient", category: "AI/ML" },
-  { name: "OpenAI API",   icon: "✨", level: "Proficient", category: "AI/ML" },
-  { name: "LangChain",    icon: "🔗", level: "Learning",   category: "AI/ML" },
+  { name: "Vercel AI SDK", icon: "🤖", level: "Proficient", category: "AI/ML" },
+  { name: "OpenAI API", icon: "✨", level: "Proficient", category: "AI/ML" },
+  { name: "LangChain", icon: "🔗", level: "Learning", category: "AI/ML" },
 ];
 
 /* ── Currently Learning ──────────────────────────────────── */
 export const currentlyLearning = [
   { name: "React Three Fiber", icon: "🌐" },
-  { name: "GSAP ScrollTrigger",icon: "🎬" },
-  { name: "LangChain",         icon: "🔗" },
-  { name: "Cloudflare Workers",icon: "⚡" },
+  { name: "GSAP ScrollTrigger", icon: "🎬" },
+  { name: "LangChain", icon: "🔗" },
+  { name: "Cloudflare Workers", icon: "⚡" },
 ];
 
 /* ── Timeline ────────────────────────────────────────────── */
@@ -189,8 +189,8 @@ export const funFacts = [
 
 /* ── Stats ───────────────────────────────────────────────── */
 export const stats = [
-  { value: "10+",  label: "Projects Built" },
-  { value: "2+",   label: "Years Coding" },
-  { value: "5+",   label: "Tech Stack" },
+  { value: "10+", label: "Projects Built" },
+  { value: "2+", label: "Years Coding" },
+  { value: "5+", label: "Tech Stack" },
   { value: "100%", label: "Passion" },
 ];
