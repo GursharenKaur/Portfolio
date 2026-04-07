@@ -30,32 +30,32 @@ const jetbrainsMono = JetBrains_Mono({
 /* ─── Metadata ─────────────────────────────────────────────── */
 export const metadata: Metadata = {
   title: {
-    default: "Gursharen Kaur — Full Stack Developer",
-    template: "%s | Gursharen Kaur",
+    default: "Gursharen Kaur Suri — Full Stack Developer",
+    template: "%s | Gursharen Kaur Suri",
   },
   description:
     "Full Stack Developer specialising in React, Next.js and AI-powered applications. Open to opportunities in 2026.",
   keywords: [
-    "Gursharen Kaur",
+    "Gursharen Kaur Suri",
     "Full Stack Developer",
     "React",
     "Next.js",
     "TypeScript",
     "Portfolio",
   ],
-  authors: [{ name: "Gursharen Kaur" }],
-  creator: "Gursharen Kaur",
+  authors: [{ name: "Gursharen Kaur Suri" }],
+  creator: "Gursharen Kaur Suri",
   openGraph: {
     type: "website",
     locale: "en_US",
-    title: "Gursharen Kaur — Full Stack Developer",
+    title: "Gursharen Kaur Suri — Full Stack Developer",
     description:
       "Full Stack Developer specialising in React, Next.js and AI-powered applications.",
-    siteName: "Gursharen Kaur Portfolio",
+    siteName: "Gursharen Kaur Suri Portfolio",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Gursharen Kaur — Full Stack Developer",
+    title: "Gursharen Kaur Suri — Full Stack Developer",
     description:
       "Full Stack Developer specialising in React, Next.js and AI-powered applications.",
   },

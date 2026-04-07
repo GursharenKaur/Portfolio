@@ -99,8 +99,8 @@ export default function Navbar() {
             </motion.div>
 
             <span className="font-heading font-semibold text-[var(--color-text-primary)] text-sm hidden sm:block tracking-tight">
-              Gursharen
-              <span className="gradient-text"> Kaur</span>
+              Gursharen Kaur
+              <span className="gradient-text"> Suri</span>
             </span>
           </Link>
 

@@ -13,7 +13,7 @@ import type {
 
 /* ── Personal Info ───────────────────────────────────────── */
 export const personalInfo = {
-  name: "Gursharen Kaur",
+  name: "Gursharen Kaur Suri",
   role: "Full Stack Developer",
   tagline: "Building fast, beautiful, AI-powered web experiences.",
   bio: `I'm a Full Stack Developer passionate about crafting seamless digital

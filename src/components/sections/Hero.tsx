@@ -186,7 +186,7 @@ export default function Hero() {
 
         {/* Name — character-by-character */}
         <h1
-          className="font-heading gradient-text text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black leading-none tracking-tighter"
+          className="font-heading gradient-text text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black leading-none tracking-tighter"
           style={{ perspective: "800px" }}
         >
           <AnimatedName text={personalInfo.name} />
