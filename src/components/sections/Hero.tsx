@@ -235,15 +235,16 @@ export default function Hero() {
             </motion.span>
           </Link>
 
-          {/* Secondary — Download Resume */}
+          {/* Secondary — View Resume */}
           <motion.a
             href={personalInfo.resumeUrl}
-            download
+            target="_blank"
+            rel="noopener noreferrer"
             whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.96 }}
             className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl font-semibold text-[var(--color-text-primary)] text-sm glass border border-white/10 hover:border-violet-500/40 transition-colors"
           >
-            Download Resume
+            View Resume
           </motion.a>
         </motion.div>
 

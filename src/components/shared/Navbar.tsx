@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "motion/react";
-import { Menu, X, Download, Sparkles } from "lucide-react";
+import { Menu, X, Eye, Sparkles } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { navLinks, personalInfo } from "@/lib/data";
 
@@ -145,7 +145,8 @@ export default function Navbar() {
             {/* Resume button */}
             <motion.a
               href={personalInfo.resumeUrl}
-              download
+              target="_blank"
+              rel="noopener noreferrer"
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.96 }}
               className={cn(
@@ -155,7 +156,7 @@ export default function Navbar() {
                 "shadow-[0_0_16px_rgba(139,92,246,0.35)] hover:shadow-[0_0_24px_rgba(139,92,246,0.55)]"
               )}
             >
-              <Download className="w-3.5 h-3.5" />
+              <Eye className="w-3.5 h-3.5" />
               Resume
             </motion.a>
           </div>
@@ -260,12 +261,13 @@ export default function Navbar() {
                 </div>
                 <a
                   href={personalInfo.resumeUrl}
-                  download
+                  target="_blank"
+                  rel="noopener noreferrer"
                   onClick={() => setMobileOpen(false)}
                   className="flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-violet-600 hover:bg-violet-500 text-white font-semibold text-sm transition-colors"
                 >
-                  <Download className="w-4 h-4" />
-                  Download Resume
+                  <Eye className="w-4 h-4" />
+                  View Resume
                 </a>
               </div>
             </motion.div>

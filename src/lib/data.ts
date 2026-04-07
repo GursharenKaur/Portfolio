@@ -24,7 +24,7 @@ exploring AI-native applications and 3D web experiences.`,
   availability: true,
   availabilityNote: "Open to opportunities — 2026",
   email: "gursharen@email.com",         // ← update
-  resumeUrl: "/resume.pdf",             // ← place your resume in /public/
+  resumeUrl: "/resume/My_Resume_ML.pdf",             // ← place your resume in /public/
 };
 
 /* ── Navigation ──────────────────────────────────────────── */
