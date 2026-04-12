@@ -110,19 +110,6 @@ export const projects: Project[] = [
     year: 2025,
   },
   {
-    id: "ai-financial-chatbot",
-    title: "AI-Powered Financial Chatbot",
-    tagline: "Intelligent chatbot for financial queries using NLP",
-    description:
-      "Developed an AI-powered financial chatbot leveraging natural language processing to answer user queries about financial topics. Built using Jupyter Notebooks with Python, integrating ML models for intent recognition and response generation.",
-    tags: ["AI"],
-    techStack: ["Python", "NLP", "Jupyter Notebook", "Machine Learning"],
-    image: "/images/financial-chatbot.png",
-    githubUrl: "https://github.com/GursharenKaur/AI-powered-Financial-Chatbot-Development",
-    featured: false,
-    year: 2025,
-  },
-  {
     id: "athlete-injury-prediction",
     title: "Athlete Injury Risk Prediction",
     tagline: "AI model to predict athlete injury risk — 4th semester project",
@@ -163,7 +150,7 @@ export const projects: Project[] = [
   },
   {
     id: "object-detection",
-    title: "Object Detection Mini-Projects",
+    title: "Object Detection",
     tagline: "Collection of OpenCV & computer vision projects",
     description:
       "A collection of computer vision mini-projects using Python and OpenCV, including real-time object detection, image processing, and feature extraction experiments.",
@@ -184,19 +171,6 @@ export const projects: Project[] = [
     techStack: ["JavaScript", "HTML", "CSS", "REST API"],
     image: "/images/search-bar.png",
     githubUrl: "https://github.com/GursharenKaur/Search-Bar-with-Lazy-Load-Functionality",
-    featured: false,
-    year: 2026,
-  },
-  {
-    id: "portfolio",
-    title: "This Portfolio",
-    tagline: "2026-stack personal portfolio with premium animations",
-    description:
-      "A dark, premium portfolio built with Next.js 16, Framer Motion, GSAP ScrollTrigger, React Three Fiber, and a modern design system featuring glassmorphism and 3D particle effects.",
-    tags: ["UI/UX", "Full-Stack"],
-    techStack: ["Next.js 16", "TypeScript", "GSAP", "Three.js", "Framer Motion"],
-    image: "/images/portfolio.png",
-    githubUrl: "https://github.com/GursharenKaur/Portfolio",
     featured: false,
     year: 2026,
   },
@@ -335,7 +309,7 @@ export const timeline: TimelineItem[] = [
 
 /* ── Stats ───────────────────────────────────────────────── */
 export const stats = [
-  { value: "11+", label: "Projects Built" },
+  { value: "9+", label: "Projects Built" },
   { value: "8.57", label: "CGPA" },
   { value: "10+", label: "Tech Stack" },
   { value: "36", label: "GitHub Repos" },
