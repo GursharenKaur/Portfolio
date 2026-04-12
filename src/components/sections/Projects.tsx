@@ -39,7 +39,7 @@ export default function Projects() {
            variants={fadeUp}
            className="text-center mb-16"
         >
-          <h2 className="font-heading font-black text-4xl sm:text-5xl leading-tight">
+          <h2 className="font-heading font-black text-3xl sm:text-4xl md:text-5xl leading-tight">
             My <span className="gradient-text italic">Craft</span>
           </h2>
           <p className="max-w-xl mx-auto mt-4 text-[var(--color-text-secondary)] text-lg">
@@ -55,11 +55,11 @@ export default function Projects() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: idx * 0.1, duration: 0.8 }}
-              className="p-8 rounded-[2rem] glass border border-white/5 group hover:border-violet-500/20 transition-all flex flex-col h-full overflow-hidden"
+              className="p-6 sm:p-8 rounded-2xl sm:rounded-[2rem] glass border border-white/5 group hover:border-violet-500/20 transition-all flex flex-col h-full overflow-hidden"
             >
               <div className="mb-8 flex items-center justify-between">
                 <div>
-                   <h3 className="text-2xl font-bold font-heading mb-2">{project.title}</h3>
+                   <h3 className="text-lg sm:text-2xl font-bold font-heading mb-2">{project.title}</h3>
                    <p className="text-[var(--color-text-muted)] text-sm tracking-wide uppercase font-bold">{project.tagline}</p>
                 </div>
                 <div className="flex gap-2">
@@ -90,16 +90,16 @@ export default function Projects() {
         <motion.div
            initial={{ opacity: 0, scale: 0.95 }}
            whileInView={{ opacity: 1, scale: 1 }}
-           className="p-12 rounded-[2.5rem] bg-violet-600/5 border border-violet-500/10 relative overflow-hidden"
+           className="p-6 sm:p-12 rounded-2xl sm:rounded-[2.5rem] bg-violet-600/5 border border-violet-500/10 relative overflow-hidden"
         >
           <div className="absolute top-0 right-0 p-8">
-             <span className="px-4 py-1.5 rounded-full bg-violet-500/20 border border-violet-500/20 text-violet-300 text-[10px] font-black uppercase tracking-[0.2em] animate-pulse">
+             <span className="px-3 sm:px-4 py-1.5 rounded-full bg-violet-500/20 border border-violet-500/20 text-violet-300 text-[9px] sm:text-[10px] font-black uppercase tracking-[0.15em] sm:tracking-[0.2em] animate-pulse">
                 Ongoing Experiment
              </span>
           </div>
           
           <div className="max-w-2xl">
-             <h3 className="text-3xl font-heading font-black mb-6">
+             <h3 className="text-2xl sm:text-3xl font-heading font-black mb-6 mt-10 sm:mt-0">
                 What&apos;s <span className="gradient-text italic">Brewing?</span>
              </h3>
              {ongoing.map(project => (

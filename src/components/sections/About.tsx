@@ -29,7 +29,7 @@ export default function About() {
               viewport={{ once: true, margin: "-100px" }}
               variants={fadeUp}
             >
-              <h2 className="font-heading font-black text-4xl sm:text-5xl mb-8 leading-tight">
+              <h2 className="font-heading font-black text-3xl sm:text-4xl md:text-5xl mb-8 leading-tight">
                 My <span className="gradient-text italic">Story</span>
               </h2>
               

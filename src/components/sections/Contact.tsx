@@ -41,7 +41,7 @@ export default function Contact() {
            variants={fadeUp}
            className="text-center mb-16"
         >
-          <h2 className="font-heading font-black text-4xl sm:text-5xl leading-tight">
+          <h2 className="font-heading font-black text-3xl sm:text-4xl md:text-5xl leading-tight">
             Say <span className="gradient-text italic">Hello</span>
           </h2>
           <p className="max-w-xl mx-auto mt-4 text-[var(--color-text-secondary)] text-lg">
@@ -57,7 +57,7 @@ export default function Contact() {
              transition={{ duration: 0.8 }}
              className="space-y-8"
           >
-            <div className="p-8 rounded-3xl glass border border-white/5 space-y-8">
+            <div className="p-6 sm:p-8 rounded-2xl sm:rounded-3xl glass border border-white/5 space-y-6 sm:space-y-8">
                <h3 className="text-xl font-bold font-heading">Direct Contact</h3>
                
                <div className="space-y-6">
@@ -105,8 +105,8 @@ export default function Contact() {
              transition={{ duration: 0.8 }}
              className="flex flex-col justify-center"
           >
-            <div className="p-12 rounded-[2.5rem] bg-violet-600/5 border border-violet-500/10 text-center">
-               <h3 className="text-3xl font-heading font-black mb-6 italic gradient-text">
+            <div className="p-8 sm:p-12 rounded-2xl sm:rounded-[2.5rem] bg-violet-600/5 border border-violet-500/10 text-center">
+               <h3 className="text-2xl sm:text-3xl font-heading font-black mb-6 italic gradient-text">
                   Let&apos;s build something <br /> amazing together.
                </h3>
                <p className="text-[var(--color-text-secondary)] mb-10 leading-relaxed text-lg">

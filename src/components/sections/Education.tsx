@@ -28,7 +28,7 @@ export default function Education() {
            variants={fadeUp}
            className="text-center mb-16"
         >
-          <h2 className="font-heading font-black text-4xl sm:text-5xl leading-tight">
+          <h2 className="font-heading font-black text-3xl sm:text-4xl md:text-5xl leading-tight">
             My <span className="gradient-text italic">Education</span>
           </h2>
           <p className="max-w-xl mx-auto mt-4 text-[var(--color-text-secondary)] text-lg">
@@ -43,7 +43,7 @@ export default function Education() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: idx * 0.1, duration: 0.8 }}
-              className="relative p-8 rounded-3xl glass border border-white/5 hover:border-violet-500/20 transition-colors group"
+              className="relative p-6 sm:p-8 rounded-2xl sm:rounded-3xl glass border border-white/5 hover:border-violet-500/20 transition-colors group"
             >
               <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
                  <div>

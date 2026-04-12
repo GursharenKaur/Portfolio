@@ -97,7 +97,7 @@ export default function Hero() {
 
       {/* Top-right accent glow */}
       <div
-        className="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] rounded-full pointer-events-none"
+        className="absolute top-[-10%] right-[-5%] w-[300px] h-[300px] sm:w-[600px] sm:h-[600px] rounded-full pointer-events-none"
         style={{
           background:
             "radial-gradient(circle, rgba(99,102,241,0.12) 0%, transparent 70%)",
@@ -107,7 +107,7 @@ export default function Hero() {
 
       {/* Bottom-left accent glow */}
       <div
-        className="absolute bottom-[-5%] left-[-5%] w-[500px] h-[500px] rounded-full pointer-events-none"
+        className="absolute bottom-[-5%] left-[-5%] w-[250px] h-[250px] sm:w-[500px] sm:h-[500px] rounded-full pointer-events-none"
         style={{
           background:
             "radial-gradient(circle, rgba(139,92,246,0.1) 0%, transparent 70%)",
@@ -157,14 +157,14 @@ export default function Hero() {
         variants={container}
         initial="hidden"
         animate="show"
-        className="relative z-10 container-portfolio flex flex-col items-center text-center gap-6 pt-24"
+        className="relative z-10 container-portfolio flex flex-col items-center text-center gap-4 sm:gap-6 pt-20 sm:pt-24 px-4 sm:px-6"
       >
 
 
         {/* Greeting */}
         <motion.p
           variants={fadeUp}
-          className="text-[var(--color-text-secondary)] text-lg font-light tracking-widest uppercase"
+          className="text-[var(--color-text-secondary)] text-base sm:text-lg font-light tracking-widest uppercase"
           style={{ letterSpacing: "0.2em" }}
         >
           Hi, I&apos;m
@@ -172,7 +172,7 @@ export default function Hero() {
 
         {/* Name — character-by-character */}
         <h1
-          className="font-heading gradient-text text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black leading-none tracking-tighter"
+          className="font-heading gradient-text text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black leading-none tracking-tighter"
           style={{ perspective: "800px" }}
         >
           <AnimatedName text={personalInfo.name} />
@@ -186,13 +186,13 @@ export default function Hero() {
           {personalInfo.roles.map((role) => (
             <div
               key={role}
-              className="flex items-center gap-2.5 px-4 py-2 rounded-full glass border border-white/5 hover:border-violet-500/30 transition-all duration-300 group hover:-translate-y-0.5"
+              className="flex items-center gap-2 sm:gap-2.5 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full glass border border-white/5 hover:border-violet-500/30 transition-all duration-300 group hover:-translate-y-0.5"
             >
               <span
                 className="w-1.5 h-1.5 rounded-full group-hover:scale-125 transition-transform duration-300 shadow-[0_0_8px_rgba(139,92,246,0.6)]"
                 style={{ background: "#8b5cf6" }}
               />
-              <span className="text-[var(--color-text-secondary)] group-hover:text-[var(--color-text-primary)] text-[11px] uppercase font-bold tracking-[0.1em] transition-colors">
+              <span className="text-[var(--color-text-secondary)] group-hover:text-[var(--color-text-primary)] text-[10px] sm:text-[11px] uppercase font-bold tracking-[0.1em] transition-colors">
                 {role}
               </span>
             </div>
@@ -202,7 +202,7 @@ export default function Hero() {
         {/* Tagline */}
         <motion.p
           variants={fadeUp}
-          className="max-w-xl text-[var(--color-text-secondary)] text-lg leading-relaxed"
+          className="max-w-xl text-[var(--color-text-secondary)] text-base sm:text-lg leading-relaxed px-2 sm:px-0"
         >
           {personalInfo.tagline}
         </motion.p>
@@ -217,7 +217,7 @@ export default function Hero() {
             <motion.span
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.96 }}
-              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl font-semibold text-white text-sm cursor-pointer"
+              className="inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-3 sm:py-3.5 rounded-xl font-semibold text-white text-sm cursor-pointer w-full sm:w-auto"
               style={{
                 background: "linear-gradient(135deg, #7c3aed, #6366f1)",
                 boxShadow: "0 0 28px rgba(124,58,237,0.45), 0 4px 16px rgba(0,0,0,0.3)",
@@ -235,7 +235,7 @@ export default function Hero() {
             rel="noopener noreferrer"
             whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.96 }}
-            className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl font-semibold text-[var(--color-text-primary)] text-sm glass border border-white/10 hover:border-violet-500/40 transition-colors cursor-pointer"
+            className="inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-3 sm:py-3.5 rounded-xl font-semibold text-[var(--color-text-primary)] text-sm glass border border-white/10 hover:border-violet-500/40 transition-colors cursor-pointer w-full sm:w-auto"
           >
             <Eye className="w-4 h-4" />
             View Resume
@@ -245,11 +245,11 @@ export default function Hero() {
         {/* Tech Marquee replacement for stats */}
         <motion.div
           variants={fadeUp}
-          className="mt-12 w-full max-w-2xl overflow-hidden relative group"
+          className="mt-8 sm:mt-12 w-full max-w-2xl overflow-hidden relative group"
         >
           {/* Gradient Masks for smooth edges */}
-          <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none" />
-          <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" />
+          <div className="absolute inset-y-0 left-0 w-12 sm:w-24 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none" />
+          <div className="absolute inset-y-0 right-0 w-12 sm:w-24 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" />
           
           <motion.div
             initial={{ x: 0 }}
