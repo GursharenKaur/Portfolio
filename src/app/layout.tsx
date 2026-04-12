@@ -30,17 +30,19 @@ const jetbrainsMono = JetBrains_Mono({
 /* ─── Metadata ─────────────────────────────────────────────── */
 export const metadata: Metadata = {
   title: {
-    default: "Gursharen Kaur Suri | AI/ML Engineer & Quant Strategist",
+    default: "Gursharen Kaur Suri | Full Stack Developer & ML Engineer",
     template: "%s | Gursharen Kaur Suri",
   },
   description:
-    "Full Stack Developer & AI/ML Engineer specialising in React, Next.js and Quantitative Financial applications.",
+    "Computer Engineering student at TIET skilled in Full Stack Development and Machine Learning. Building scalable, user-focused applications.",
   keywords: [
     "Gursharen Kaur Suri",
     "Full Stack Developer",
+    "Machine Learning",
     "React",
-    "Next.js",
-    "TypeScript",
+    "Python",
+    "TIET",
+    "Computer Engineering",
     "Portfolio",
   ],
   authors: [{ name: "Gursharen Kaur Suri" }],
@@ -48,15 +50,15 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    title: "Gursharen Kaur Suri — AI/ML & Quant Developer",
+    title: "Gursharen Kaur Suri — Full Stack Developer & ML Engineer",
     description:
-      "Full Stack Developer & AI/ML Engineer specialising in React, Next.js and Quantitative Finance.",
+      "Computer Engineering student at TIET skilled in Full Stack Development and Machine Learning.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Gursharen Kaur Suri — AI/ML & Quant Developer",
+    title: "Gursharen Kaur Suri — Full Stack Developer & ML Engineer",
     description:
-      "Full Stack Developer & AI/ML Engineer specialising in React, Next.js and Quantitative Finance.",
+      "Computer Engineering student at TIET skilled in Full Stack Development and Machine Learning.",
   },
   robots: { index: true, follow: true },
 };

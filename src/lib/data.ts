@@ -7,7 +7,7 @@ import type {
 } from "@/types";
 
 /* ─────────────────────────────────────────────────────────────
-   PORTFOLIO DATA
+   PORTFOLIO DATA — Gursharen Kaur Suri
    ↳ Edit this file to update all your portfolio content.
 ───────────────────────────────────────────────────────────── */
 
@@ -15,17 +15,20 @@ import type {
 export const personalInfo = {
   name: "Gursharen Kaur Suri",
   role: "Full Stack Developer",
-  roles: ["Full Stack Developer", "AI/ML Engineer"],
-  tagline: "Building fast, beautiful, AI-powered web experiences.",
-  bio: `I'm a Full Stack Developer passionate about crafting seamless digital
-experiences — from pixel-perfect UIs to scalable backend systems. I love
-working at the intersection of design and engineering, and I'm currently
-exploring AI-native applications and 3D web experiences.`,
-  location: "India 🇮🇳",
+  roles: ["Full Stack Developer", "ML Engineer", "Research Enthusiast"],
+  tagline:
+    "Computer Engineering student skilled in Full Stack Development, driven by a passion for secure, user-focused digital innovation with hands-on expertise in Machine Learning.",
+  bio: `I'm a Computer Engineering student at Thapar Institute of Engineering and Technology,
+skilled in Full Stack Development. Experienced in building scalable applications using modern
+frameworks and driven by a passion for secure, user-focused digital innovation. I have hands-on
+expertise in Machine Learning, and I'm familiar with Git, Agile (Scrum), and collaborative
+team environments. I'm eager to apply problem-solving skills and work to provide high-quality
+software solutions.`,
+  location: "Patiala, India 🇮🇳",
   availability: true,
   availabilityNote: "Open to opportunities — 2026",
-  email: "gursharen@email.com",         // ← update
-  resumeUrl: "/resume/My_Resume_ML.pdf",             // ← place your resume in /public/
+  email: "gksuri04@gmail.com",
+  resumeUrl: "/resume/My_Resume_ML.pdf",
 };
 
 /* ── Navigation ──────────────────────────────────────────── */
@@ -47,7 +50,7 @@ export const socialLinks: SocialLink[] = [
   },
   {
     label: "LinkedIn",
-    href: "https://www.linkedin.com/in/gursharen-kaur-suri",  // ← update
+    href: "https://www.linkedin.com/in/gursharen-kaur-suri",
     icon: "linkedin",
   },
 ];
@@ -55,161 +58,189 @@ export const socialLinks: SocialLink[] = [
 /* ── Projects ────────────────────────────────────────────── */
 export const projects: Project[] = [
   {
-    id: "fpi-monitor",
-    title: "FPI Monitor",
-    tagline: "Real-time Foreign Portfolio Investment tracking dashboard",
+    id: "skin-disease-detection",
+    title: "AI-based Skin Disease Detection System",
+    tagline: "Deep learning model for accurate skin disease classification",
     description:
-      "A full-stack application that scrapes NSDL data, stores it in SQLite, and visualises FPI equity/debt flows with interactive charts and filters. Built to help retail investors track institutional money movement.",
-    tags: ["Full-Stack", "AI"],
-    techStack: ["Next.js", "Python", "SQLite", "Recharts", "Tailwind CSS"],
-    image: "/images/fpi-monitor.png",
-    githubUrl: "https://github.com/GursharenKaur/fpi-monitor",  // ← update
+      "Designed and fine-tuned a Swin Transformer deep learning model for accurate classification of skin diseases. Built pre-processing pipelines and validated model performance through test cases. Worked on software diagrams for proper end-to-end implementation and debugged to improve model accuracy.",
+    tags: ["AI"],
+    techStack: ["Python", "SWIN Transformer", "OpenCV", "Deep Learning"],
+    image: "/images/skin-detection.png",
+    githubUrl: "https://github.com/GursharenKaur",
     featured: true,
-    year: 2026,
+    year: 2025,
   },
   {
-    id: "scholarship-portal",
-    title: "Scholarship Portal",
-    tagline: "AI-powered scholarship discovery and application platform",
+    id: "road-segmentation",
+    title: "Road Segmentation from Satellite Images",
+    tagline: "Multi-architecture CNN comparison for satellite imagery",
     description:
-      "An admin-facing portal with AI-driven PDF parsing to bulk-upload scholarships, document management for student profiles, and a smart matching algorithm. Features OCR via Tesseract.js and auto-fill from uploaded resumes.",
-    tags: ["Full-Stack", "AI"],
-    techStack: ["Next.js", "TypeScript", "Python", "Tesseract.js", "PostgreSQL"],
-    image: "/images/scholarship-portal.png",
-    githubUrl: "https://github.com/GursharenKaur",              // ← update
+      "Implemented and compared multiple architectures including U-Net Lite, U-Net Full, U-Net++, DeepLabV3+ (ResNet-50), HRNet-Small, and SegFormer-B0. Built a custom data preprocessing pipeline including resizing, normalization, binary mask generation, and data augmentation using Albumentations. Optimized training for limited GPU memory using mixed-precision training and efficient batch sizing.",
+    tags: ["AI"],
+    techStack: ["Python", "PyTorch", "U-Net", "DeepLabV3+", "SegFormer", "Albumentations"],
+    image: "/images/road-segmentation.png",
+    githubUrl: "https://github.com/GursharenKaur",
     featured: true,
     year: 2025,
   },
   {
     id: "portfolio",
     title: "This Portfolio",
-    tagline: "2026-stack personal portfolio with AI chatbot",
+    tagline: "2026-stack personal portfolio with premium animations",
     description:
-      "A dark, premium portfolio built with Next.js 15, Framer Motion, GSAP ScrollTrigger, React Three Fiber, and a Vercel AI SDK chatbot that answers questions about my resume in real time.",
+      "A dark, premium portfolio built with Next.js 16, Framer Motion, GSAP ScrollTrigger, React Three Fiber, and a modern design system featuring glassmorphism and 3D particle effects.",
     tags: ["UI/UX", "Full-Stack"],
-    techStack: ["Next.js 15", "TypeScript", "GSAP", "Three.js", "Vercel AI SDK"],
+    techStack: ["Next.js 16", "TypeScript", "GSAP", "Three.js", "Framer Motion"],
     image: "/images/portfolio.png",
     githubUrl: "https://github.com/GursharenKaur/Portfolio",
     featured: false,
     year: 2026,
-    isOngoing: false,
-  },
-  {
-    id: "ai-quant-trading",
-    title: "AI Quant Trading Bot",
-    tagline: "Ongoing Research — RL for derivative strategies",
-    description: "Developing a deep reinforcement learning agent to optimize options trading strategies using historical Indian market data and real-time news sentiment indicators. Still in the active research and backtesting phase.",
-    tags: ["AI", "Full-Stack"],
-    techStack: ["Python", "TensorFlow", "FastAPI", "React", "PineScript"],
-    image: "/images/quant-bot.png",
-    githubUrl: "https://github.com/GursharenKaur",
-    featured: true,
-    year: 2026,
-    isOngoing: true,
   },
 ];
 
 /* ── Skills ──────────────────────────────────────────────── */
 export const skills: Skill[] = [
   // Languages
-  { name: "TypeScript", icon: "🔷", level: "Expert", category: "Language" },
-  { name: "JavaScript", icon: "🟡", level: "Expert", category: "Language" },
+  { name: "C++", icon: "⚡", level: "Proficient", category: "Language" },
   { name: "Python", icon: "🐍", level: "Proficient", category: "Language" },
   { name: "HTML/CSS", icon: "🎨", level: "Expert", category: "Language" },
 
-  // Frontend
-  { name: "React", icon: "⚛️", level: "Expert", category: "Frontend" },
-  { name: "Next.js", icon: "▲", level: "Expert", category: "Frontend" },
+  // Frameworks & Tools
+  { name: "React", icon: "⚛️", level: "Proficient", category: "Frontend" },
+  { name: "Node.js", icon: "🟩", level: "Proficient", category: "Frontend" },
+  { name: "Express.js", icon: "🚀", level: "Proficient", category: "Frontend" },
+  { name: "Next.js", icon: "▲", level: "Proficient", category: "Frontend" },
   { name: "Tailwind CSS", icon: "💨", level: "Expert", category: "Frontend" },
-  { name: "Framer Motion", icon: "🎭", level: "Proficient", category: "Frontend" },
-  { name: "GSAP", icon: "🟢", level: "Proficient", category: "Frontend" },
-  { name: "Three.js", icon: "🌐", level: "Learning", category: "Frontend" },
 
-  // Backend
-  { name: "Node.js", icon: "🟩", level: "Proficient", category: "Backend" },
-  { name: "REST APIs", icon: "🔗", level: "Expert", category: "Backend" },
+  // ML & Deep Learning
+  { name: "SWIN Transformer", icon: "🧠", level: "Proficient", category: "AI/ML" },
+  { name: "Semantic Segmentation", icon: "🖼️", level: "Proficient", category: "AI/ML" },
+  { name: "OpenCV", icon: "👁️", level: "Proficient", category: "AI/ML" },
+  { name: "Deep Learning", icon: "🔬", level: "Proficient", category: "AI/ML" },
+  { name: "CNNs", icon: "🧬", level: "Proficient", category: "AI/ML" },
 
-  // Database
-  { name: "PostgreSQL", icon: "🐘", level: "Proficient", category: "Database" },
-  { name: "SQLite", icon: "📦", level: "Proficient", category: "Database" },
-  { name: "MongoDB", icon: "🍃", level: "Proficient", category: "Database" },
-
-  // DevOps
+  // Tools & Others
   { name: "Git", icon: "🔀", level: "Expert", category: "DevOps" },
-  { name: "Vercel", icon: "▲", level: "Expert", category: "DevOps" },
-  { name: "Docker", icon: "🐳", level: "Learning", category: "DevOps" },
+  { name: "GitHub", icon: "🐙", level: "Expert", category: "DevOps" },
+  { name: "Selenium", icon: "🌐", level: "Proficient", category: "DevOps" },
+  { name: "Excel", icon: "📊", level: "Proficient", category: "DevOps" },
+  { name: "Data Analysis", icon: "📈", level: "Proficient", category: "DevOps" },
 
-  // AI/ML
-  { name: "Vercel AI SDK", icon: "🤖", level: "Proficient", category: "AI/ML" },
-  { name: "OpenAI API", icon: "✨", level: "Proficient", category: "AI/ML" },
-  { name: "LangChain", icon: "🔗", level: "Learning", category: "AI/ML" },
+  // Coursework topics (as skills)
+  { name: "DSA", icon: "🧮", level: "Proficient", category: "Backend" },
+  { name: "Agile / Scrum", icon: "🔄", level: "Proficient", category: "Backend" },
+  { name: "Computer Networking", icon: "🌐", level: "Proficient", category: "Backend" },
 ];
 
 /* ── Marquee Skills ────────────────────────────────────────── */
 export const marqueeSkills = [
-  { name: "Next.js", icon: "▲" },
-  { name: "TypeScript", icon: "🔷" },
-  { name: "Three.js", icon: "🌐" },
-  { name: "Framer Motion", icon: "🎭" },
-  { name: "OpenAI", icon: "✨" },
-  { name: "Node.js", icon: "🟩" },
+  { name: "C++", icon: "⚡" },
   { name: "Python", icon: "🐍" },
-  { name: "Tailwind", icon: "💨" },
-  { name: "PostgreSQL", icon: "🐘" },
-  { name: "Vercel SDK", icon: "🤖" },
+  { name: "React", icon: "⚛️" },
+  { name: "Node.js", icon: "🟩" },
+  { name: "Express.js", icon: "🚀" },
+  { name: "Next.js", icon: "▲" },
+  { name: "OpenCV", icon: "👁️" },
+  { name: "Deep Learning", icon: "🔬" },
+  { name: "Git", icon: "🔀" },
+  { name: "Selenium", icon: "🌐" },
 ];
 
 /* ── Currently Learning ──────────────────────────────────── */
 export const currentlyLearning = [
-  { name: "React Three Fiber", icon: "🌐" },
-  { name: "GSAP ScrollTrigger", icon: "🎬" },
-  { name: "LangChain", icon: "🔗" },
-  { name: "Cloudflare Workers", icon: "⚡" },
+  { name: "SWIN Transformer", icon: "🧠" },
+  { name: "Semantic Segmentation", icon: "🖼️" },
+  { name: "Three.js / R3F", icon: "🌐" },
+  { name: "Advanced ML Architectures", icon: "🔬" },
 ];
 
 /* ── Timeline ────────────────────────────────────────────── */
 export const timeline: TimelineItem[] = [
+  /* ─── Education ────────────────────────────────────────── */
   {
     id: "edu-1",
     type: "education",
-    title: "B.Tech — Computer Science",
-    organization: "Your College Name",        // ← update
-    location: "India",
-    period: "2022 — 2026",
+    title: "B.E. Computer Engineering",
+    organization: "Thapar Institute of Engineering and Technology",
+    location: "Patiala, India",
+    period: "2023 — 2027",
     description:
-      "Pursuing a Bachelor's in Computer Science. Focused on full-stack development, algorithms, and AI/ML. Active member of the coding club.",
-    tags: ["CS", "Algorithms", "Full-Stack"],
+      "Pursuing Bachelor of Engineering in Computer Engineering. CGPA: 8.57/10. Focused on full-stack development, machine learning, data structures & algorithms, and software engineering.",
+    tags: ["Computer Engineering", "ML", "Full-Stack", "DSA"],
   },
+  {
+    id: "edu-2",
+    type: "education",
+    title: "Class XII — CBSE",
+    organization: "Swami Sant Dass Public School",
+    location: "Phagwara, India",
+    period: "2023",
+    description:
+      "Completed senior secondary education with 94.2% in CBSE board examinations.",
+    tags: ["CBSE", "94.2%"],
+  },
+
+  /* ─── Work Experience ──────────────────────────────────── */
   {
     id: "work-1",
     type: "work",
-    title: "Full Stack Developer Intern",
-    organization: "Company Name",             // ← update
-    location: "Remote",
-    period: "Jun 2025 — Sep 2025",
+    title: "Research Intern",
+    organization: "Thapar Institute of Engineering and Technology",
+    location: "Patiala, India",
+    period: "Jun 2025 — Dec 2025",
     description:
-      "Built and maintained production features for a scholarship management platform. Led the document parsing pipeline using Python and Tesseract.js.",
-    tags: ["Next.js", "Python", "PostgreSQL"],
+      "Worked under Dr. Neeraj Kumar and Dr. Sandeep Verma, Computer Science Department. Conducted comprehensive review on underwater sensor networks, analyzing advancements in communication protocols and 3D network topologies. Enhanced skills in scientific writing, critical analysis, and data interpretation, collaborating with domain experts throughout the research process.",
+    tags: ["Research", "Sensor Networks", "Scientific Writing"],
   },
+
+  /* ─── Organizational Roles ─────────────────────────────── */
   {
     id: "achievement-1",
     type: "achievement",
-    title: "Hackathon Winner 🏆",
-    organization: "Hackathon Name",           // ← update
-    location: "India",
+    title: "Technical Secretary",
+    organization: "Thapar Venture Club",
+    location: "Patiala, India",
+    period: "2025 — 2026",
+    description:
+      "Serving as Technical Secretary of Thapar Venture Club, leading technical initiatives and events for the entrepreneurship community.",
+    tags: ["Leadership", "Tech"],
+  },
+  {
+    id: "achievement-2",
+    type: "achievement",
+    title: "Overall Content Coordinator — E-Summit'25",
+    organization: "Thapar Venture Club",
+    location: "Patiala, India",
     period: "2025",
     description:
-      "Built an AI-powered tool that won 1st place. Competed against 200+ teams in a 24-hour hackathon.",
-    tags: ["AI", "Hackathon"],
+      "Led the content strategy and coordination for E-Summit'25, managing all written and digital communication for the flagship entrepreneurship summit.",
+    tags: ["Content", "Event Management"],
   },
+  {
+    id: "achievement-3",
+    type: "achievement",
+    title: "Executive Committee Member",
+    organization: "Thapar Food Festival",
+    location: "Patiala, India",
+    period: "2025",
+    description:
+      "Served on the Executive Committee for Thapar Food Festival 2025, contributing to event planning and execution.",
+    tags: ["Event Management", "Leadership"],
+  },
+];
+
+/* ── Stats ───────────────────────────────────────────────── */
+export const stats = [
+  { value: "3+", label: "Projects Built" },
+  { value: "8.57", label: "CGPA" },
+  { value: "6+", label: "Tech Stack" },
+  { value: "100%", label: "Passion" },
 ];
 
 /* ── Fun Facts (for Bento / About) ──────────────────────── */
 export const funFacts = [
-  { emoji: "☕", text: "Powered by caffeine and curiosity" },
-  { emoji: "🎵", text: "Coding playlists are a personality trait" },
-  { emoji: "🌙", text: "Best code written after midnight" },
-  { emoji: "📚", text: "Currently reading: Deep Work by Cal Newport" },
+  { emoji: "🎓", text: "B.E. Computer Engineering @ TIET (8.57 CGPA)" },
+  { emoji: "🔬", text: "Research intern — underwater sensor networks" },
+  { emoji: "🧠", text: "Passionate about ML & deep learning" },
+  { emoji: "📝", text: "Technical Secretary @ Thapar Venture Club" },
 ];
-
-
