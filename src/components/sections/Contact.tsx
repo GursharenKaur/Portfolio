@@ -114,11 +114,11 @@ export default function Contact() {
                   I&apos;ll get back to you as soon as possible!
                </p>
                <a 
-                 href={`mailto:${personalInfo.email}`} 
+                 href={`mailto:${personalInfo.email}?subject=Let's Connect — From Your Portfolio`} 
                  className="inline-flex items-center gap-3 px-8 py-4 rounded-2xl bg-violet-600 hover:bg-violet-500 text-white font-bold transition-all shadow-[0_0_24px_rgba(139,92,246,0.3)] hover:shadow-[0_0_32px_rgba(139,92,246,0.5)] hover:-translate-y-1"
                >
-                  <Send className="w-4 h-4" />
-                  Request Resume
+                  <Mail className="w-4 h-4" />
+                  Drop Me a Mail
                </a>
             </div>
           </motion.div>
