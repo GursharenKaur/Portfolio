@@ -40,7 +40,7 @@ export default function Projects() {
            className="text-center mb-16"
         >
           <h2 className="font-heading font-black text-3xl sm:text-4xl md:text-5xl leading-tight">
-            My <span className="gradient-text italic">Craft</span>
+            My <span className="gradient-text italic">Projects</span>
           </h2>
           <p className="max-w-xl mx-auto mt-4 text-[var(--color-text-secondary)] text-lg">
             A selection of my best work and current experiments.
