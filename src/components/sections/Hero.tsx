@@ -268,7 +268,16 @@ export default function Hero() {
                 className="flex items-center gap-3 px-5 py-2.5 rounded-xl glass border border-white/5 whitespace-nowrap hover:border-violet-500/30 transition-colors"
                 style={{ background: "rgba(255,255,255,0.03)" }}
               >
-                <span className="text-base select-none">{skill.icon}</span>
+                <img
+                  src={skill.logoUrl}
+                  alt={skill.name}
+                  width={20}
+                  height={20}
+                  className="select-none"
+                  style={{
+                    filter: ["Express.js", "Next.js"].includes(skill.name) ? "invert(1)" : undefined,
+                  }}
+                />
                 <span className="text-[10px] uppercase font-bold tracking-[0.2em] text-[var(--color-text-muted)] group-hover:text-[var(--color-text-secondary)] transition-colors">
                   {skill.name}
                 </span>

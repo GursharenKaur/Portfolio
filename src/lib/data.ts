@@ -212,16 +212,16 @@ export const skills: Skill[] = [
 
 /* ── Marquee Skills ────────────────────────────────────────── */
 export const marqueeSkills = [
-  { name: "C++", icon: "⚡" },
-  { name: "Python", icon: "🐍" },
-  { name: "React", icon: "⚛️" },
-  { name: "Node.js", icon: "🟩" },
-  { name: "Express.js", icon: "🚀" },
-  { name: "Next.js", icon: "▲" },
-  { name: "OpenCV", icon: "👁️" },
-  { name: "Deep Learning", icon: "🔬" },
-  { name: "Git", icon: "🔀" },
-  { name: "Selenium", icon: "🌐" },
+  { name: "C++", icon: "⚡", logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg" },
+  { name: "Python", icon: "🐍", logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" },
+  { name: "React", icon: "⚛️", logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" },
+  { name: "Node.js", icon: "🟩", logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" },
+  { name: "Express.js", icon: "🚀", logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg" },
+  { name: "Next.js", icon: "▲", logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg" },
+  { name: "OpenCV", icon: "👁️", logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/opencv/opencv-original.svg" },
+  { name: "TensorFlow", icon: "🔬", logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tensorflow/tensorflow-original.svg" },
+  { name: "Git", icon: "🔀", logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" },
+  { name: "Selenium", icon: "🌐", logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/selenium/selenium-original.svg" },
 ];
 
 /* ── Currently Learning ──────────────────────────────────── */
