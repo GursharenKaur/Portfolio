@@ -104,6 +104,29 @@ export interface ChatMessage {
   timestamp: Date;
 }
 
+export type ChatCategory =
+  | "project"
+  | "skill"
+  | "experience"
+  | "education"
+  | "general"
+  | "contact";
+
+export interface ChatKnowledgeEntry {
+  id: string;
+  category: ChatCategory;
+  keywords: string[];           // triggers that match this entry
+  question: string;             // canonical question
+  answer: string;               // the bot's response
+  followUps?: string[];         // suggested follow-up questions
+  projectId?: string;           // links to a specific project (for context mode)
+}
+
+export interface ChatContext {
+  projectId?: string;           // if chat is focused on a specific project
+  category?: ChatCategory;      // current topic area
+}
+
 /* ── Spotify Now Playing ─────────────────────────────────── */
 export interface SpotifyTrack {
   isPlaying: boolean;

@@ -1,0 +1,3943 @@
+This file is a merged representation of the entire codebase, combined into a single document by Repomix.
+
+<file_summary>
+This section contains a summary of this file.
+
+<purpose>
+This file contains a packed representation of the entire repository's contents.
+It is designed to be easily consumable by AI systems for analysis, code review,
+or other automated processes.
+</purpose>
+
+<file_format>
+The content is organized as follows:
+1. This summary section
+2. Repository information
+3. Directory structure
+4. Repository files (if enabled)
+5. Multiple file entries, each consisting of:
+  - File path as an attribute
+  - Full contents of the file
+</file_format>
+
+<usage_guidelines>
+- This file should be treated as read-only. Any changes should be made to the
+  original repository files, not this packed version.
+- When processing this file, use the file path to distinguish
+  between different files in the repository.
+- Be aware that this file may contain sensitive information. Handle it with
+  the same level of security as you would the original repository.
+</usage_guidelines>
+
+<notes>
+- Some files may have been excluded based on .gitignore rules and Repomix's configuration
+- Binary files are not included in this packed representation. Please refer to the Repository Structure section for a complete list of file paths, including binary files
+- Files matching patterns in .gitignore are excluded
+- Files matching default ignore patterns are excluded
+- Files are sorted by Git change count (files with more changes are at the bottom)
+</notes>
+
+</file_summary>
+
+<directory_structure>
+.gitignore
+components.json
+eslint.config.mjs
+next.config.ts
+package.json
+postcss.config.mjs
+public/file.svg
+public/globe.svg
+public/next.svg
+public/resume/My_Resume_ML.pdf
+public/vercel.svg
+public/window.svg
+README.md
+src/app/globals.css
+src/app/icon.svg
+src/app/layout.tsx
+src/app/page.tsx
+src/app/projects/layout.tsx
+src/app/projects/page.tsx
+src/components/sections/About.tsx
+src/components/sections/Contact.tsx
+src/components/sections/Education.tsx
+src/components/sections/Experience.tsx
+src/components/sections/Hero.tsx
+src/components/sections/Projects.tsx
+src/components/sections/Skills.tsx
+src/components/shared/CustomCursor.tsx
+src/components/shared/Navbar.tsx
+src/components/shared/ParticleCanvas.tsx
+src/components/shared/SmoothScrollProvider.tsx
+src/components/ui/badge.tsx
+src/components/ui/button.tsx
+src/components/ui/card.tsx
+src/components/ui/dialog.tsx
+src/components/ui/drawer.tsx
+src/components/ui/input.tsx
+src/components/ui/label.tsx
+src/components/ui/separator.tsx
+src/components/ui/sheet.tsx
+src/components/ui/skeleton.tsx
+src/components/ui/sonner.tsx
+src/components/ui/textarea.tsx
+src/components/ui/tooltip.tsx
+src/lib/data.ts
+src/lib/utils.ts
+src/types/index.ts
+tsconfig.json
+</directory_structure>
+
+<files>
+This section contains the contents of the repository's files.
+
+<file path=".gitignore">
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# env files (can opt-in for committing if needed)
+.env*
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+</file>
+
+<file path="components.json">
+{
+  "$schema": "https://ui.shadcn.com/schema.json",
+  "style": "base-nova",
+  "rsc": true,
+  "tsx": true,
+  "tailwind": {
+    "config": "",
+    "css": "src/app/globals.css",
+    "baseColor": "neutral",
+    "cssVariables": true,
+    "prefix": ""
+  },
+  "iconLibrary": "lucide",
+  "rtl": false,
+  "aliases": {
+    "components": "@/components",
+    "utils": "@/lib/utils",
+    "ui": "@/components/ui",
+    "lib": "@/lib",
+    "hooks": "@/hooks"
+  },
+  "menuColor": "default",
+  "menuAccent": "subtle",
+  "registries": {}
+}
+</file>
+
+<file path="eslint.config.mjs">
+import { defineConfig, globalIgnores } from "eslint/config";
+import nextVitals from "eslint-config-next/core-web-vitals";
+import nextTs from "eslint-config-next/typescript";
+
+const eslintConfig = defineConfig([
+  ...nextVitals,
+  ...nextTs,
+  // Override default ignores of eslint-config-next.
+  globalIgnores([
+    // Default ignores of eslint-config-next:
+    ".next/**",
+    "out/**",
+    "build/**",
+    "next-env.d.ts",
+  ]),
+]);
+
+export default eslintConfig;
+</file>
+
+<file path="next.config.ts">
+import type { NextConfig } from "next";
+
+const nextConfig: NextConfig = {
+  /* config options here */
+};
+
+export default nextConfig;
+</file>
+
+<file path="postcss.config.mjs">
+const config = {
+  plugins: {
+    "@tailwindcss/postcss": {},
+  },
+};
+
+export default config;
+</file>
+
+<file path="public/file.svg">
+<svg fill="none" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M14.5 13.5V5.41a1 1 0 0 0-.3-.7L9.8.29A1 1 0 0 0 9.08 0H1.5v13.5A2.5 2.5 0 0 0 4 16h8a2.5 2.5 0 0 0 2.5-2.5m-1.5 0v-7H8v-5H3v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1M9.5 5V2.12L12.38 5zM5.13 5h-.62v1.25h2.12V5zm-.62 3h7.12v1.25H4.5zm.62 3h-.62v1.25h7.12V11z" clip-rule="evenodd" fill="#666" fill-rule="evenodd"/></svg>
+</file>
+
+<file path="public/globe.svg">
+<svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><g clip-path="url(#a)"><path fill-rule="evenodd" clip-rule="evenodd" d="M10.27 14.1a6.5 6.5 0 0 0 3.67-3.45q-1.24.21-2.7.34-.31 1.83-.97 3.1M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m.48-1.52a7 7 0 0 1-.96 0H7.5a4 4 0 0 1-.84-1.32q-.38-.89-.63-2.08a40 40 0 0 0 3.92 0q-.25 1.2-.63 2.08a4 4 0 0 1-.84 1.31zm2.94-4.76q1.66-.15 2.95-.43a7 7 0 0 0 0-2.58q-1.3-.27-2.95-.43a18 18 0 0 1 0 3.44m-1.27-3.54a17 17 0 0 1 0 3.64 39 39 0 0 1-4.3 0 17 17 0 0 1 0-3.64 39 39 0 0 1 4.3 0m1.1-1.17q1.45.13 2.69.34a6.5 6.5 0 0 0-3.67-3.44q.65 1.26.98 3.1M8.48 1.5l.01.02q.41.37.84 1.31.38.89.63 2.08a40 40 0 0 0-3.92 0q.25-1.2.63-2.08a4 4 0 0 1 .85-1.32 7 7 0 0 1 .96 0m-2.75.4a6.5 6.5 0 0 0-3.67 3.44 29 29 0 0 1 2.7-.34q.31-1.83.97-3.1M4.58 6.28q-1.66.16-2.95.43a7 7 0 0 0 0 2.58q1.3.27 2.95.43a18 18 0 0 1 0-3.44m.17 4.71q-1.45-.12-2.69-.34a6.5 6.5 0 0 0 3.67 3.44q-.65-1.27-.98-3.1" fill="#666"/></g><defs><clipPath id="a"><path fill="#fff" d="M0 0h16v16H0z"/></clipPath></defs></svg>
+</file>
+
+<file path="public/next.svg">
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 394 80"><path fill="#000" d="M262 0h68.5v12.7h-27.2v66.6h-13.6V12.7H262V0ZM149 0v12.7H94v20.4h44.3v12.6H94v21h55v12.6H80.5V0h68.7zm34.3 0h-17.8l63.8 79.4h17.9l-32-39.7 32-39.6h-17.9l-23 28.6-23-28.6zm18.3 56.7-9-11-27.1 33.7h17.8l18.3-22.7z"/><path fill="#000" d="M81 79.3 17 0H0v79.3h13.6V17l50.2 62.3H81Zm252.6-.4c-1 0-1.8-.4-2.5-1s-1.1-1.6-1.1-2.6.3-1.8 1-2.5 1.6-1 2.6-1 1.8.3 2.5 1a3.4 3.4 0 0 1 .6 4.3 3.7 3.7 0 0 1-3 1.8zm23.2-33.5h6v23.3c0 2.1-.4 4-1.3 5.5a9.1 9.1 0 0 1-3.8 3.5c-1.6.8-3.5 1.3-5.7 1.3-2 0-3.7-.4-5.3-1s-2.8-1.8-3.7-3.2c-.9-1.3-1.4-3-1.4-5h6c.1.8.3 1.6.7 2.2s1 1.2 1.6 1.5c.7.4 1.5.5 2.4.5 1 0 1.8-.2 2.4-.6a4 4 0 0 0 1.6-1.8c.3-.8.5-1.8.5-3V45.5zm30.9 9.1a4.4 4.4 0 0 0-2-3.3 7.5 7.5 0 0 0-4.3-1.1c-1.3 0-2.4.2-3.3.5-.9.4-1.6 1-2 1.6a3.5 3.5 0 0 0-.3 4c.3.5.7.9 1.3 1.2l1.8 1 2 .5 3.2.8c1.3.3 2.5.7 3.7 1.2a13 13 0 0 1 3.2 1.8 8.1 8.1 0 0 1 3 6.5c0 2-.5 3.7-1.5 5.1a10 10 0 0 1-4.4 3.5c-1.8.8-4.1 1.2-6.8 1.2-2.6 0-4.9-.4-6.8-1.2-2-.8-3.4-2-4.5-3.5a10 10 0 0 1-1.7-5.6h6a5 5 0 0 0 3.5 4.6c1 .4 2.2.6 3.4.6 1.3 0 2.5-.2 3.5-.6 1-.4 1.8-1 2.4-1.7a4 4 0 0 0 .8-2.4c0-.9-.2-1.6-.7-2.2a11 11 0 0 0-2.1-1.4l-3.2-1-3.8-1c-2.8-.7-5-1.7-6.6-3.2a7.2 7.2 0 0 1-2.4-5.7 8 8 0 0 1 1.7-5 10 10 0 0 1 4.3-3.5c2-.8 4-1.2 6.4-1.2 2.3 0 4.4.4 6.2 1.2 1.8.8 3.2 2 4.3 3.4 1 1.4 1.5 3 1.5 5h-5.8z"/></svg>
+</file>
+
+<file path="public/vercel.svg">
+<svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1155 1000"><path d="m577.3 0 577.4 1000H0z" fill="#fff"/></svg>
+</file>
+
+<file path="public/window.svg">
+<svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" clip-rule="evenodd" d="M1.5 2.5h13v10a1 1 0 0 1-1 1h-11a1 1 0 0 1-1-1zM0 1h16v11.5a2.5 2.5 0 0 1-2.5 2.5h-11A2.5 2.5 0 0 1 0 12.5zm3.75 4.5a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5M7 4.75a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0m1.75.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5" fill="#666"/></svg>
+</file>
+
+<file path="README.md">
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+
+## Getting Started
+
+First, run the development server:
+
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+
+## Learn More
+
+To learn more about Next.js, take a look at the following resources:
+
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+</file>
+
+<file path="src/app/icon.svg">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <rect width="32" height="32" rx="7" fill="#0a0a0a"/>
+  <text x="16" y="21.5" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-weight="900" font-size="14" fill="#a78bfa" letter-spacing="-0.5">GK</text>
+</svg>
+</file>
+
+<file path="src/app/projects/layout.tsx">
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "All Projects",
+  description:
+    "Browse all projects by Gursharen Kaur Suri — full-stack applications, deep learning models, and more.",
+};
+
+export default function ProjectsLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return children;
+}
+</file>
+
+<file path="src/components/shared/CustomCursor.tsx">
+"use client";
+
+import { useEffect, useRef, useState } from "react";
+import { motion, useMotionValue, useSpring } from "motion/react";
+
+export default function CustomCursor() {
+  const cursorRef = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+  const [isHovering, setIsHovering] = useState(false);
+  const [isClicking, setIsClicking] = useState(false);
+
+  // Raw mouse position
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+
+  // Dot follows mouse instantly
+  const dotX = useSpring(mouseX, { stiffness: 1000, damping: 50, mass: 0.1 });
+  const dotY = useSpring(mouseY, { stiffness: 1000, damping: 50, mass: 0.1 });
+
+  // Ring follows with lag — gives the trailing effect
+  const ringX = useSpring(mouseX, { stiffness: 150, damping: 20, mass: 0.5 });
+  const ringY = useSpring(mouseY, { stiffness: 150, damping: 20, mass: 0.5 });
+
+  useEffect(() => {
+    // Only show on non-touch desktop
+    if (window.matchMedia("(pointer: coarse)").matches) return;
+
+    const handleMove = (e: MouseEvent) => {
+      mouseX.set(e.clientX);
+      mouseY.set(e.clientY);
+      if (!isVisible) setIsVisible(true);
+    };
+
+    const handleLeave = () => setIsVisible(false);
+    const handleEnter = () => setIsVisible(true);
+    const handleMouseDown = () => setIsClicking(true);
+    const handleMouseUp = () => setIsClicking(false);
+
+    // Track hoverable elements
+    const addHover = () => setIsHovering(true);
+    const removeHover = () => setIsHovering(false);
+
+    const interactives = document.querySelectorAll(
+      "a, button, [role='button'], input, textarea, select, label, [data-cursor='hover']"
+    );
+    interactives.forEach((el) => {
+      el.addEventListener("mouseenter", addHover);
+      el.addEventListener("mouseleave", removeHover);
+    });
+
+    document.addEventListener("mousemove", handleMove);
+    document.addEventListener("mouseleave", handleLeave);
+    document.addEventListener("mouseenter", handleEnter);
+    document.addEventListener("mousedown", handleMouseDown);
+    document.addEventListener("mouseup", handleMouseUp);
+
+    return () => {
+      document.removeEventListener("mousemove", handleMove);
+      document.removeEventListener("mouseleave", handleLeave);
+      document.removeEventListener("mouseenter", handleEnter);
+      document.removeEventListener("mousedown", handleMouseDown);
+      document.removeEventListener("mouseup", handleMouseUp);
+      interactives.forEach((el) => {
+        el.removeEventListener("mouseenter", addHover);
+        el.removeEventListener("mouseleave", removeHover);
+      });
+    };
+  }, [mouseX, mouseY, isVisible]);
+
+  return (
+    <>
+      {/* Hide the native cursor */}
+      <style>{`* { cursor: none !important; }`}</style>
+
+      {/* Outer ring — lags behind */}
+      <motion.div
+        ref={cursorRef}
+        className="fixed top-0 left-0 pointer-events-none z-[9999] mix-blend-difference"
+        style={{
+          x: ringX,
+          y: ringY,
+          translateX: "-50%",
+          translateY: "-50%",
+        }}
+        animate={{
+          opacity: isVisible ? 1 : 0,
+          scale: isClicking ? 0.7 : isHovering ? 1.8 : 1,
+          width: isHovering ? 44 : 36,
+          height: isHovering ? 44 : 36,
+        }}
+        transition={{ duration: 0.15 }}
+      >
+        <div
+          className="w-full h-full rounded-full border border-white/70"
+          style={{
+            boxShadow: isHovering
+              ? "0 0 12px rgba(167,139,250,0.6)"
+              : "none",
+            borderColor: isHovering
+              ? "rgba(167,139,250,0.9)"
+              : "rgba(255,255,255,0.7)",
+          }}
+        />
+      </motion.div>
+
+      {/* Inner dot — instant */}
+      <motion.div
+        className="fixed top-0 left-0 pointer-events-none z-[9999] mix-blend-difference"
+        style={{
+          x: dotX,
+          y: dotY,
+          translateX: "-50%",
+          translateY: "-50%",
+        }}
+        animate={{
+          opacity: isVisible ? 1 : 0,
+          scale: isClicking ? 0.5 : isHovering ? 0 : 1,
+          width: 6,
+          height: 6,
+        }}
+        transition={{ duration: 0.1 }}
+      >
+        <div className="w-full h-full rounded-full bg-white" />
+      </motion.div>
+    </>
+  );
+}
+</file>
+
+<file path="src/components/shared/ParticleCanvas.tsx">
+"use client";
+
+import { useRef, useMemo } from "react";
+import { Canvas, useFrame } from "@react-three/fiber";
+import { Points, PointMaterial } from "@react-three/drei";
+import * as THREE from "three";
+
+/* ── Floating Particle Cloud ─────────────────────────────── */
+function Particles({ count = 2800 }: { count?: number }) {
+  const ref = useRef<THREE.Points>(null);
+  const ref2 = useRef<THREE.Points>(null);
+
+  // Sphere distribution for main cloud
+  const { positions, colors } = useMemo(() => {
+    const positions = new Float32Array(count * 3);
+    const colors = new Float32Array(count * 3);
+
+    for (let i = 0; i < count; i++) {
+      // Random inside a sphere
+      const r = Math.random() * 5 + 2;
+      const theta = Math.random() * Math.PI * 2;
+      const phi = Math.acos(2 * Math.random() - 1);
+
+      positions[i * 3]     = r * Math.sin(phi) * Math.cos(theta);
+      positions[i * 3 + 1] = r * Math.sin(phi) * Math.sin(theta);
+      positions[i * 3 + 2] = r * Math.cos(phi);
+
+      // Gradient colour: violet → indigo → blue
+      const t = Math.random();
+      if (t < 0.5) {
+        // violet
+        colors[i * 3]     = 0.55 + t * 0.3;
+        colors[i * 3 + 1] = 0.36;
+        colors[i * 3 + 2] = 0.98;
+      } else {
+        // indigo / blue
+        colors[i * 3]     = 0.39;
+        colors[i * 3 + 1] = 0.40;
+        colors[i * 3 + 2] = 0.95;
+      }
+    }
+
+    return { positions, colors };
+  }, [count]);
+
+  // Small inner ring of brighter particles
+  const ringPositions = useMemo(() => {
+    const arr = new Float32Array(400 * 3);
+    for (let i = 0; i < 400; i++) {
+      const angle = (i / 400) * Math.PI * 2;
+      const radius = 1.6 + Math.random() * 0.5;
+      arr[i * 3]     = Math.cos(angle) * radius;
+      arr[i * 3 + 1] = (Math.random() - 0.5) * 0.8;
+      arr[i * 3 + 2] = Math.sin(angle) * radius;
+    }
+    return arr;
+  }, []);
+
+  // Gentle rotation
+  useFrame(({ clock }) => {
+    const t = clock.elapsedTime;
+    if (ref.current) {
+      ref.current.rotation.y = t * 0.04;
+      ref.current.rotation.x = t * 0.015;
+    }
+    if (ref2.current) {
+      ref2.current.rotation.y = -t * 0.08;
+      ref2.current.rotation.z = t * 0.025;
+    }
+  });
+
+  return (
+    <>
+      {/* Main cloud */}
+      <Points ref={ref} positions={positions} stride={3} frustumCulled={false}>
+        <PointMaterial
+          transparent
+          vertexColors
+          size={0.018}
+          sizeAttenuation
+          depthWrite={false}
+          opacity={0.7}
+        />
+      </Points>
+
+      {/* Bright inner ring */}
+      <Points ref={ref2} positions={ringPositions} stride={3} frustumCulled={false}>
+        <PointMaterial
+          transparent
+          color="#a78bfa"
+          size={0.03}
+          sizeAttenuation
+          depthWrite={false}
+          opacity={0.9}
+        />
+      </Points>
+    </>
+  );
+}
+
+/* ── Canvas wrapper ──────────────────────────────────────── */
+export default function ParticleCanvas() {
+  return (
+    <Canvas
+      camera={{ position: [0, 0, 6], fov: 65 }}
+      gl={{ antialias: true, alpha: true }}
+      style={{ background: "transparent" }}
+    >
+      <ambientLight intensity={0.5} />
+      <Particles />
+    </Canvas>
+  );
+}
+</file>
+
+<file path="src/components/shared/SmoothScrollProvider.tsx">
+"use client";
+
+import { useEffect, useRef } from "react";
+import Lenis from "lenis";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
+export default function SmoothScrollProvider({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  const lenisRef = useRef<Lenis | null>(null);
+
+  useEffect(() => {
+    // Initialise Lenis
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      orientation: "vertical",
+      smoothWheel: true,
+      touchMultiplier: 2,
+    });
+
+    lenisRef.current = lenis;
+
+    // Sync Lenis scroll with GSAP ScrollTrigger
+    lenis.on("scroll", ScrollTrigger.update);
+
+    gsap.ticker.add((time) => {
+      lenis.raf(time * 1000);
+    });
+
+    // Prevent GSAP lag smoothing from fighting Lenis
+    gsap.ticker.lagSmoothing(0);
+
+    return () => {
+      gsap.ticker.remove((time) => {
+        lenis.raf(time * 1000);
+      });
+      lenis.destroy();
+    };
+  }, []);
+
+  return <>{children}</>;
+}
+</file>
+
+<file path="src/components/ui/badge.tsx">
+import { mergeProps } from "@base-ui/react/merge-props"
+import { useRender } from "@base-ui/react/use-render"
+import { cva, type VariantProps } from "class-variance-authority"
+
+import { cn } from "@/lib/utils"
+
+const badgeVariants = cva(
+  "group/badge inline-flex h-5 w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-4xl border border-transparent px-2 py-0.5 text-xs font-medium whitespace-nowrap transition-all focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 has-data-[icon=inline-end]:pr-1.5 has-data-[icon=inline-start]:pl-1.5 aria-invalid:border-destructive aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 [&>svg]:pointer-events-none [&>svg]:size-3!",
+  {
+    variants: {
+      variant: {
+        default: "bg-primary text-primary-foreground [a]:hover:bg-primary/80",
+        secondary:
+          "bg-secondary text-secondary-foreground [a]:hover:bg-secondary/80",
+        destructive:
+          "bg-destructive/10 text-destructive focus-visible:ring-destructive/20 dark:bg-destructive/20 dark:focus-visible:ring-destructive/40 [a]:hover:bg-destructive/20",
+        outline:
+          "border-border text-foreground [a]:hover:bg-muted [a]:hover:text-muted-foreground",
+        ghost:
+          "hover:bg-muted hover:text-muted-foreground dark:hover:bg-muted/50",
+        link: "text-primary underline-offset-4 hover:underline",
+      },
+    },
+    defaultVariants: {
+      variant: "default",
+    },
+  }
+)
+
+function Badge({
+  className,
+  variant = "default",
+  render,
+  ...props
+}: useRender.ComponentProps<"span"> & VariantProps<typeof badgeVariants>) {
+  return useRender({
+    defaultTagName: "span",
+    props: mergeProps<"span">(
+      {
+        className: cn(badgeVariants({ variant }), className),
+      },
+      props
+    ),
+    render,
+    state: {
+      slot: "badge",
+      variant,
+    },
+  })
+}
+
+export { Badge, badgeVariants }
+</file>
+
+<file path="src/components/ui/button.tsx">
+"use client"
+
+import { Button as ButtonPrimitive } from "@base-ui/react/button"
+import { cva, type VariantProps } from "class-variance-authority"
+
+import { cn } from "@/lib/utils"
+
+const buttonVariants = cva(
+  "group/button inline-flex shrink-0 items-center justify-center rounded-lg border border-transparent bg-clip-padding text-sm font-medium whitespace-nowrap transition-all outline-none select-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 active:not-aria-[haspopup]:translate-y-px disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-3 aria-invalid:ring-destructive/20 dark:aria-invalid:border-destructive/50 dark:aria-invalid:ring-destructive/40 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+  {
+    variants: {
+      variant: {
+        default: "bg-primary text-primary-foreground [a]:hover:bg-primary/80",
+        outline:
+          "border-border bg-background hover:bg-muted hover:text-foreground aria-expanded:bg-muted aria-expanded:text-foreground dark:border-input dark:bg-input/30 dark:hover:bg-input/50",
+        secondary:
+          "bg-secondary text-secondary-foreground hover:bg-secondary/80 aria-expanded:bg-secondary aria-expanded:text-secondary-foreground",
+        ghost:
+          "hover:bg-muted hover:text-foreground aria-expanded:bg-muted aria-expanded:text-foreground dark:hover:bg-muted/50",
+        destructive:
+          "bg-destructive/10 text-destructive hover:bg-destructive/20 focus-visible:border-destructive/40 focus-visible:ring-destructive/20 dark:bg-destructive/20 dark:hover:bg-destructive/30 dark:focus-visible:ring-destructive/40",
+        link: "text-primary underline-offset-4 hover:underline",
+      },
+      size: {
+        default:
+          "h-8 gap-1.5 px-2.5 has-data-[icon=inline-end]:pr-2 has-data-[icon=inline-start]:pl-2",
+        xs: "h-6 gap-1 rounded-[min(var(--radius-md),10px)] px-2 text-xs in-data-[slot=button-group]:rounded-lg has-data-[icon=inline-end]:pr-1.5 has-data-[icon=inline-start]:pl-1.5 [&_svg:not([class*='size-'])]:size-3",
+        sm: "h-7 gap-1 rounded-[min(var(--radius-md),12px)] px-2.5 text-[0.8rem] in-data-[slot=button-group]:rounded-lg has-data-[icon=inline-end]:pr-1.5 has-data-[icon=inline-start]:pl-1.5 [&_svg:not([class*='size-'])]:size-3.5",
+        lg: "h-9 gap-1.5 px-2.5 has-data-[icon=inline-end]:pr-2 has-data-[icon=inline-start]:pl-2",
+        icon: "size-8",
+        "icon-xs":
+          "size-6 rounded-[min(var(--radius-md),10px)] in-data-[slot=button-group]:rounded-lg [&_svg:not([class*='size-'])]:size-3",
+        "icon-sm":
+          "size-7 rounded-[min(var(--radius-md),12px)] in-data-[slot=button-group]:rounded-lg",
+        "icon-lg": "size-9",
+      },
+    },
+    defaultVariants: {
+      variant: "default",
+      size: "default",
+    },
+  }
+)
+
+function Button({
+  className,
+  variant = "default",
+  size = "default",
+  ...props
+}: ButtonPrimitive.Props & VariantProps<typeof buttonVariants>) {
+  return (
+    <ButtonPrimitive
+      data-slot="button"
+      className={cn(buttonVariants({ variant, size, className }))}
+      {...props}
+    />
+  )
+}
+
+export { Button, buttonVariants }
+</file>
+
+<file path="src/components/ui/card.tsx">
+import * as React from "react"
+
+import { cn } from "@/lib/utils"
+
+function Card({
+  className,
+  size = "default",
+  ...props
+}: React.ComponentProps<"div"> & { size?: "default" | "sm" }) {
+  return (
+    <div
+      data-slot="card"
+      data-size={size}
+      className={cn(
+        "group/card flex flex-col gap-4 overflow-hidden rounded-xl bg-card py-4 text-sm text-card-foreground ring-1 ring-foreground/10 has-data-[slot=card-footer]:pb-0 has-[>img:first-child]:pt-0 data-[size=sm]:gap-3 data-[size=sm]:py-3 data-[size=sm]:has-data-[slot=card-footer]:pb-0 *:[img:first-child]:rounded-t-xl *:[img:last-child]:rounded-b-xl",
+        className
+      )}
+      {...props}
+    />
+  )
+}
+
+function CardHeader({ className, ...props }: React.ComponentProps<"div">) {
+  return (
+    <div
+      data-slot="card-header"
+      className={cn(
+        "group/card-header @container/card-header grid auto-rows-min items-start gap-1 rounded-t-xl px-4 group-data-[size=sm]/card:px-3 has-data-[slot=card-action]:grid-cols-[1fr_auto] has-data-[slot=card-description]:grid-rows-[auto_auto] [.border-b]:pb-4 group-data-[size=sm]/card:[.border-b]:pb-3",
+        className
+      )}
+      {...props}
+    />
+  )
+}
+
+function CardTitle({ className, ...props }: React.ComponentProps<"div">) {
+  return (
+    <div
+      data-slot="card-title"
+      className={cn(
+        "font-heading text-base leading-snug font-medium group-data-[size=sm]/card:text-sm",
+        className
+      )}
+      {...props}
+    />
+  )
+}
+
+function CardDescription({ className, ...props }: React.ComponentProps<"div">) {
+  return (
+    <div
+      data-slot="card-description"
+      className={cn("text-sm text-muted-foreground", className)}
+      {...props}
+    />
+  )
+}
+
+function CardAction({ className, ...props }: React.ComponentProps<"div">) {
+  return (
+    <div
+      data-slot="card-action"
+      className={cn(
+        "col-start-2 row-span-2 row-start-1 self-start justify-self-end",
+        className
+      )}
+      {...props}
+    />
+  )
+}
+
+function CardContent({ className, ...props }: React.ComponentProps<"div">) {
+  return (
+    <div
+      data-slot="card-content"
+      className={cn("px-4 group-data-[size=sm]/card:px-3", className)}
+      {...props}
+    />
+  )
+}
+
+function CardFooter({ className, ...props }: React.ComponentProps<"div">) {
+  return (
+    <div
+      data-slot="card-footer"
+      className={cn(
+        "flex items-center rounded-b-xl border-t bg-muted/50 p-4 group-data-[size=sm]/card:p-3",
+        className
+      )}
+      {...props}
+    />
+  )
+}
+
+export {
+  Card,
+  CardHeader,
+  CardFooter,
+  CardTitle,
+  CardAction,
+  CardDescription,
+  CardContent,
+}
+</file>
+
+<file path="src/components/ui/dialog.tsx">
+"use client"
+
+import * as React from "react"
+import { Dialog as DialogPrimitive } from "@base-ui/react/dialog"
+
+import { cn } from "@/lib/utils"
+import { Button } from "@/components/ui/button"
+import { XIcon } from "lucide-react"
+
+function Dialog({ ...props }: DialogPrimitive.Root.Props) {
+  return <DialogPrimitive.Root data-slot="dialog" {...props} />
+}
+
+function DialogTrigger({ ...props }: DialogPrimitive.Trigger.Props) {
+  return <DialogPrimitive.Trigger data-slot="dialog-trigger" {...props} />
+}
+
+function DialogPortal({ ...props }: DialogPrimitive.Portal.Props) {
+  return <DialogPrimitive.Portal data-slot="dialog-portal" {...props} />
+}
+
+function DialogClose({ ...props }: DialogPrimitive.Close.Props) {
+  return <DialogPrimitive.Close data-slot="dialog-close" {...props} />
+}
+
+function DialogOverlay({
+  className,
+  ...props
+}: DialogPrimitive.Backdrop.Props) {
+  return (
+    <DialogPrimitive.Backdrop
+      data-slot="dialog-overlay"
+      className={cn(
+        "fixed inset-0 isolate z-50 bg-black/10 duration-100 supports-backdrop-filter:backdrop-blur-xs data-open:animate-in data-open:fade-in-0 data-closed:animate-out data-closed:fade-out-0",
+        className
+      )}
+      {...props}
+    />
+  )
+}
+
+function DialogContent({
+  className,
+  children,
+  showCloseButton = true,
+  ...props
+}: DialogPrimitive.Popup.Props & {
+  showCloseButton?: boolean
+}) {
+  return (
+    <DialogPortal>
+      <DialogOverlay />
+      <DialogPrimitive.Popup
+        data-slot="dialog-content"
+        className={cn(
+          "fixed top-1/2 left-1/2 z-50 grid w-full max-w-[calc(100%-2rem)] -translate-x-1/2 -translate-y-1/2 gap-4 rounded-xl bg-popover p-4 text-sm text-popover-foreground ring-1 ring-foreground/10 duration-100 outline-none sm:max-w-sm data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95",
+          className
+        )}
+        {...props}
+      >
+        {children}
+        {showCloseButton && (
+          <DialogPrimitive.Close
+            data-slot="dialog-close"
+            render={
+              <Button
+                variant="ghost"
+                className="absolute top-2 right-2"
+                size="icon-sm"
+              />
+            }
+          >
+            <XIcon
+            />
+            <span className="sr-only">Close</span>
+          </DialogPrimitive.Close>
+        )}
+      </DialogPrimitive.Popup>
+    </DialogPortal>
+  )
+}
+
+function DialogHeader({ className, ...props }: React.ComponentProps<"div">) {
+  return (
+    <div
+      data-slot="dialog-header"
+      className={cn("flex flex-col gap-2", className)}
+      {...props}
+    />
+  )
+}
+
+function DialogFooter({
+  className,
+  showCloseButton = false,
+  children,
+  ...props
+}: React.ComponentProps<"div"> & {
+  showCloseButton?: boolean
+}) {
+  return (
+    <div
+      data-slot="dialog-footer"
+      className={cn(
+        "-mx-4 -mb-4 flex flex-col-reverse gap-2 rounded-b-xl border-t bg-muted/50 p-4 sm:flex-row sm:justify-end",
+        className
+      )}
+      {...props}
+    >
+      {children}
+      {showCloseButton && (
+        <DialogPrimitive.Close render={<Button variant="outline" />}>
+          Close
+        </DialogPrimitive.Close>
+      )}
+    </div>
+  )
+}
+
+function DialogTitle({ className, ...props }: DialogPrimitive.Title.Props) {
+  return (
+    <DialogPrimitive.Title
+      data-slot="dialog-title"
+      className={cn(
+        "font-heading text-base leading-none font-medium",
+        className
+      )}
+      {...props}
+    />
+  )
+}
+
+function DialogDescription({
+  className,
+  ...props
+}: DialogPrimitive.Description.Props) {
+  return (
+    <DialogPrimitive.Description
+      data-slot="dialog-description"
+      className={cn(
+        "text-sm text-muted-foreground *:[a]:underline *:[a]:underline-offset-3 *:[a]:hover:text-foreground",
+        className
+      )}
+      {...props}
+    />
+  )
+}
+
+export {
+  Dialog,
+  DialogClose,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogOverlay,
+  DialogPortal,
+  DialogTitle,
+  DialogTrigger,
+}
+</file>
+
+<file path="src/components/ui/drawer.tsx">
+"use client"
+
+import * as React from "react"
+import { Drawer as DrawerPrimitive } from "vaul"
+
+import { cn } from "@/lib/utils"
+
+function Drawer({
+  ...props
+}: React.ComponentProps<typeof DrawerPrimitive.Root>) {
+  return <DrawerPrimitive.Root data-slot="drawer" {...props} />
+}
+
+function DrawerTrigger({
+  ...props
+}: React.ComponentProps<typeof DrawerPrimitive.Trigger>) {
+  return <DrawerPrimitive.Trigger data-slot="drawer-trigger" {...props} />
+}
+
+function DrawerPortal({
+  ...props
+}: React.ComponentProps<typeof DrawerPrimitive.Portal>) {
+  return <DrawerPrimitive.Portal data-slot="drawer-portal" {...props} />
+}
+
+function DrawerClose({
+  ...props
+}: React.ComponentProps<typeof DrawerPrimitive.Close>) {
+  return <DrawerPrimitive.Close data-slot="drawer-close" {...props} />
+}
+
+function DrawerOverlay({
+  className,
+  ...props
+}: React.ComponentProps<typeof DrawerPrimitive.Overlay>) {
+  return (
+    <DrawerPrimitive.Overlay
+      data-slot="drawer-overlay"
+      className={cn(
+        "fixed inset-0 z-50 bg-black/10 supports-backdrop-filter:backdrop-blur-xs data-open:animate-in data-open:fade-in-0 data-closed:animate-out data-closed:fade-out-0",
+        className
+      )}
+      {...props}
+    />
+  )
+}
+
+function DrawerContent({
+  className,
+  children,
+  ...props
+}: React.ComponentProps<typeof DrawerPrimitive.Content>) {
+  return (
+    <DrawerPortal data-slot="drawer-portal">
+      <DrawerOverlay />
+      <DrawerPrimitive.Content
+        data-slot="drawer-content"
+        className={cn(
+          "group/drawer-content fixed z-50 flex h-auto flex-col bg-popover text-sm text-popover-foreground data-[vaul-drawer-direction=bottom]:inset-x-0 data-[vaul-drawer-direction=bottom]:bottom-0 data-[vaul-drawer-direction=bottom]:mt-24 data-[vaul-drawer-direction=bottom]:max-h-[80vh] data-[vaul-drawer-direction=bottom]:rounded-t-xl data-[vaul-drawer-direction=bottom]:border-t data-[vaul-drawer-direction=left]:inset-y-0 data-[vaul-drawer-direction=left]:left-0 data-[vaul-drawer-direction=left]:w-3/4 data-[vaul-drawer-direction=left]:rounded-r-xl data-[vaul-drawer-direction=left]:border-r data-[vaul-drawer-direction=right]:inset-y-0 data-[vaul-drawer-direction=right]:right-0 data-[vaul-drawer-direction=right]:w-3/4 data-[vaul-drawer-direction=right]:rounded-l-xl data-[vaul-drawer-direction=right]:border-l data-[vaul-drawer-direction=top]:inset-x-0 data-[vaul-drawer-direction=top]:top-0 data-[vaul-drawer-direction=top]:mb-24 data-[vaul-drawer-direction=top]:max-h-[80vh] data-[vaul-drawer-direction=top]:rounded-b-xl data-[vaul-drawer-direction=top]:border-b data-[vaul-drawer-direction=left]:sm:max-w-sm data-[vaul-drawer-direction=right]:sm:max-w-sm",
+          className
+        )}
+        {...props}
+      >
+        <div className="mx-auto mt-4 hidden h-1 w-[100px] shrink-0 rounded-full bg-muted group-data-[vaul-drawer-direction=bottom]/drawer-content:block" />
+        {children}
+      </DrawerPrimitive.Content>
+    </DrawerPortal>
+  )
+}
+
+function DrawerHeader({ className, ...props }: React.ComponentProps<"div">) {
+  return (
+    <div
+      data-slot="drawer-header"
+      className={cn(
+        "flex flex-col gap-0.5 p-4 group-data-[vaul-drawer-direction=bottom]/drawer-content:text-center group-data-[vaul-drawer-direction=top]/drawer-content:text-center md:gap-0.5 md:text-left",
+        className
+      )}
+      {...props}
+    />
+  )
+}
+
+function DrawerFooter({ className, ...props }: React.ComponentProps<"div">) {
+  return (
+    <div
+      data-slot="drawer-footer"
+      className={cn("mt-auto flex flex-col gap-2 p-4", className)}
+      {...props}
+    />
+  )
+}
+
+function DrawerTitle({
+  className,
+  ...props
+}: React.ComponentProps<typeof DrawerPrimitive.Title>) {
+  return (
+    <DrawerPrimitive.Title
+      data-slot="drawer-title"
+      className={cn(
+        "font-heading text-base font-medium text-foreground",
+        className
+      )}
+      {...props}
+    />
+  )
+}
+
+function DrawerDescription({
+  className,
+  ...props
+}: React.ComponentProps<typeof DrawerPrimitive.Description>) {
+  return (
+    <DrawerPrimitive.Description
+      data-slot="drawer-description"
+      className={cn("text-sm text-muted-foreground", className)}
+      {...props}
+    />
+  )
+}
+
+export {
+  Drawer,
+  DrawerPortal,
+  DrawerOverlay,
+  DrawerTrigger,
+  DrawerClose,
+  DrawerContent,
+  DrawerHeader,
+  DrawerFooter,
+  DrawerTitle,
+  DrawerDescription,
+}
+</file>
+
+<file path="src/components/ui/input.tsx">
+import * as React from "react"
+import { Input as InputPrimitive } from "@base-ui/react/input"
+
+import { cn } from "@/lib/utils"
+
+function Input({ className, type, ...props }: React.ComponentProps<"input">) {
+  return (
+    <InputPrimitive
+      type={type}
+      data-slot="input"
+      className={cn(
+        "h-8 w-full min-w-0 rounded-lg border border-input bg-transparent px-2.5 py-1 text-base transition-colors outline-none file:inline-flex file:h-6 file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:pointer-events-none disabled:cursor-not-allowed disabled:bg-input/50 disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-3 aria-invalid:ring-destructive/20 md:text-sm dark:bg-input/30 dark:disabled:bg-input/80 dark:aria-invalid:border-destructive/50 dark:aria-invalid:ring-destructive/40",
+        className
+      )}
+      {...props}
+    />
+  )
+}
+
+export { Input }
+</file>
+
+<file path="src/components/ui/label.tsx">
+"use client"
+
+import * as React from "react"
+
+import { cn } from "@/lib/utils"
+
+function Label({ className, ...props }: React.ComponentProps<"label">) {
+  return (
+    <label
+      data-slot="label"
+      className={cn(
+        "flex items-center gap-2 text-sm leading-none font-medium select-none group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50",
+        className
+      )}
+      {...props}
+    />
+  )
+}
+
+export { Label }
+</file>
+
+<file path="src/components/ui/separator.tsx">
+"use client"
+
+import { Separator as SeparatorPrimitive } from "@base-ui/react/separator"
+
+import { cn } from "@/lib/utils"
+
+function Separator({
+  className,
+  orientation = "horizontal",
+  ...props
+}: SeparatorPrimitive.Props) {
+  return (
+    <SeparatorPrimitive
+      data-slot="separator"
+      orientation={orientation}
+      className={cn(
+        "shrink-0 bg-border data-horizontal:h-px data-horizontal:w-full data-vertical:w-px data-vertical:self-stretch",
+        className
+      )}
+      {...props}
+    />
+  )
+}
+
+export { Separator }
+</file>
+
+<file path="src/components/ui/sheet.tsx">
+"use client"
+
+import * as React from "react"
+import { Dialog as SheetPrimitive } from "@base-ui/react/dialog"
+
+import { cn } from "@/lib/utils"
+import { Button } from "@/components/ui/button"
+import { XIcon } from "lucide-react"
+
+function Sheet({ ...props }: SheetPrimitive.Root.Props) {
+  return <SheetPrimitive.Root data-slot="sheet" {...props} />
+}
+
+function SheetTrigger({ ...props }: SheetPrimitive.Trigger.Props) {
+  return <SheetPrimitive.Trigger data-slot="sheet-trigger" {...props} />
+}
+
+function SheetClose({ ...props }: SheetPrimitive.Close.Props) {
+  return <SheetPrimitive.Close data-slot="sheet-close" {...props} />
+}
+
+function SheetPortal({ ...props }: SheetPrimitive.Portal.Props) {
+  return <SheetPrimitive.Portal data-slot="sheet-portal" {...props} />
+}
+
+function SheetOverlay({ className, ...props }: SheetPrimitive.Backdrop.Props) {
+  return (
+    <SheetPrimitive.Backdrop
+      data-slot="sheet-overlay"
+      className={cn(
+        "fixed inset-0 z-50 bg-black/10 transition-opacity duration-150 data-ending-style:opacity-0 data-starting-style:opacity-0 supports-backdrop-filter:backdrop-blur-xs",
+        className
+      )}
+      {...props}
+    />
+  )
+}
+
+function SheetContent({
+  className,
+  children,
+  side = "right",
+  showCloseButton = true,
+  ...props
+}: SheetPrimitive.Popup.Props & {
+  side?: "top" | "right" | "bottom" | "left"
+  showCloseButton?: boolean
+}) {
+  return (
+    <SheetPortal>
+      <SheetOverlay />
+      <SheetPrimitive.Popup
+        data-slot="sheet-content"
+        data-side={side}
+        className={cn(
+          "fixed z-50 flex flex-col gap-4 bg-popover bg-clip-padding text-sm text-popover-foreground shadow-lg transition duration-200 ease-in-out data-ending-style:opacity-0 data-starting-style:opacity-0 data-[side=bottom]:inset-x-0 data-[side=bottom]:bottom-0 data-[side=bottom]:h-auto data-[side=bottom]:border-t data-[side=bottom]:data-ending-style:translate-y-[2.5rem] data-[side=bottom]:data-starting-style:translate-y-[2.5rem] data-[side=left]:inset-y-0 data-[side=left]:left-0 data-[side=left]:h-full data-[side=left]:w-3/4 data-[side=left]:border-r data-[side=left]:data-ending-style:translate-x-[-2.5rem] data-[side=left]:data-starting-style:translate-x-[-2.5rem] data-[side=right]:inset-y-0 data-[side=right]:right-0 data-[side=right]:h-full data-[side=right]:w-3/4 data-[side=right]:border-l data-[side=right]:data-ending-style:translate-x-[2.5rem] data-[side=right]:data-starting-style:translate-x-[2.5rem] data-[side=top]:inset-x-0 data-[side=top]:top-0 data-[side=top]:h-auto data-[side=top]:border-b data-[side=top]:data-ending-style:translate-y-[-2.5rem] data-[side=top]:data-starting-style:translate-y-[-2.5rem] data-[side=left]:sm:max-w-sm data-[side=right]:sm:max-w-sm",
+          className
+        )}
+        {...props}
+      >
+        {children}
+        {showCloseButton && (
+          <SheetPrimitive.Close
+            data-slot="sheet-close"
+            render={
+              <Button
+                variant="ghost"
+                className="absolute top-3 right-3"
+                size="icon-sm"
+              />
+            }
+          >
+            <XIcon
+            />
+            <span className="sr-only">Close</span>
+          </SheetPrimitive.Close>
+        )}
+      </SheetPrimitive.Popup>
+    </SheetPortal>
+  )
+}
+
+function SheetHeader({ className, ...props }: React.ComponentProps<"div">) {
+  return (
+    <div
+      data-slot="sheet-header"
+      className={cn("flex flex-col gap-0.5 p-4", className)}
+      {...props}
+    />
+  )
+}
+
+function SheetFooter({ className, ...props }: React.ComponentProps<"div">) {
+  return (
+    <div
+      data-slot="sheet-footer"
+      className={cn("mt-auto flex flex-col gap-2 p-4", className)}
+      {...props}
+    />
+  )
+}
+
+function SheetTitle({ className, ...props }: SheetPrimitive.Title.Props) {
+  return (
+    <SheetPrimitive.Title
+      data-slot="sheet-title"
+      className={cn(
+        "font-heading text-base font-medium text-foreground",
+        className
+      )}
+      {...props}
+    />
+  )
+}
+
+function SheetDescription({
+  className,
+  ...props
+}: SheetPrimitive.Description.Props) {
+  return (
+    <SheetPrimitive.Description
+      data-slot="sheet-description"
+      className={cn("text-sm text-muted-foreground", className)}
+      {...props}
+    />
+  )
+}
+
+export {
+  Sheet,
+  SheetTrigger,
+  SheetClose,
+  SheetContent,
+  SheetHeader,
+  SheetFooter,
+  SheetTitle,
+  SheetDescription,
+}
+</file>
+
+<file path="src/components/ui/skeleton.tsx">
+import { cn } from "@/lib/utils"
+
+function Skeleton({ className, ...props }: React.ComponentProps<"div">) {
+  return (
+    <div
+      data-slot="skeleton"
+      className={cn("animate-pulse rounded-md bg-muted", className)}
+      {...props}
+    />
+  )
+}
+
+export { Skeleton }
+</file>
+
+<file path="src/components/ui/sonner.tsx">
+"use client"
+
+import { useTheme } from "next-themes"
+import { Toaster as Sonner, type ToasterProps } from "sonner"
+import { CircleCheckIcon, InfoIcon, TriangleAlertIcon, OctagonXIcon, Loader2Icon } from "lucide-react"
+
+const Toaster = ({ ...props }: ToasterProps) => {
+  const { theme = "system" } = useTheme()
+
+  return (
+    <Sonner
+      theme={theme as ToasterProps["theme"]}
+      className="toaster group"
+      icons={{
+        success: (
+          <CircleCheckIcon className="size-4" />
+        ),
+        info: (
+          <InfoIcon className="size-4" />
+        ),
+        warning: (
+          <TriangleAlertIcon className="size-4" />
+        ),
+        error: (
+          <OctagonXIcon className="size-4" />
+        ),
+        loading: (
+          <Loader2Icon className="size-4 animate-spin" />
+        ),
+      }}
+      style={
+        {
+          "--normal-bg": "var(--popover)",
+          "--normal-text": "var(--popover-foreground)",
+          "--normal-border": "var(--border)",
+          "--border-radius": "var(--radius)",
+        } as React.CSSProperties
+      }
+      toastOptions={{
+        classNames: {
+          toast: "cn-toast",
+        },
+      }}
+      {...props}
+    />
+  )
+}
+
+export { Toaster }
+</file>
+
+<file path="src/components/ui/textarea.tsx">
+import * as React from "react"
+
+import { cn } from "@/lib/utils"
+
+function Textarea({ className, ...props }: React.ComponentProps<"textarea">) {
+  return (
+    <textarea
+      data-slot="textarea"
+      className={cn(
+        "flex field-sizing-content min-h-16 w-full rounded-lg border border-input bg-transparent px-2.5 py-2 text-base transition-colors outline-none placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:cursor-not-allowed disabled:bg-input/50 disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-3 aria-invalid:ring-destructive/20 md:text-sm dark:bg-input/30 dark:disabled:bg-input/80 dark:aria-invalid:border-destructive/50 dark:aria-invalid:ring-destructive/40",
+        className
+      )}
+      {...props}
+    />
+  )
+}
+
+export { Textarea }
+</file>
+
+<file path="src/components/ui/tooltip.tsx">
+"use client"
+
+import { Tooltip as TooltipPrimitive } from "@base-ui/react/tooltip"
+
+import { cn } from "@/lib/utils"
+
+function TooltipProvider({
+  delay = 0,
+  ...props
+}: TooltipPrimitive.Provider.Props) {
+  return (
+    <TooltipPrimitive.Provider
+      data-slot="tooltip-provider"
+      delay={delay}
+      {...props}
+    />
+  )
+}
+
+function Tooltip({ ...props }: TooltipPrimitive.Root.Props) {
+  return <TooltipPrimitive.Root data-slot="tooltip" {...props} />
+}
+
+function TooltipTrigger({ ...props }: TooltipPrimitive.Trigger.Props) {
+  return <TooltipPrimitive.Trigger data-slot="tooltip-trigger" {...props} />
+}
+
+function TooltipContent({
+  className,
+  side = "top",
+  sideOffset = 4,
+  align = "center",
+  alignOffset = 0,
+  children,
+  ...props
+}: TooltipPrimitive.Popup.Props &
+  Pick<
+    TooltipPrimitive.Positioner.Props,
+    "align" | "alignOffset" | "side" | "sideOffset"
+  >) {
+  return (
+    <TooltipPrimitive.Portal>
+      <TooltipPrimitive.Positioner
+        align={align}
+        alignOffset={alignOffset}
+        side={side}
+        sideOffset={sideOffset}
+        className="isolate z-50"
+      >
+        <TooltipPrimitive.Popup
+          data-slot="tooltip-content"
+          className={cn(
+            "z-50 inline-flex w-fit max-w-xs origin-(--transform-origin) items-center gap-1.5 rounded-md bg-foreground px-3 py-1.5 text-xs text-background has-data-[slot=kbd]:pr-1.5 data-[side=bottom]:slide-in-from-top-2 data-[side=inline-end]:slide-in-from-left-2 data-[side=inline-start]:slide-in-from-right-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 **:data-[slot=kbd]:relative **:data-[slot=kbd]:isolate **:data-[slot=kbd]:z-50 **:data-[slot=kbd]:rounded-sm data-[state=delayed-open]:animate-in data-[state=delayed-open]:fade-in-0 data-[state=delayed-open]:zoom-in-95 data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95",
+            className
+          )}
+          {...props}
+        >
+          {children}
+          <TooltipPrimitive.Arrow className="z-50 size-2.5 translate-y-[calc(-50%-2px)] rotate-45 rounded-[2px] bg-foreground fill-foreground data-[side=bottom]:top-1 data-[side=inline-end]:top-1/2! data-[side=inline-end]:-left-1 data-[side=inline-end]:-translate-y-1/2 data-[side=inline-start]:top-1/2! data-[side=inline-start]:-right-1 data-[side=inline-start]:-translate-y-1/2 data-[side=left]:top-1/2! data-[side=left]:-right-1 data-[side=left]:-translate-y-1/2 data-[side=right]:top-1/2! data-[side=right]:-left-1 data-[side=right]:-translate-y-1/2 data-[side=top]:-bottom-2.5" />
+        </TooltipPrimitive.Popup>
+      </TooltipPrimitive.Positioner>
+    </TooltipPrimitive.Portal>
+  )
+}
+
+export { Tooltip, TooltipTrigger, TooltipContent, TooltipProvider }
+</file>
+
+<file path="src/lib/utils.ts">
+import { clsx, type ClassValue } from "clsx"
+import { twMerge } from "tailwind-merge"
+
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs))
+}
+</file>
+
+<file path="tsconfig.json">
+{
+  "compilerOptions": {
+    "target": "ES2017",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "react-jsx",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    ".next/dev/types/**/*.ts",
+    "**/*.mts"
+  ],
+  "exclude": ["node_modules"]
+}
+</file>
+
+<file path="package.json">
+{
+  "name": "portfolio",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint"
+  },
+  "dependencies": {
+    "@ai-sdk/openai": "^3.0.50",
+    "@base-ui/react": "^1.3.0",
+    "@hookform/resolvers": "^5.2.2",
+    "@react-three/drei": "^10.7.7",
+    "@react-three/fiber": "^9.5.0",
+    "@rive-app/react-canvas": "^4.27.3",
+    "@vercel/analytics": "^2.0.1",
+    "@vercel/speed-insights": "^2.0.0",
+    "ai": "^6.0.146",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "gsap": "^3.14.2",
+    "lenis": "^1.3.21",
+    "lucide-react": "^1.7.0",
+    "motion": "^12.38.0",
+    "next": "16.2.2",
+    "next-themes": "^0.4.6",
+    "react": "19.2.4",
+    "react-dom": "19.2.4",
+    "react-github-calendar": "^5.0.5",
+    "react-hook-form": "^7.72.1",
+    "resend": "^6.10.0",
+    "shadcn": "^4.1.2",
+    "sonner": "^2.0.7",
+    "tailwind-merge": "^3.5.0",
+    "three": "^0.183.2",
+    "tw-animate-css": "^1.4.0",
+    "vaul": "^1.1.2",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@types/three": "^0.183.1",
+    "eslint": "^9",
+    "eslint-config-next": "16.2.2",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
+}
+</file>
+
+<file path="src/app/projects/page.tsx">
+"use client";
+
+import Link from "next/link";
+import { useState } from "react";
+import { motion, AnimatePresence } from "motion/react";
+import { projects } from "@/lib/data";
+import { ArrowLeft, Filter } from "lucide-react";
+import type { ProjectTag } from "@/types";
+
+/* ── Social icon map ── */
+const iconMap: Record<string, React.ReactNode> = {
+  github: (
+    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+    </svg>
+  ),
+};
+
+const filterTags: ProjectTag[] = ["All", "Full-Stack", "ML/DL", "UI/UX"];
+
+export default function AllProjectsPage() {
+  const [activeTag, setActiveTag] = useState<ProjectTag>("All");
+
+  const allProjects = projects.filter((p) => !p.isOngoing);
+  const filtered =
+    activeTag === "All"
+      ? allProjects
+      : allProjects.filter((p) => p.tags.includes(activeTag));
+
+  return (
+    <main className="relative bg-black min-h-screen">
+      {/* Grid background overlay */}
+      <div
+        className="fixed inset-0 pointer-events-none z-0 opacity-[0.03]"
+        style={{
+          backgroundImage: `linear-gradient(to right, #ffffff 1px, transparent 1px), linear-gradient(to bottom, #ffffff 1px, transparent 1px)`,
+          backgroundSize: "40px 40px",
+        }}
+      />
+
+      <section className="pt-32 pb-24 relative z-10">
+        <div className="container-portfolio">
+          {/* ── Back Button ── */}
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+            className="mb-12"
+          >
+            <Link href="/#work">
+              <motion.span
+                whileHover={{ scale: 1.04 }}
+                whileTap={{ scale: 0.96 }}
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-medium cursor-pointer
+                           bg-white/[0.04] border border-white/[0.08] hover:border-violet-500/30
+                           text-[var(--color-text-secondary)] hover:text-white
+                           transition-all duration-300 group"
+              >
+                <ArrowLeft className="w-4 h-4 transition-transform duration-300 group-hover:-translate-x-1" />
+                Back to Home
+              </motion.span>
+            </Link>
+          </motion.div>
+
+          {/* ── Header ── */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            className="text-center mb-16"
+          >
+            <h1 className="font-heading font-black text-4xl sm:text-5xl md:text-6xl leading-tight">
+              All{" "}
+              <span className="gradient-text italic">Projects</span>
+            </h1>
+            <p className="max-w-2xl mx-auto mt-4 text-[var(--color-text-secondary)] text-lg">
+              Every project I&apos;ve built — from full-stack apps to deep
+              learning experiments.
+            </p>
+          </motion.div>
+
+          {/* ── Filter Tabs ── */}
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="flex flex-wrap justify-center gap-3 mb-16"
+          >
+            {filterTags.map((tag) => {
+              const isActive = tag === activeTag;
+              return (
+                <button
+                  key={tag}
+                  onClick={() => setActiveTag(tag)}
+                  className={`
+                    relative px-5 py-2 rounded-xl text-sm font-semibold transition-all duration-300 cursor-pointer
+                    ${
+                      isActive
+                        ? "bg-violet-600/20 text-violet-300 border border-violet-500/30 shadow-[0_0_16px_rgba(139,92,246,0.2)]"
+                        : "bg-white/[0.04] text-[var(--color-text-secondary)] border border-white/[0.08] hover:border-white/[0.15] hover:text-white"
+                    }
+                  `}
+                >
+                  {tag}
+                </button>
+              );
+            })}
+          </motion.div>
+
+          {/* ── Projects Grid ── */}
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={activeTag}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.4 }}
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+            >
+              {filtered.map((project, idx) => (
+                <motion.div
+                  key={project.id}
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: idx * 0.08, duration: 0.6 }}
+                  className="p-6 rounded-2xl glass border border-white/5 group hover:border-violet-500/20 transition-all flex flex-col h-full overflow-hidden"
+                >
+                  {/* Header */}
+                  <div className="mb-6 flex items-start justify-between gap-3">
+                    <div className="flex-1 min-w-0">
+                      <h3 className="text-lg font-bold font-heading mb-1.5 leading-snug">
+                        {project.title}
+                      </h3>
+                      <p className="text-[var(--color-text-muted)] text-xs tracking-wide uppercase font-bold leading-relaxed">
+                        {project.tagline}
+                      </p>
+                    </div>
+                    <div className="flex gap-2 flex-shrink-0">
+                      {project.githubUrl && (
+                        <a
+                          href={project.githubUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="p-2 rounded-lg bg-white/5 border border-white/5 hover:border-violet-500/30 transition-all text-[var(--color-text-secondary)] hover:text-white"
+                        >
+                          {iconMap.github}
+                        </a>
+                      )}
+                    </div>
+                  </div>
+
+                  {/* Description */}
+                  <p className="text-[var(--color-text-secondary)] text-sm leading-relaxed mb-6 flex-grow">
+                    {project.description}
+                  </p>
+
+                  {/* Tags + Year */}
+                  <div className="flex flex-wrap items-center gap-2 pt-5 border-t border-white/5">
+                    {project.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="px-2 py-0.5 rounded-md bg-violet-500/10 border border-violet-500/15 text-violet-300 text-[10px] uppercase font-bold"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                    <span className="ml-auto text-[10px] text-[var(--color-text-muted)] font-mono">
+                      {project.year}
+                    </span>
+                  </div>
+
+                  {/* Tech Stack */}
+                  <div className="flex flex-wrap gap-2 mt-3">
+                    {project.techStack.map((tech) => (
+                      <span
+                        key={tech}
+                        className="text-[10px] uppercase font-bold opacity-50 group-hover:opacity-100 transition-opacity"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </motion.div>
+              ))}
+            </motion.div>
+          </AnimatePresence>
+
+          {/* Empty state */}
+          {filtered.length === 0 && (
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              className="text-center text-[var(--color-text-muted)] py-20 text-lg"
+            >
+              No projects found for this category.
+            </motion.p>
+          )}
+        </div>
+      </section>
+    </main>
+  );
+}
+</file>
+
+<file path="src/components/sections/About.tsx">
+"use client";
+
+import { motion } from "motion/react";
+import { personalInfo } from "@/lib/data";
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 20 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: [0.22, 1, 0.36, 1] as any,
+    },
+  },
+};
+
+export default function About() {
+  return (
+    <section id="about" className="py-24 relative overflow-hidden">
+      <div className="container-portfolio relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          
+          {/* Text Content */}
+          <div className="lg:col-span-12 max-w-3xl mx-auto text-center">
+            <motion.div
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, margin: "-100px" }}
+              variants={fadeUp}
+            >
+              <h2 className="font-heading font-black text-3xl sm:text-4xl md:text-5xl mb-8 leading-tight">
+                My <span className="gradient-text italic">Story</span>
+              </h2>
+              
+              <div className="space-y-6 text-[var(--color-text-secondary)] text-lg leading-relaxed text-justify sm:text-center">
+                <p>
+                  {personalInfo.bio}
+                </p>
+                <p>
+                  My journey is driven by a deep curiosity for how things work. Whether it&apos;s architecting a 
+                  robust backend system or fine-tuning the motion of a 3D interface, I find beauty in the 
+                  balance between complexity and simplicity.
+                </p>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+</file>
+
+<file path="src/components/sections/Education.tsx">
+"use client";
+
+import { motion } from "motion/react";
+import { timeline } from "@/lib/data";
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 20 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: [0.22, 1, 0.36, 1] as any,
+    },
+  },
+};
+
+export default function Education() {
+  const education = timeline.filter((item) => item.type === "education");
+
+  return (
+    <section id="education" className="py-24 relative overflow-hidden bg-white/[0.01]">
+      <div className="container-portfolio relative z-10">
+        <motion.div
+           initial="hidden"
+           whileInView="show"
+           viewport={{ once: true, margin: "-100px" }}
+           variants={fadeUp}
+           className="text-center mb-16"
+        >
+          <h2 className="font-heading font-black text-3xl sm:text-4xl md:text-5xl leading-tight">
+            My <span className="gradient-text italic">Education</span>
+          </h2>
+          <p className="max-w-xl mx-auto mt-4 text-[var(--color-text-secondary)] text-lg">
+            Academic background and learning milestones.
+          </p>
+        </motion.div>
+
+        <div className="max-w-4xl mx-auto space-y-12">
+          {education.map((item, idx) => (
+            <motion.div
+              key={item.id}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: idx * 0.1, duration: 0.8 }}
+              className="relative p-6 sm:p-8 rounded-2xl sm:rounded-3xl glass border border-white/5 hover:border-violet-500/20 transition-colors group"
+            >
+              <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
+                 <div>
+                   <h3 className="text-xl font-bold font-heading text-[var(--color-text-primary)]">
+                     {item.title}
+                   </h3>
+                   <p className="text-emerald-400 font-medium">{item.organization}</p>
+                 </div>
+                 <div className="text-right flex flex-col md:items-end">
+                    <span className="text-sm font-semibold px-3 py-1 rounded-full bg-white/5 border border-white/5 text-[var(--color-text-muted)] group-hover:text-emerald-300 transition-colors">
+                      {item.period}
+                    </span>
+                    <span className="text-xs text-[var(--color-text-muted)] mt-1">{item.location}</span>
+                 </div>
+              </div>
+              
+              <p className="text-[var(--color-text-secondary)] leading-relaxed mb-6">
+                {item.description}
+              </p>
+              
+              {item.tags && (
+                <div className="flex flex-wrap gap-2">
+                   {item.tags.map(tag => (
+                     <span key={tag} className="text-[10px] uppercase font-bold tracking-widest px-2.5 py-1 rounded-lg bg-black/40 border border-white/5 text-[var(--color-text-muted)] group-hover:border-emerald-500/30 transition-colors">
+                       {tag}
+                     </span>
+                   ))}
+                </div>
+              )}
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+</file>
+
+<file path="src/components/sections/Experience.tsx">
+"use client";
+
+import { motion } from "motion/react";
+import { timeline } from "@/lib/data";
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 20 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: [0.22, 1, 0.36, 1] as any,
+    },
+  },
+};
+
+export default function Experience() {
+  const experiences = timeline.filter((item) => item.type === "work");
+
+  return (
+    <section id="experience" className="py-24 relative overflow-hidden bg-white/[0.01]">
+      <div className="container-portfolio relative z-10">
+        <motion.div
+           initial="hidden"
+           whileInView="show"
+           viewport={{ once: true, margin: "-100px" }}
+           variants={fadeUp}
+           className="text-center mb-16"
+        >
+          <h2 className="font-heading font-black text-3xl sm:text-4xl md:text-5xl leading-tight">
+            My <span className="gradient-text italic">Journey</span>
+          </h2>
+          <p className="max-w-xl mx-auto mt-4 text-[var(--color-text-secondary)] text-lg">
+            Professional roles and positions I&apos;ve held over the years.
+          </p>
+        </motion.div>
+
+        <div className="max-w-4xl mx-auto space-y-12">
+          {experiences.map((exp, idx) => (
+            <motion.div
+              key={exp.id}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: idx * 0.1, duration: 0.8 }}
+              className="relative p-6 sm:p-8 rounded-2xl sm:rounded-3xl glass border border-white/5 hover:border-violet-500/20 transition-colors group"
+            >
+              <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
+                 <div>
+                   <h3 className="text-xl font-bold font-heading text-[var(--color-text-primary)]">
+                     {exp.title}
+                   </h3>
+                   <p className="text-violet-400 font-medium">{exp.organization}</p>
+                 </div>
+                 <div className="text-right flex flex-col md:items-end">
+                    <span className="text-sm font-semibold px-3 py-1 rounded-full bg-white/5 border border-white/5 text-[var(--color-text-muted)] group-hover:text-violet-300 transition-colors">
+                      {exp.period}
+                    </span>
+                    <span className="text-xs text-[var(--color-text-muted)] mt-1">{exp.location}</span>
+                 </div>
+              </div>
+              
+              <p className="text-[var(--color-text-secondary)] leading-relaxed mb-6">
+                {exp.description}
+              </p>
+              
+              {exp.tags && (
+                <div className="flex flex-wrap gap-2">
+                   {exp.tags.map(tag => (
+                     <span key={tag} className="text-[10px] uppercase font-bold tracking-widest px-2.5 py-1 rounded-lg bg-black/40 border border-white/5 text-[var(--color-text-muted)] group-hover:border-violet-500/30 transition-colors">
+                       {tag}
+                     </span>
+                   ))}
+                </div>
+              )}
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+</file>
+
+<file path="src/components/sections/Skills.tsx">
+"use client";
+
+import { motion } from "motion/react";
+import { skills, currentlyLearning } from "@/lib/data";
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 20 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: [0.22, 1, 0.36, 1] as any,
+    },
+  },
+};
+
+export default function Skills() {
+  const categories = Array.from(new Set(skills.map(s => s.category)));
+
+  return (
+    <section id="skills" className="py-24 relative overflow-hidden">
+      <div className="container-portfolio relative z-10">
+        <motion.div
+           initial="hidden"
+           whileInView="show"
+           viewport={{ once: true, margin: "-100px" }}
+           variants={fadeUp}
+           className="text-center mb-16"
+        >
+          <h2 className="font-heading font-black text-3xl sm:text-4xl md:text-5xl leading-tight">
+            My <span className="gradient-text italic">Toolkit</span>
+          </h2>
+          <p className="max-w-xl mx-auto mt-4 text-[var(--color-text-secondary)] text-lg">
+            The technologies and tools I use to bring ideas to life.
+          </p>
+        </motion.div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {categories.map((cat, idx) => (
+            <motion.div
+              key={cat}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: idx * 0.1, duration: 0.8 }}
+              className="p-6 sm:p-8 rounded-2xl sm:rounded-3xl glass border border-white/5 hover:border-violet-500/20 transition-all group"
+            >
+              <h3 className="text-xl font-bold font-heading text-violet-400 mb-6 flex items-center justify-between">
+                {cat}
+                <span className="text-[10px] uppercase tracking-widest text-[var(--color-text-muted)] group-hover:text-violet-300 transition-colors">
+                  {skills.filter(s => s.category === cat).length} Tools
+                </span>
+              </h3>
+              
+              <div className="flex flex-wrap gap-3">
+                {skills.filter(s => s.category === cat).map(skill => (
+                  <div 
+                    key={skill.name}
+                    className="flex items-center gap-2 px-3 py-2 rounded-xl bg-white/5 border border-white/5 hover:border-violet-500/30 transition-all hover:scale-105 cursor-default"
+                  >
+                    <span className="text-sm">{skill.icon}</span>
+                    <span className="text-[var(--color-text-primary)] text-sm font-medium">{skill.name}</span>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+          ))}
+
+          {/* Currently Learning */}
+          <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4, duration: 0.8 }}
+              className="p-8 rounded-3xl glass border border-white/5 hover:border-emerald-500/20 transition-all group lg:col-span-1"
+            >
+              <h3 className="text-xl font-bold font-heading text-emerald-400 mb-6">
+                 Currently Exploring
+              </h3>
+              <div className="flex flex-wrap gap-3">
+                {currentlyLearning.map(skill => (
+                  <div 
+                    key={skill.name}
+                    className="flex items-center gap-2 px-3 py-2 rounded-xl bg-white/5 border border-white/5 hover:border-emerald-500/30 transition-all hover:scale-105 cursor-default"
+                  >
+                    <span className="text-sm">{skill.icon}</span>
+                    <span className="text-[var(--color-text-primary)] text-sm font-medium">{skill.name}</span>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+}
+</file>
+
+<file path="src/app/globals.css">
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ─── Design Tokens ────────────────────────────────────────── */
+@theme {
+  /* Shadcn semantic mappings */
+  --color-background:              var(--background);
+  --color-foreground:              var(--foreground);
+  --color-card:                    var(--card);
+  --color-card-foreground:         var(--card-foreground);
+  --color-popover:                 var(--popover);
+  --color-popover-foreground:      var(--popover-foreground);
+  --color-primary:                 var(--primary);
+  --color-primary-foreground:      var(--primary-foreground);
+  --color-secondary:               var(--secondary);
+  --color-secondary-foreground:    var(--secondary-foreground);
+  --color-muted:                   var(--muted);
+  --color-muted-foreground:        var(--muted-foreground);
+  --color-accent:                  var(--accent);
+  --color-accent-foreground:       var(--accent-foreground);
+  --color-destructive:             var(--destructive);
+  --color-border:                  var(--border);
+  --color-input:                   var(--input);
+  --color-ring:                    var(--ring);
+  --color-sidebar-ring:            var(--sidebar-ring);
+  --color-sidebar-border:          var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent:          var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary:         var(--sidebar-primary);
+  --color-sidebar-foreground:      var(--sidebar-foreground);
+  --color-sidebar:                 var(--sidebar);
+
+  /* Radius scale */
+  --radius-sm:  calc(var(--radius) * 0.6);
+  --radius-md:  calc(var(--radius) * 0.8);
+  --radius-lg:  var(--radius);
+  --radius-xl:  calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+
+  /* Typography */
+  --font-sans:    "Inter", system-ui, sans-serif;
+  --font-heading: "Outfit", system-ui, sans-serif;
+  --font-mono:    "JetBrains Mono", monospace;
+
+  /* Portfolio brand colors */
+  --color-violet-400: #a78bfa;
+  --color-violet-500: #8b5cf6;
+  --color-violet-600: #7c3aed;
+  --color-violet-glow: rgba(139, 92, 246, 0.35);
+  --color-surface-1: #0f0f13;
+  --color-surface-2: #16161d;
+  --color-surface-3: #1e1e28;
+  --color-text-primary: #f4f4f5;
+  --color-text-secondary: #a1a1aa;
+  --color-text-muted: #52525b;
+}
+
+/* ─── Root (Pure Black Portfolio) ─────────────────────────── */
+:root, .dark {
+  color-scheme: dark;
+
+  /* Shadcn black tokens */
+  --background:              #000000;
+  --foreground:              #f4f4f5;
+  --card:                    #0a0a0a;
+  --card-foreground:         #f4f4f5;
+  --popover:                 #0a0a0a;
+  --popover-foreground:      #f4f4f5;
+  --primary:                 #7c3aed;
+  --primary-foreground:      #ffffff;
+  --secondary:               #0a0a0a;
+  --secondary-foreground:    #f4f4f5;
+  --muted:                   #0a0a0a;
+  --muted-foreground:        #a1a1aa;
+  --accent:                  #0a0a0a;
+  --accent-foreground:       #f4f4f5;
+  --destructive:             #ef4444;
+  --border:                  rgba(255, 255, 255, 0.1);
+  --input:                   rgba(255, 255, 255, 0.05);
+  --ring:                    #7c3aed;
+  --radius:                  0.75rem;
+  --sidebar:                 #0a0a0a;
+  --sidebar-foreground:      #f4f4f5;
+  --sidebar-primary:         #7c3aed;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent:          #0a0a0a;
+  --sidebar-accent-foreground: #f4f4f5;
+  --sidebar-border:          rgba(255, 255, 255, 0.1);
+  --sidebar-ring:            #7c3aed;
+}
+
+/* ─── Base Styles ──────────────────────────────────────────── */
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+    box-sizing: border-box;
+  }
+
+  html {
+    font-family: var(--font-sans);
+    background-color: var(--background);
+    color: var(--foreground);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+  }
+
+  p {
+    line-height: 1.7;
+  }
+
+  code, pre {
+    font-family: var(--font-mono);
+  }
+
+  ::selection {
+    background: rgba(139, 92, 246, 0.35);
+    color: #f4f4f5;
+  }
+}
+
+/* ─── Custom Scrollbar ─────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+::-webkit-scrollbar-thumb {
+  background: #3f3f46;
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #8b5cf6;
+}
+
+/* ─── Utility Classes ──────────────────────────────────────── */
+@layer utilities {
+
+  /* Typography helpers */
+  .font-heading    { font-family: var(--font-heading); }
+  .font-mono-code  { font-family: var(--font-mono); }
+
+  /* Gradient text */
+  .gradient-text {
+    background: linear-gradient(135deg, #a78bfa 0%, #8b5cf6 40%, #6366f1 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .gradient-text-warm {
+    background: linear-gradient(135deg, #f9a8d4 0%, #c084fc 50%, #818cf8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Glassmorphism card */
+  .glass {
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .glass-strong {
+    background: rgba(255, 255, 255, 0.07);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  /* Glow effects */
+  .glow-violet {
+    box-shadow:
+      0 0 20px rgba(139, 92, 246, 0.3),
+      0 0 60px rgba(139, 92, 246, 0.1);
+  }
+
+  .glow-violet-sm {
+    box-shadow: 0 0 12px rgba(139, 92, 246, 0.25);
+  }
+
+  .text-glow-violet {
+    text-shadow:
+      0 0 20px rgba(139, 92, 246, 0.8),
+      0 0 40px rgba(139, 92, 246, 0.4);
+  }
+
+  /* Gradient borders */
+  .border-gradient {
+    position: relative;
+    border-radius: var(--radius-xl);
+  }
+  .border-gradient::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.5), rgba(99, 102, 241, 0.2), rgba(139, 92, 246, 0.1));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  /* Noise texture overlay */
+  .noise::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    border-radius: inherit;
+    pointer-events: none;
+    opacity: 0.4;
+  }
+
+  /* Section spacing */
+  .section-padding {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+
+  @media (min-width: 768px) {
+    .section-padding {
+      padding-top: 8rem;
+      padding-bottom: 8rem;
+    }
+  }
+
+  /* Container */
+  .container-portfolio {
+    width: 100%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .container-portfolio {
+      padding-left: 2.5rem;
+      padding-right: 2.5rem;
+    }
+  }
+
+  /* Bento grid */
+  .bento-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+  }
+
+  @media (max-width: 1024px) {
+    .bento-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 640px) {
+    .bento-grid { grid-template-columns: 1fr; }
+  }
+
+  /* Animated gradient background */
+  .animated-bg {
+    background: linear-gradient(
+      -45deg,
+      #000000,
+      #050505,
+      #000000,
+      #030308
+    );
+    background-size: 400% 400%;
+    animation: gradient-shift 15s ease infinite;
+  }
+
+  /* Sheen/shimmer effect */
+  .shimmer {
+    background: linear-gradient(
+      105deg,
+      transparent 40%,
+      rgba(139, 92, 246, 0.08) 50%,
+      transparent 60%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 2.5s ease infinite;
+  }
+
+  /* Tag/badge pill */
+  .tech-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.2rem 0.7rem;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    background: rgba(139, 92, 246, 0.12);
+    border: 1px solid rgba(139, 92, 246, 0.25);
+    color: #a78bfa;
+    letter-spacing: 0.02em;
+    transition: all 0.2s;
+  }
+  .tech-pill:hover {
+    background: rgba(139, 92, 246, 0.22);
+    border-color: rgba(139, 92, 246, 0.5);
+  }
+
+  /* Availability dot */
+  .availability-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #4ade80;
+    box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.6);
+    animation: ping-dot 2s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite;
+    flex-shrink: 0;
+  }
+}
+
+/* ─── Keyframe Animations ──────────────────────────────────── */
+@keyframes gradient-shift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+@keyframes ping-dot {
+  0%   { box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.5); }
+  70%  { box-shadow: 0 0 0 8px rgba(74, 222, 128, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(74, 222, 128, 0); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-12px); }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0.5; }
+  50%       { opacity: 1; }
+}
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ─── Reduced Motion ───────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+</file>
+
+<file path="src/components/sections/Contact.tsx">
+"use client";
+
+import { motion } from "motion/react";
+import { Mail, Send } from "lucide-react";
+import { socialLinks, personalInfo } from "@/lib/data";
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 20 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: [0.22, 1, 0.36, 1] as any,
+    },
+  },
+};
+
+/* ── Social icon map (using same SVGs as Hero for consistency) ── */
+const iconMap: Record<string, React.ReactNode> = {
+  github: (
+    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+    </svg>
+  ),
+  linkedin: (
+    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+    </svg>
+  ),
+};
+
+export default function Contact() {
+  return (
+    <section id="contact" className="py-24 relative overflow-hidden bg-white/[0.01]">
+      <div className="container-portfolio relative z-10">
+        <motion.div
+           initial="hidden"
+           whileInView="show"
+           viewport={{ once: true, margin: "-100px" }}
+           variants={fadeUp}
+           className="text-center mb-16"
+        >
+          <h2 className="font-heading font-black text-3xl sm:text-4xl md:text-5xl leading-tight">
+            Say <span className="gradient-text italic">Hello</span>
+          </h2>
+          <p className="max-w-xl mx-auto mt-4 text-[var(--color-text-secondary)] text-lg">
+            I&apos;m always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
+          </p>
+        </motion.div>
+
+        <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
+          {/* Contact Methods */}
+          <motion.div
+             initial={{ opacity: 0, x: -30 }}
+             whileInView={{ opacity: 1, x: 0 }}
+             transition={{ duration: 0.8 }}
+             className="space-y-8"
+          >
+            <div className="p-6 sm:p-8 rounded-2xl sm:rounded-3xl glass border border-white/5 space-y-6 sm:space-y-8">
+               <h3 className="text-xl font-bold font-heading">Direct Contact</h3>
+               
+               <div className="space-y-6">
+                 <a 
+                   href={`mailto:${personalInfo.email}`} 
+                   className="flex items-center gap-4 group text-[var(--color-text-secondary)] hover:text-white transition-colors"
+                 >
+                   <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/5 flex items-center justify-center group-hover:border-violet-500/30 group-hover:bg-violet-500/10 transition-all">
+                      <Mail className="w-5 h-5 text-violet-400" />
+                   </div>
+                   <div>
+                      <p className="text-xs uppercase font-bold text-[var(--color-text-muted)] tracking-widest">Email Me</p>
+                      <p className="text-lg font-medium">{personalInfo.email}</p>
+                   </div>
+                 </a>
+
+                 <div className="pt-8 border-t border-white/5">
+                   <p className="text-sm font-heading font-bold mb-6 text-[var(--color-text-muted)] uppercase tracking-widest">Follow me</p>
+                   <div className="flex gap-4">
+                      {socialLinks.map(link => {
+                        const icon = iconMap[link.icon.toLowerCase()] || <Send className="w-5 h-5" />;
+                        return (
+                          <a 
+                            key={link.label}
+                            href={link.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="w-12 h-12 rounded-xl bg-white/5 border border-white/5 flex items-center justify-center hover:border-violet-500/30 hover:bg-violet-500/10 transition-all text-white/70 hover:text-white"
+                            aria-label={link.label}
+                          >
+                             {icon}
+                          </a>
+                        );
+                      })}
+                   </div>
+                 </div>
+               </div>
+            </div>
+          </motion.div>
+
+          {/* Prompt Message */}
+          <motion.div
+             initial={{ opacity: 0, x: 30 }}
+             whileInView={{ opacity: 1, x: 0 }}
+             transition={{ duration: 0.8 }}
+             className="flex flex-col justify-center"
+          >
+            <div className="p-8 sm:p-12 rounded-2xl sm:rounded-[2.5rem] bg-violet-600/5 border border-violet-500/10 text-center">
+               <h3 className="text-2xl sm:text-3xl font-heading font-black mb-6 italic gradient-text">
+                  Let&apos;s build something <br /> amazing together.
+               </h3>
+               <p className="text-[var(--color-text-secondary)] mb-10 leading-relaxed text-lg">
+                  Whether you have a question or just want to say hi, my inbox is always open. 
+                  I&apos;ll get back to you as soon as possible!
+               </p>
+               <a 
+                 href={`mailto:${personalInfo.email}?subject=Let's Connect — From Your Portfolio`} 
+                 className="inline-flex items-center gap-3 px-8 py-4 rounded-2xl bg-violet-600 hover:bg-violet-500 text-white font-bold transition-all shadow-[0_0_24px_rgba(139,92,246,0.3)] hover:shadow-[0_0_32px_rgba(139,92,246,0.5)] hover:-translate-y-1"
+               >
+                  <Mail className="w-4 h-4" />
+                  Drop Me a Mail
+               </a>
+            </div>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+}
+</file>
+
+<file path="src/types/index.ts">
+/* ─────────────────────────────────────────────────────────────
+   Portfolio Type Definitions
+───────────────────────────────────────────────────────────── */
+
+/* ── Navigation ──────────────────────────────────────────── */
+export interface NavLink {
+  label: string;
+  href: string;
+}
+
+/* ── Projects ────────────────────────────────────────────── */
+export type ProjectTag =
+  | "All"
+  | "Full-Stack"
+  | "ML/DL"
+  | "UI/UX"
+  | "Open Source";
+
+export interface Project {
+  id: string;
+  title: string;
+  tagline: string;
+  description: string;
+  tags: ProjectTag[];
+  techStack: string[];
+  image: string;         // path in /public/images/
+  liveUrl?: string;
+  githubUrl?: string;
+  featured: boolean;
+  year: number;
+  isOngoing?: boolean;
+}
+
+/* ── Skills / Tech Stack ─────────────────────────────────── */
+export type SkillLevel = "Expert" | "Proficient" | "Learning";
+
+export interface Skill {
+  name: string;
+  icon: string;          // emoji or icon name
+  level: SkillLevel;
+  category: SkillCategory;
+}
+
+export type SkillCategory =
+  | "Language"
+  | "Frontend"
+  | "Backend"
+  | "Database"
+  | "DevOps"
+  | "Design"
+  | "AI/ML";
+
+/* ── Experience / Timeline ───────────────────────────────── */
+export type TimelineType = "work" | "education" | "achievement";
+
+export interface TimelineItem {
+  id: string;
+  type: TimelineType;
+  title: string;
+  organization: string;
+  location: string;
+  period: string;
+  description: string;
+  tags?: string[];
+}
+
+/* ── Bento Cards ─────────────────────────────────────────── */
+export interface BentoCard {
+  id: string;
+  title: string;
+  description?: string;
+  colSpan?: 1 | 2 | 3 | 4;
+  rowSpan?: 1 | 2;
+  type:
+    | "skills"
+    | "github"
+    | "currently-learning"
+    | "fun-fact"
+    | "availability"
+    | "tech-stack"
+    | "location";
+}
+
+/* ── Social Links ────────────────────────────────────────── */
+export interface SocialLink {
+  label: string;
+  href: string;
+  icon: string;
+}
+
+/* ── Contact Form ────────────────────────────────────────── */
+export interface ContactFormData {
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
+}
+
+/* ── AI Chat ─────────────────────────────────────────────── */
+export interface ChatMessage {
+  id: string;
+  role: "user" | "assistant";
+  content: string;
+  timestamp: Date;
+}
+
+/* ── Spotify Now Playing ─────────────────────────────────── */
+export interface SpotifyTrack {
+  isPlaying: boolean;
+  title?: string;
+  artist?: string;
+  album?: string;
+  albumArt?: string;
+  songUrl?: string;
+}
+</file>
+
+<file path="src/app/page.tsx">
+import Hero from "@/components/sections/Hero";
+import Education from "@/components/sections/Education";
+import Skills from "@/components/sections/Skills";
+import Projects from "@/components/sections/Projects";
+import Experience from "@/components/sections/Experience";
+import Contact from "@/components/sections/Contact";
+
+export default function Home() {
+  return (
+    <main className="relative bg-black">
+      <Hero />
+      
+      <div className="space-y-12">
+        <Education />
+        <Skills />
+        <Projects />
+        <Experience />
+        <Contact />
+      </div>
+
+      {/* Grid background overlay for the whole page */}
+      <div 
+        className="fixed inset-0 pointer-events-none z-[-1] opacity-[0.03]"
+        style={{
+          backgroundImage: `linear-gradient(to right, #ffffff 1px, transparent 1px), linear-gradient(to bottom, #ffffff 1px, transparent 1px)`,
+          backgroundSize: '40px 40px'
+        }}
+      />
+    </main>
+  );
+}
+</file>
+
+<file path="src/components/sections/Projects.tsx">
+"use client";
+
+import Link from "next/link";
+import { motion } from "motion/react";
+import { projects } from "@/lib/data";
+import { ArrowRight } from "lucide-react";
+
+/* ── Social icon map (using same SVG style as Hero) ── */
+const iconMap: Record<string, React.ReactNode> = {
+  github: (
+    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+    </svg>
+  ),
+};
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 20 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: [0.22, 1, 0.36, 1] as any,
+    },
+  },
+};
+
+export default function Projects() {
+  /* Show only the top 4 featured projects on the main page */
+  const featuredProjects = projects.filter(p => p.featured && !p.isOngoing).slice(0, 4);
+  const ongoing = projects.filter(p => p.isOngoing);
+
+  return (
+    <section id="work" className="py-24 relative overflow-hidden bg-white/[0.01]">
+      <div className="container-portfolio relative z-10">
+        <motion.div
+           initial="hidden"
+           whileInView="show"
+           viewport={{ once: true, margin: "-100px" }}
+           variants={fadeUp}
+           className="text-center mb-16"
+        >
+          <h2 className="font-heading font-black text-3xl sm:text-4xl md:text-5xl leading-tight">
+            My <span className="gradient-text italic">Projects</span>
+          </h2>
+          <p className="max-w-xl mx-auto mt-4 text-[var(--color-text-secondary)] text-lg">
+            A selection of my best work and current experiments.
+          </p>
+        </motion.div>
+
+        {/* Featured Projects (top 4) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+          {featuredProjects.map((project, idx) => (
+            <motion.div
+              key={project.id}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: idx * 0.1, duration: 0.8 }}
+              className="p-6 sm:p-8 rounded-2xl sm:rounded-[2rem] glass border border-white/5 group hover:border-violet-500/20 transition-all flex flex-col h-full overflow-hidden"
+            >
+              <div className="mb-8 flex items-center justify-between">
+                <div>
+                   <h3 className="text-lg sm:text-2xl font-bold font-heading mb-2">{project.title}</h3>
+                   <p className="text-[var(--color-text-muted)] text-sm tracking-wide uppercase font-bold">{project.tagline}</p>
+                </div>
+                <div className="flex gap-2">
+                   {project.githubUrl && (
+                     <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="p-2 rounded-lg bg-white/5 border border-white/5 hover:border-violet-500/30 transition-all text-[var(--color-text-secondary)] hover:text-white">
+                        {iconMap.github}
+                     </a>
+                   )}
+                </div>
+              </div>
+
+              <p className="text-[var(--color-text-secondary)] text-sm leading-relaxed mb-8 flex-grow">
+                 {project.description}
+              </p>
+
+              <div className="flex flex-wrap gap-2 pt-6 border-t border-white/5">
+                {project.techStack.map(tech => (
+                  <span key={tech} className="text-[10px] uppercase font-bold opacity-60 group-hover:opacity-100 transition-opacity">
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* View All Projects Button */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="flex justify-center mb-24"
+        >
+          <Link href="/projects">
+            <motion.span
+              whileHover={{ scale: 1.04 }}
+              whileTap={{ scale: 0.96 }}
+              className="inline-flex items-center gap-3 px-8 py-4 rounded-2xl text-base font-semibold cursor-pointer
+                         bg-white/[0.04] border border-white/[0.08] hover:border-violet-500/30
+                         text-[var(--color-text-secondary)] hover:text-white
+                         transition-all duration-300 group
+                         hover:bg-violet-600/10 hover:shadow-[0_0_30px_rgba(139,92,246,0.15)]"
+            >
+              View All Projects
+              <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+            </motion.span>
+          </Link>
+        </motion.div>
+
+        {/* Ongoing Research / Projects */}
+        {ongoing.length > 0 && (
+          <motion.div
+             initial={{ opacity: 0, scale: 0.95 }}
+             whileInView={{ opacity: 1, scale: 1 }}
+             className="p-6 sm:p-12 rounded-2xl sm:rounded-[2.5rem] bg-violet-600/5 border border-violet-500/10 relative overflow-hidden"
+          >
+            <div className="absolute top-0 right-0 p-8">
+               <span className="px-3 sm:px-4 py-1.5 rounded-full bg-violet-500/20 border border-violet-500/20 text-violet-300 text-[9px] sm:text-[10px] font-black uppercase tracking-[0.15em] sm:tracking-[0.2em] animate-pulse">
+                  Ongoing Experiment
+               </span>
+            </div>
+            
+            <div className="max-w-2xl">
+               <h3 className="text-2xl sm:text-3xl font-heading font-black mb-6 mt-10 sm:mt-0">
+                  What&apos;s <span className="gradient-text italic">Brewing?</span>
+               </h3>
+               {ongoing.map(project => (
+                 <div key={project.id}>
+                   <h4 className="text-xl font-bold text-[var(--color-text-primary)] mb-3">{project.title}</h4>
+                   <p className="text-[var(--color-text-secondary)] leading-relaxed mb-6">
+                     {project.description}
+                   </p>
+                   <div className="flex flex-wrap gap-3">
+                     {project.techStack.map(tech => (
+                       <span key={tech} className="px-3 py-1 rounded-lg bg-white/5 border border-white/5 text-[10px] uppercase font-bold text-[var(--color-text-muted)]">
+                          {tech}
+                       </span>
+                     ))}
+                   </div>
+                 </div>
+               ))}
+            </div>
+          </motion.div>
+        )}
+      </div>
+    </section>
+  );
+}
+</file>
+
+<file path="src/components/shared/Navbar.tsx">
+"use client";
+
+import { useEffect, useState } from "react";
+import Link from "next/link";
+import { motion, AnimatePresence } from "motion/react";
+import { Menu, X, MessageSquare, Sparkles } from "lucide-react";
+import { cn } from "@/lib/utils";
+import { navLinks, personalInfo } from "@/lib/data";
+
+export default function Navbar() {
+  const [scrolled, setScrolled] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("/");
+
+  /* ── Scroll detection ──────────────────────────────────── */
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 40);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  /* ── Active section detection ──────────────────────────── */
+  useEffect(() => {
+    const sections = navLinks
+      .map((l) => l.href.replace(/^\/#?/, ""))
+      .filter((id) => id && id !== "/");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(`/#${entry.target.id}`);
+          }
+        });
+      },
+      { rootMargin: "-40% 0px -55% 0px" }
+    );
+
+    sections.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
+  /* ── Close mobile menu on resize ───────────────────────── */
+  useEffect(() => {
+    const onResize = () => {
+      if (window.innerWidth >= 768) setMobileOpen(false);
+    };
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, []);
+
+  /* ── Lock body scroll when mobile menu open ─────────────  */
+  useEffect(() => {
+    document.body.style.overflow = mobileOpen ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [mobileOpen]);
+
+  return (
+    <>
+      {/* ── Main Navbar ─────────────────────────────────── */}
+      <motion.header
+        initial={{ y: -80, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
+        className={cn(
+          "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
+          scrolled
+            ? "py-3 bg-black/80 backdrop-blur-xl border-b border-white/[0.06] shadow-[0_8px_32px_rgba(0,0,0,0.4)]"
+            : "py-5 bg-transparent"
+        )}
+      >
+        <div className="container-portfolio flex items-center justify-between">
+
+          {/* ── Logo ──────────────────────────────────────── */}
+          <Link
+            href="/"
+            className="group flex items-center gap-2"
+            onClick={() => setMobileOpen(false)}
+          >
+            {/* Animated monogram */}
+            <motion.div
+              whileHover={{ scale: 1.08 }}
+              whileTap={{ scale: 0.94 }}
+              className="relative w-9 h-9 rounded-lg flex items-center justify-center overflow-hidden"
+              style={{
+                background: "linear-gradient(135deg, #7c3aed, #6366f1)",
+                boxShadow: "0 0 16px rgba(139,92,246,0.45)",
+              }}
+            >
+              <span className="font-heading font-black text-white text-sm tracking-tight select-none">
+                GK
+              </span>
+              {/* Shimmer sweep */}
+              <span className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full" />
+            </motion.div>
+
+            <span className="font-heading font-semibold text-[var(--color-text-primary)] text-sm hidden sm:block tracking-tight">
+              Gursharen Kaur
+              <span className="gradient-text"> Suri</span>
+            </span>
+          </Link>
+
+          {/* ── Desktop Nav ───────────────────────────────── */}
+          <nav className="hidden md:flex items-center gap-1" aria-label="Main navigation">
+            {navLinks.map((link) => {
+              const isActive = activeSection === link.href || (link.href === "/#home" && activeSection === "/");
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={cn(
+                    "relative px-4 py-2 text-sm font-medium rounded-lg transition-colors duration-200",
+                    isActive
+                      ? "text-[var(--color-text-primary)]"
+                      : "text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)]"
+                  )}
+                >
+                  {isActive && (
+                    <motion.span
+                      layoutId="active-nav-pill"
+                      className="absolute inset-0 rounded-lg bg-white/[0.07] border border-white/[0.08]"
+                      transition={{ type: "spring", bounce: 0.25, duration: 0.4 }}
+                    />
+                  )}
+                  <span className="relative z-10">{link.label}</span>
+                </Link>
+              );
+            })}
+          </nav>
+
+          {/* ── Desktop CTA ──────────────────────────────── */}
+          <div className="hidden md:flex items-center gap-3">
+
+
+            {/* Resume button */}
+            <Link href="/#contact">
+              <motion.span
+                whileHover={{ scale: 1.04 }}
+                whileTap={{ scale: 0.96 }}
+                className={cn(
+                  "flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-semibold cursor-pointer",
+                  "bg-violet-600 hover:bg-violet-500 text-white",
+                  "transition-colors duration-200",
+                  "shadow-[0_0_16px_rgba(139,92,246,0.35)] hover:shadow-[0_0_24px_rgba(139,92,246,0.55)]"
+                )}
+              >
+                <MessageSquare className="w-3.5 h-3.5" />
+                Let&apos;s Talk
+              </motion.span>
+            </Link>
+          </div>
+
+          {/* ── Mobile hamburger ─────────────────────────── */}
+          <motion.button
+            whileTap={{ scale: 0.9 }}
+            onClick={() => setMobileOpen((v) => !v)}
+            className="md:hidden p-2 rounded-lg text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] hover:bg-white/[0.06] transition-colors"
+            aria-label="Toggle menu"
+            aria-expanded={mobileOpen}
+          >
+            <AnimatePresence mode="wait" initial={false}>
+              {mobileOpen ? (
+                <motion.span
+                  key="close"
+                  initial={{ rotate: -90, opacity: 0 }}
+                  animate={{ rotate: 0, opacity: 1 }}
+                  exit={{ rotate: 90, opacity: 0 }}
+                  transition={{ duration: 0.15 }}
+                >
+                  <X className="w-5 h-5" />
+                </motion.span>
+              ) : (
+                <motion.span
+                  key="menu"
+                  initial={{ rotate: 90, opacity: 0 }}
+                  animate={{ rotate: 0, opacity: 1 }}
+                  exit={{ rotate: -90, opacity: 0 }}
+                  transition={{ duration: 0.15 }}
+                >
+                  <Menu className="w-5 h-5" />
+                </motion.span>
+              )}
+            </AnimatePresence>
+          </motion.button>
+        </div>
+      </motion.header>
+
+      {/* ── Mobile Menu Overlay ──────────────────────────── */}
+      <AnimatePresence>
+        {mobileOpen && (
+          <>
+            {/* Backdrop */}
+            <motion.div
+              key="backdrop"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              className="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm md:hidden"
+              onClick={() => setMobileOpen(false)}
+            />
+
+            {/* Slide-down panel */}
+            <motion.div
+              key="mobile-menu"
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
+              className="fixed top-0 left-0 right-0 z-40 pt-20 pb-8 px-6 md:hidden"
+              style={{
+                background: "rgba(0,0,0,0.97)",
+                borderBottom: "1px solid rgba(255,255,255,0.08)",
+                backdropFilter: "blur(24px)",
+              }}
+            >
+              {/* Nav links */}
+              <nav className="flex flex-col gap-1 mb-6">
+                {navLinks.map((link, i) => (
+                  <motion.div
+                    key={link.href}
+                    initial={{ opacity: 0, x: -16 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: i * 0.05, duration: 0.2 }}
+                  >
+                    <Link
+                      href={link.href}
+                      onClick={() => setMobileOpen(false)}
+                      className={cn(
+                        "flex items-center gap-3 px-4 py-3 rounded-xl text-base font-medium transition-colors",
+                        activeSection === link.href
+                          ? "bg-violet-600/15 text-violet-300 border border-violet-500/20"
+                          : "text-[var(--color-text-secondary)] hover:bg-white/[0.06] hover:text-white"
+                      )}
+                    >
+                      <Sparkles className="w-4 h-4 opacity-50" />
+                      {link.label}
+                    </Link>
+                  </motion.div>
+                ))}
+              </nav>
+
+              {/* Availability + resume */}
+              <div className="flex flex-col gap-3 pt-4 border-t border-white/[0.06]">
+
+                <Link
+                  href="/#contact"
+                  onClick={() => setMobileOpen(false)}
+                  className="flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-violet-600 hover:bg-violet-500 text-white font-semibold text-sm transition-colors cursor-pointer"
+                >
+                  <MessageSquare className="w-4 h-4" />
+                  Let&apos;s Talk
+                </Link>
+              </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
+    </>
+  );
+}
+</file>
+
+<file path="src/app/layout.tsx">
+import type { Metadata } from "next";
+import { Outfit, Inter, JetBrains_Mono } from "next/font/google";
+import "./globals.css";
+import SmoothScrollProvider from "@/components/shared/SmoothScrollProvider";
+import Navbar from "@/components/shared/Navbar";
+import CustomCursor from "@/components/shared/CustomCursor";
+
+/* ─── Fonts ────────────────────────────────────────────────── */
+const outfit = Outfit({
+  variable: "--font-heading",
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
+  display: "swap",
+});
+
+const inter = Inter({
+  variable: "--font-sans",
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600"],
+  display: "swap",
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  variable: "--font-mono",
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  display: "swap",
+});
+
+/* ─── Metadata ─────────────────────────────────────────────── */
+export const metadata: Metadata = {
+  title: {
+    default: "Gursharen Kaur Suri | Full Stack Developer & ML Engineer",
+    template: "%s | Gursharen Kaur Suri",
+  },
+  description:
+    "Computer Engineering student at TIET skilled in Full Stack Development and Machine Learning. Building scalable, user-focused applications.",
+  keywords: [
+    "Gursharen Kaur Suri",
+    "Full Stack Developer",
+    "Machine Learning",
+    "React",
+    "Python",
+    "TIET",
+    "Computer Engineering",
+    "Portfolio",
+  ],
+  authors: [{ name: "Gursharen Kaur Suri" }],
+  creator: "Gursharen Kaur Suri",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    title: "Gursharen Kaur Suri — Full Stack Developer & ML Engineer",
+    description:
+      "Computer Engineering student at TIET skilled in Full Stack Development and Machine Learning.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Gursharen Kaur Suri — Full Stack Developer & ML Engineer",
+    description:
+      "Computer Engineering student at TIET skilled in Full Stack Development and Machine Learning.",
+  },
+  robots: { index: true, follow: true },
+};
+
+/* ─── Root Layout ──────────────────────────────────────────── */
+export default function RootLayout({
+  children,
+}: Readonly<{ children: React.ReactNode }>) {
+  return (
+    <html
+      lang="en"
+      className={`${outfit.variable} ${inter.variable} ${jetbrainsMono.variable} dark`}
+      suppressHydrationWarning
+    >
+      <body className="min-h-screen overflow-x-hidden antialiased bg-[#000000]" suppressHydrationWarning>
+        {/* Custom cursor — desktop only, client component */}
+        <CustomCursor />
+
+        {/* Global navigation */}
+        <Navbar />
+
+        {/* Lenis smooth scroll + GSAP sync wrapper */}
+        <SmoothScrollProvider>
+          {children}
+        </SmoothScrollProvider>
+      </body>
+    </html>
+  );
+}
+</file>
+
+<file path="src/components/sections/Hero.tsx">
+"use client";
+
+import dynamic from "next/dynamic";
+import Link from "next/link";
+import { motion, type Variants } from "motion/react";
+import { ArrowDown, ArrowRight, Sparkles, Eye } from "lucide-react";
+import { personalInfo, socialLinks, marqueeSkills } from "@/lib/data";
+
+/* Lazy-load 3D canvas — never SSR */
+const ParticleCanvas = dynamic(
+  () => import("@/components/shared/ParticleCanvas"),
+  { ssr: false }
+);
+
+/* ── Animation variants ──────────────────────────────────── */
+const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
+
+const container: Variants = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.08, delayChildren: 0.3 } },
+};
+
+const fadeUp: Variants = {
+  hidden: { opacity: 0, y: 32, filter: "blur(8px)" },
+  show:   { opacity: 1, y: 0, filter: "blur(0px)",
+    transition: { duration: 0.7, ease: EASE } },
+};
+
+const fadeIn: Variants = {
+  hidden: { opacity: 0 },
+  show:   { opacity: 1, transition: { duration: 0.6 } },
+};
+
+/* ── Character-split name reveal ─────────────────────────── */
+function AnimatedName({ text }: { text: string }) {
+  return (
+    <span aria-label={text} className="inline-flex flex-wrap justify-center">
+      {text.split("").map((char, i) => (
+        <motion.span
+          key={i}
+          initial={{ opacity: 0, y: 48, rotateX: -90 }}
+          animate={{ opacity: 1, y: 0, rotateX: 0 }}
+          transition={{
+            duration: 0.55,
+            delay: 0.5 + i * 0.035,
+            ease: [0.22, 1, 0.36, 1],
+          }}
+          className="inline-block"
+          style={{ transformOrigin: "bottom" }}
+        >
+          {char === " " ? "\u00A0" : char}
+        </motion.span>
+      ))}
+    </span>
+  );
+}
+
+/* ── Social icon map (inline SVGs) ──────────────────────── */
+const iconMap: Record<string, React.ReactNode> = {
+  github: (
+    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+    </svg>
+  ),
+  linkedin: (
+    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+    </svg>
+  ),
+  twitter: (
+    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.259 5.63L18.243 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+    </svg>
+  ),
+};
+
+/* ── Hero ────────────────────────────────────────────────── */
+export default function Hero() {
+  return (
+    <section
+      id="home"
+      className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden"
+    >
+      {/* ── Background layers ─────────────────────────────── */}
+
+      {/* Deep gradient base */}
+      <div className="absolute inset-0 animated-bg" />
+
+      {/* Radial violet glow behind content */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background:
+            "radial-gradient(ellipse 80% 60% at 50% 40%, rgba(109,40,217,0.18) 0%, transparent 70%)",
+        }}
+      />
+
+      {/* Top-right accent glow */}
+      <div
+        className="absolute top-[-10%] right-[-5%] w-[300px] h-[300px] sm:w-[600px] sm:h-[600px] rounded-full pointer-events-none"
+        style={{
+          background:
+            "radial-gradient(circle, rgba(99,102,241,0.12) 0%, transparent 70%)",
+          filter: "blur(60px)",
+        }}
+      />
+
+      {/* Bottom-left accent glow */}
+      <div
+        className="absolute bottom-[-5%] left-[-5%] w-[250px] h-[250px] sm:w-[500px] sm:h-[500px] rounded-full pointer-events-none"
+        style={{
+          background:
+            "radial-gradient(circle, rgba(139,92,246,0.1) 0%, transparent 70%)",
+          filter: "blur(80px)",
+        }}
+      />
+
+      {/* 3D Particle canvas — fills background */}
+      <div className="absolute inset-0 opacity-60 pointer-events-none">
+        <ParticleCanvas />
+      </div>
+
+      {/* Noise grain overlay */}
+      <div
+        className="absolute inset-0 pointer-events-none opacity-[0.025]"
+        style={{
+          backgroundImage:
+            "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")",
+        }}
+      />
+
+      {/* ── Vertical social rail (desktop) ───────────────── */}
+      <motion.div
+        initial={{ opacity: 0, x: -20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ delay: 1.4, duration: 0.6 }}
+        className="absolute left-6 bottom-32 hidden lg:flex flex-col items-center gap-4"
+      >
+        {socialLinks.map((s) => (
+          <a
+            key={s.label}
+            href={s.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={s.label}
+            className="p-2 rounded-lg text-[var(--color-text-muted)] hover:text-violet-400 hover:bg-violet-500/10 transition-all duration-200 hover:-translate-y-0.5"
+          >
+            {iconMap[s.icon]}
+          </a>
+        ))}
+        {/* Connecting line */}
+        <div className="w-px h-16 bg-gradient-to-b from-white/15 to-transparent" />
+      </motion.div>
+
+      {/* ── Main content ─────────────────────────────────── */}
+      <motion.div
+        variants={container}
+        initial="hidden"
+        animate="show"
+        className="relative z-10 container-portfolio flex flex-col items-center text-center gap-4 sm:gap-6 pt-20 sm:pt-24 px-4 sm:px-6"
+      >
+
+
+        {/* Greeting */}
+        <motion.p
+          variants={fadeUp}
+          className="text-[var(--color-text-secondary)] text-base sm:text-lg font-light tracking-widest uppercase"
+          style={{ letterSpacing: "0.2em" }}
+        >
+          Hi, I&apos;m
+        </motion.p>
+
+        {/* Name — character-by-character */}
+        <h1
+          className="font-heading gradient-text text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black leading-none tracking-tighter"
+          style={{ perspective: "800px" }}
+        >
+          <AnimatedName text={personalInfo.name} />
+        </h1>
+
+        {/* Role button panel */}
+        <motion.div
+          variants={fadeUp}
+          className="flex flex-wrap items-center justify-center gap-3 mt-1"
+        >
+          {personalInfo.roles.map((role) => (
+            <div
+              key={role}
+              className="flex items-center gap-2 sm:gap-2.5 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full glass border border-white/5 hover:border-violet-500/30 transition-all duration-300 group hover:-translate-y-0.5"
+            >
+              <span
+                className="w-1.5 h-1.5 rounded-full group-hover:scale-125 transition-transform duration-300 shadow-[0_0_8px_rgba(139,92,246,0.6)]"
+                style={{ background: "#8b5cf6" }}
+              />
+              <span className="text-[var(--color-text-secondary)] group-hover:text-[var(--color-text-primary)] text-[10px] sm:text-[11px] uppercase font-bold tracking-[0.1em] transition-colors">
+                {role}
+              </span>
+            </div>
+          ))}
+        </motion.div>
+
+        {/* Tagline */}
+        <motion.p
+          variants={fadeUp}
+          className="max-w-xl text-[var(--color-text-secondary)] text-base sm:text-lg leading-relaxed px-2 sm:px-0"
+        >
+          {personalInfo.tagline}
+        </motion.p>
+
+        {/* CTA Buttons */}
+        <motion.div
+          variants={fadeUp}
+          className="flex flex-col sm:flex-row items-center gap-4 mt-2"
+        >
+          {/* Primary — View Work */}
+          <Link href="#work">
+            <motion.span
+              whileHover={{ scale: 1.04 }}
+              whileTap={{ scale: 0.96 }}
+              className="inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-3 sm:py-3.5 rounded-xl font-semibold text-white text-sm cursor-pointer w-full sm:w-auto"
+              style={{
+                background: "linear-gradient(135deg, #7c3aed, #6366f1)",
+                boxShadow: "0 0 28px rgba(124,58,237,0.45), 0 4px 16px rgba(0,0,0,0.3)",
+              }}
+            >
+              View My Work
+              <ArrowRight className="w-4 h-4" />
+            </motion.span>
+          </Link>
+
+          {/* Secondary — View Resume */}
+          <motion.a
+            href={personalInfo.resumeUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.04 }}
+            whileTap={{ scale: 0.96 }}
+            className="inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-3 sm:py-3.5 rounded-xl font-semibold text-[var(--color-text-primary)] text-sm glass border border-white/10 hover:border-violet-500/40 transition-colors cursor-pointer w-full sm:w-auto"
+          >
+            <Eye className="w-4 h-4" />
+            View Resume
+          </motion.a>
+        </motion.div>
+
+        {/* Tech Marquee replacement for stats */}
+        <motion.div
+          variants={fadeUp}
+          className="mt-8 sm:mt-12 w-full max-w-2xl overflow-hidden relative group"
+        >
+          {/* Gradient Masks for smooth edges */}
+          <div className="absolute inset-y-0 left-0 w-12 sm:w-24 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none" />
+          <div className="absolute inset-y-0 right-0 w-12 sm:w-24 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" />
+          
+          <motion.div
+            initial={{ x: 0 }}
+            animate={{ x: "-50%" }}
+            transition={{
+              duration: 35,
+              repeat: Infinity,
+              ease: "linear",
+            }}
+            className="flex gap-4 w-max"
+          >
+            {/* Multiplied array for seamless looping */}
+            {[...marqueeSkills, ...marqueeSkills, ...marqueeSkills, ...marqueeSkills].map((skill, i) => (
+              <div
+                key={`${skill.name}-${i}`}
+                className="flex items-center gap-3 px-5 py-2.5 rounded-xl glass border border-white/5 whitespace-nowrap hover:border-violet-500/30 transition-colors"
+                style={{ background: "rgba(255,255,255,0.03)" }}
+              >
+                <img
+                  src={skill.logoUrl}
+                  alt={skill.name}
+                  width={20}
+                  height={20}
+                  className="select-none"
+                  style={{
+                    filter: ["Express.js", "Next.js"].includes(skill.name) ? "invert(1)" : undefined,
+                  }}
+                />
+                <span className="text-[10px] uppercase font-bold tracking-[0.2em] text-[var(--color-text-muted)] group-hover:text-[var(--color-text-secondary)] transition-colors">
+                  {skill.name}
+                </span>
+              </div>
+            ))}
+          </motion.div>
+        </motion.div>
+
+      </motion.div>
+
+      {/* ── Scroll indicator ──────────────────────────────── */}
+      <motion.div
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 2, duration: 0.6 }}
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+      >
+        <span className="text-[10px] uppercase tracking-[0.3em] text-[var(--color-text-muted)]">
+          scroll
+        </span>
+        <motion.div
+          animate={{ y: [0, 6, 0] }}
+          transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
+        >
+          <ArrowDown className="w-4 h-4 text-[var(--color-text-muted)]" />
+        </motion.div>
+      </motion.div>
+    </section>
+  );
+}
+</file>
+
+<file path="src/lib/data.ts">
+import type {
+  NavLink,
+  Project,
+  Skill,
+  TimelineItem,
+  SocialLink,
+} from "@/types";
+
+/* ─────────────────────────────────────────────────────────────
+   PORTFOLIO DATA — Gursharen Kaur Suri
+   ↳ Edit this file to update all your portfolio content.
+───────────────────────────────────────────────────────────── */
+
+/* ── Personal Info ───────────────────────────────────────── */
+export const personalInfo = {
+  name: "Gursharen Kaur Suri",
+  role: "Full Stack Developer",
+  roles: ["Full Stack Developer", "ML Engineer", "Research Enthusiast"],
+  tagline:
+    "Computer Engineering student skilled in Full Stack Development, driven by a passion for secure, user-focused digital innovation with hands-on expertise in Machine Learning.",
+  bio: `I'm a Computer Engineering student at Thapar Institute of Engineering and Technology,
+skilled in Full Stack Development. Experienced in building scalable applications using modern
+frameworks and driven by a passion for secure, user-focused digital innovation. I have hands-on
+expertise in Machine Learning, and I'm familiar with Git, Agile (Scrum), and collaborative
+team environments. I'm eager to apply problem-solving skills and work to provide high-quality
+software solutions.`,
+  location: "Patiala, India 🇮🇳",
+  availability: true,
+  availabilityNote: "Open to opportunities — 2026",
+  email: "gksuri04@gmail.com",
+  resumeUrl: "/resume/My_Resume_ML.pdf",
+};
+
+/* ── Navigation ──────────────────────────────────────────── */
+export const navLinks: NavLink[] = [
+  { label: "Home", href: "/#home" },
+  { label: "Education", href: "/#education" },
+  { label: "Skills", href: "/#skills" },
+  { label: "Projects", href: "/#work" },
+  { label: "Experience", href: "/#experience" },
+  { label: "Contact", href: "/#contact" },
+];
+
+/* ── Social Links ────────────────────────────────────────── */
+export const socialLinks: SocialLink[] = [
+  {
+    label: "GitHub",
+    href: "https://github.com/GursharenKaur",
+    icon: "github",
+  },
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/gursharen-kaur-suri",
+    icon: "linkedin",
+  },
+];
+
+/* ── Projects ────────────────────────────────────────────── */
+export const projects: Project[] = [
+  {
+    id: "skin-disease-detection",
+    title: "AI-based Skin Disease Detection System",
+    tagline: "Deep learning model for accurate skin disease classification",
+    description:
+      "Designed and fine-tuned a Swin Transformer deep learning model for accurate classification of skin diseases. Built pre-processing pipelines and validated model performance through test cases. Worked on software diagrams for proper end-to-end implementation and debugged to improve model accuracy.",
+    tags: ["ML/DL"],
+    techStack: ["Python", "SWIN Transformer", "OpenCV", "Deep Learning"],
+    image: "/images/skin-detection.png",
+    githubUrl: "https://github.com/GursharenKaur/Skin-Disease-Detection-using-SwinTransformer",
+    featured: true,
+    year: 2025,
+  },
+  {
+    id: "road-segmentation",
+    title: "Road Segmentation from Satellite Images",
+    tagline: "Multi-architecture CNN comparison for satellite imagery",
+    description:
+      "Implemented and compared multiple architectures including U-Net Lite, U-Net Full, U-Net++, DeepLabV3+ (ResNet-50), HRNet-Small, and SegFormer-B0. Built a custom data preprocessing pipeline including resizing, normalization, binary mask generation, and data augmentation using Albumentations. Optimized training for limited GPU memory using mixed-precision training and efficient batch sizing.",
+    tags: ["ML/DL"],
+    techStack: ["Python", "PyTorch", "U-Net", "DeepLabV3+", "SegFormer", "Albumentations"],
+    image: "/images/road-segmentation.png",
+    githubUrl: "https://github.com/GursharenKaur/Road-Extraction-From-Satellite-Imagery",
+    featured: true,
+    year: 2025,
+  },
+  {
+    id: "scholar-logic",
+    title: "ScholarLogic — Scholarship Portal",
+    tagline: "AI-powered scholarship discovery and management platform",
+    description:
+      "A full-stack scholarship management platform built with Next.js and TypeScript. Features include AI-driven PDF parsing for bulk scholarship uploads, document management for student profiles, and a smart matching algorithm. Developed as a collaborative project with a team.",
+    tags: ["Full-Stack"],
+    techStack: ["Next.js", "TypeScript", "PostgreSQL", "Tailwind CSS"],
+    image: "/images/scholar-logic.png",
+    githubUrl: "https://github.com/GursharenKaur/scholarLogic",
+    featured: true,
+    year: 2026,
+  },
+  {
+    id: "anvaya-railfit",
+    title: "Anvaya RailFit",
+    tagline: "Health & fitness tracking platform for railway employees",
+    description:
+      "A TypeScript-based full-stack web application designed for health and fitness monitoring. Built with a modern frontend stack and focused on user-friendly UI/UX for tracking health metrics and fitness routines.",
+    tags: ["Full-Stack"],
+    techStack: ["TypeScript", "React", "Node.js", "Tailwind CSS"],
+    image: "/images/anvaya-railfit.png",
+    githubUrl: "https://github.com/GursharenKaur/Anvaya-RailFit",
+    featured: true,
+    year: 2025,
+  },
+  {
+    id: "athlete-injury-prediction",
+    title: "Athlete Injury Risk Prediction",
+    tagline: "AI model to predict athlete injury risk — 4th semester project",
+    description:
+      "Built a machine learning system to predict injury risk in athletes using health and performance data. Developed as a 4th semester AI course project, featuring data analysis, model training, and risk scoring with Python and Jupyter Notebooks.",
+    tags: ["ML/DL"],
+    techStack: ["Python", "Scikit-learn", "Pandas", "Jupyter Notebook"],
+    image: "/images/athlete-injury.png",
+    githubUrl: "https://github.com/GursharenKaur/Athlete-Injury-Risk-Prediction-AI-4th-Semester-Project-",
+    featured: false,
+    year: 2025,
+  },
+  {
+    id: "casequest-25",
+    title: "CaseQuest 2025",
+    tagline: "Case study competition platform",
+    description:
+      "A JavaScript web application built for managing and hosting the CaseQuest 2025 case study competition. Features include team registration, case submission, and judging workflows.",
+    tags: ["Full-Stack"],
+    techStack: ["JavaScript", "HTML", "CSS", "Node.js"],
+    image: "/images/casequest.png",
+    githubUrl: "https://github.com/GursharenKaur/CASEQUEST-25",
+    featured: false,
+    year: 2025,
+  },
+  {
+    id: "web-scraping-selenium",
+    title: "Web Scraping with Selenium",
+    tagline: "Automated web data extraction using Selenium & Python",
+    description:
+      "Built an automated web scraping tool using Python and Selenium for extracting structured data from websites. Demonstrates browser automation, data parsing, and handling dynamic content.",
+    tags: ["Full-Stack"],
+    techStack: ["Python", "Selenium", "BeautifulSoup", "Automation"],
+    image: "/images/web-scraping.png",
+    githubUrl: "https://github.com/GursharenKaur/Web-Scraping-Selenium",
+    featured: false,
+    year: 2025,
+  },
+  {
+    id: "object-detection",
+    title: "Object Detection",
+    tagline: "Collection of OpenCV & computer vision projects",
+    description:
+      "A collection of computer vision mini-projects using Python and OpenCV, including real-time object detection, image processing, and feature extraction experiments.",
+    tags: ["ML/DL"],
+    techStack: ["Python", "OpenCV", "Computer Vision"],
+    image: "/images/object-detection.png",
+    githubUrl: "https://github.com/GursharenKaur/Object-Detection-MiniProjects",
+    featured: false,
+    year: 2025,
+  },
+  {
+    id: "search-bar-lazy-load",
+    title: "Search Bar with Lazy Loading",
+    tagline: "Performant search UI with infinite scroll & lazy loading",
+    description:
+      "A JavaScript frontend component implementing a search bar with lazy loading functionality for efficient data fetching and rendering. Demonstrates performance optimization techniques for large datasets.",
+    tags: ["UI/UX"],
+    techStack: ["JavaScript", "HTML", "CSS", "REST API"],
+    image: "/images/search-bar.png",
+    githubUrl: "https://github.com/GursharenKaur/Search-Bar-with-Lazy-Load-Functionality",
+    featured: false,
+    year: 2026,
+  },
+];
+
+/* ── Skills ──────────────────────────────────────────────── */
+export const skills: Skill[] = [
+  // Languages
+  { name: "C++", icon: "⚡", level: "Proficient", category: "Language" },
+  { name: "Python", icon: "🐍", level: "Proficient", category: "Language" },
+  { name: "HTML/CSS", icon: "🎨", level: "Expert", category: "Language" },
+
+  // Frameworks & Tools
+  { name: "React", icon: "⚛️", level: "Proficient", category: "Frontend" },
+  { name: "Node.js", icon: "🟩", level: "Proficient", category: "Frontend" },
+  { name: "Express.js", icon: "🚀", level: "Proficient", category: "Frontend" },
+  { name: "Next.js", icon: "▲", level: "Proficient", category: "Frontend" },
+  { name: "Tailwind CSS", icon: "💨", level: "Expert", category: "Frontend" },
+
+  // ML & Deep Learning
+  { name: "SWIN Transformer", icon: "🧠", level: "Proficient", category: "AI/ML" },
+  { name: "Semantic Segmentation", icon: "🖼️", level: "Proficient", category: "AI/ML" },
+  { name: "OpenCV", icon: "👁️", level: "Proficient", category: "AI/ML" },
+  { name: "Deep Learning", icon: "🔬", level: "Proficient", category: "AI/ML" },
+  { name: "CNNs", icon: "🧬", level: "Proficient", category: "AI/ML" },
+
+  // Tools & Others
+  { name: "Git", icon: "🔀", level: "Expert", category: "DevOps" },
+  { name: "GitHub", icon: "🐙", level: "Expert", category: "DevOps" },
+  { name: "Selenium", icon: "🌐", level: "Proficient", category: "DevOps" },
+  { name: "Excel", icon: "📊", level: "Proficient", category: "DevOps" },
+  { name: "Data Analysis", icon: "📈", level: "Proficient", category: "DevOps" },
+
+  // Coursework topics (as skills)
+  { name: "DSA", icon: "🧮", level: "Proficient", category: "Backend" },
+  { name: "Agile / Scrum", icon: "🔄", level: "Proficient", category: "Backend" },
+  { name: "Computer Networking", icon: "🌐", level: "Proficient", category: "Backend" },
+];
+
+/* ── Marquee Skills ────────────────────────────────────────── */
+export const marqueeSkills = [
+  { name: "C++", icon: "⚡", logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg" },
+  { name: "Python", icon: "🐍", logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" },
+  { name: "React", icon: "⚛️", logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" },
+  { name: "Node.js", icon: "🟩", logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" },
+  { name: "Express.js", icon: "🚀", logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg" },
+  { name: "Next.js", icon: "▲", logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg" },
+  { name: "OpenCV", icon: "👁️", logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/opencv/opencv-original.svg" },
+  { name: "TensorFlow", icon: "🔬", logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tensorflow/tensorflow-original.svg" },
+  { name: "Git", icon: "🔀", logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" },
+  { name: "Selenium", icon: "🌐", logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/selenium/selenium-original.svg" },
+];
+
+/* ── Currently Learning ──────────────────────────────────── */
+export const currentlyLearning = [
+  { name: "SWIN Transformer", icon: "🧠" },
+  { name: "Semantic Segmentation", icon: "🖼️" },
+  { name: "Three.js / R3F", icon: "🌐" },
+  { name: "Advanced ML Architectures", icon: "🔬" },
+];
+
+/* ── Timeline ────────────────────────────────────────────── */
+export const timeline: TimelineItem[] = [
+  /* ─── Education ────────────────────────────────────────── */
+  {
+    id: "edu-1",
+    type: "education",
+    title: "B.E. Computer Engineering",
+    organization: "Thapar Institute of Engineering and Technology",
+    location: "Patiala, India",
+    period: "2023 — 2027",
+    description:
+      "Pursuing Bachelor of Engineering in Computer Engineering. CGPA: 8.57/10. Focused on full-stack development, machine learning, data structures & algorithms, and software engineering.",
+    tags: ["Computer Engineering", "ML", "Full-Stack", "DSA"],
+  },
+  {
+    id: "edu-2",
+    type: "education",
+    title: "Class XII — CBSE",
+    organization: "Swami Sant Dass Public School",
+    location: "Phagwara, India",
+    period: "2023",
+    description:
+      "Completed senior secondary education with 94.2% in CBSE board examinations.",
+    tags: ["CBSE", "94.2%"],
+  },
+
+  /* ─── Work Experience ──────────────────────────────────── */
+  {
+    id: "work-1",
+    type: "work",
+    title: "Research Intern",
+    organization: "Thapar Institute of Engineering and Technology",
+    location: "Patiala, India",
+    period: "Jun 2025 — Dec 2025",
+    description:
+      "Worked under Dr. Neeraj Kumar and Dr. Sandeep Verma, Computer Science Department. Conducted comprehensive review on underwater sensor networks, analyzing advancements in communication protocols and 3D network topologies. Enhanced skills in scientific writing, critical analysis, and data interpretation, collaborating with domain experts throughout the research process.",
+    tags: ["Research", "Sensor Networks", "Scientific Writing"],
+  },
+
+  /* ─── Organizational Roles ─────────────────────────────── */
+  {
+    id: "achievement-1",
+    type: "achievement",
+    title: "Technical Secretary",
+    organization: "Thapar Venture Club",
+    location: "Patiala, India",
+    period: "2025 — 2026",
+    description:
+      "Serving as Technical Secretary of Thapar Venture Club, leading technical initiatives and events for the entrepreneurship community.",
+    tags: ["Leadership", "Tech"],
+  },
+  {
+    id: "achievement-2",
+    type: "achievement",
+    title: "Overall Content Coordinator — E-Summit'25",
+    organization: "Thapar Venture Club",
+    location: "Patiala, India",
+    period: "2025",
+    description:
+      "Led the content strategy and coordination for E-Summit'25, managing all written and digital communication for the flagship entrepreneurship summit.",
+    tags: ["Content", "Event Management"],
+  },
+  {
+    id: "achievement-3",
+    type: "achievement",
+    title: "Executive Committee Member",
+    organization: "Thapar Food Festival",
+    location: "Patiala, India",
+    period: "2025",
+    description:
+      "Served on the Executive Committee for Thapar Food Festival 2025, contributing to event planning and execution.",
+    tags: ["Event Management", "Leadership"],
+  },
+];
+
+/* ── Stats ───────────────────────────────────────────────── */
+export const stats = [
+  { value: "9+", label: "Projects Built" },
+  { value: "8.57", label: "CGPA" },
+  { value: "10+", label: "Tech Stack" },
+  { value: "36", label: "GitHub Repos" },
+];
+
+/* ── Fun Facts (for Bento / About) ──────────────────────── */
+export const funFacts = [
+  { emoji: "🎓", text: "B.E. Computer Engineering @ TIET (8.57 CGPA)" },
+  { emoji: "🔬", text: "Research intern — underwater sensor networks" },
+  { emoji: "🧠", text: "Passionate about ML & deep learning" },
+  { emoji: "📝", text: "Technical Secretary @ Thapar Venture Club" },
+];
+</file>
+
+</files>
