@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "motion/react";
 import { projects } from "@/lib/data";
 import { ArrowRight } from "lucide-react";
@@ -26,7 +27,8 @@ const fadeUp = {
 };
 
 export default function Projects() {
-  const completed = projects.filter(p => !p.isOngoing);
+  /* Show only the top 4 featured projects on the main page */
+  const featuredProjects = projects.filter(p => p.featured && !p.isOngoing).slice(0, 4);
   const ongoing = projects.filter(p => p.isOngoing);
 
   return (
@@ -40,16 +42,16 @@ export default function Projects() {
            className="text-center mb-16"
         >
           <h2 className="font-heading font-black text-3xl sm:text-4xl md:text-5xl leading-tight">
-            My <span className="gradient-text italic"></span>
+            My <span className="gradient-text italic">Projects</span>
           </h2>
           <p className="max-w-xl mx-auto mt-4 text-[var(--color-text-secondary)] text-lg">
             A selection of my best work and current experiments.
           </p>
         </motion.div>
 
-        {/* Completed Projects */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-24">
-          {completed.map((project, idx) => (
+        {/* Featured Projects (top 4) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+          {featuredProjects.map((project, idx) => (
             <motion.div
               key={project.id}
               initial={{ opacity: 0, y: 30 }}
@@ -86,40 +88,67 @@ export default function Projects() {
           ))}
         </div>
 
-        {/* Ongoing Research / Projects */}
+        {/* View All Projects Button */}
         <motion.div
-           initial={{ opacity: 0, scale: 0.95 }}
-           whileInView={{ opacity: 1, scale: 1 }}
-           className="p-6 sm:p-12 rounded-2xl sm:rounded-[2.5rem] bg-violet-600/5 border border-violet-500/10 relative overflow-hidden"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="flex justify-center mb-24"
         >
-          <div className="absolute top-0 right-0 p-8">
-             <span className="px-3 sm:px-4 py-1.5 rounded-full bg-violet-500/20 border border-violet-500/20 text-violet-300 text-[9px] sm:text-[10px] font-black uppercase tracking-[0.15em] sm:tracking-[0.2em] animate-pulse">
-                Ongoing Experiment
-             </span>
-          </div>
-          
-          <div className="max-w-2xl">
-             <h3 className="text-2xl sm:text-3xl font-heading font-black mb-6 mt-10 sm:mt-0">
-                What&apos;s <span className="gradient-text italic">Brewing?</span>
-             </h3>
-             {ongoing.map(project => (
-               <div key={project.id}>
-                 <h4 className="text-xl font-bold text-[var(--color-text-primary)] mb-3">{project.title}</h4>
-                 <p className="text-[var(--color-text-secondary)] leading-relaxed mb-6">
-                   {project.description}
-                 </p>
-                 <div className="flex flex-wrap gap-3">
-                   {project.techStack.map(tech => (
-                     <span key={tech} className="px-3 py-1 rounded-lg bg-white/5 border border-white/5 text-[10px] uppercase font-bold text-[var(--color-text-muted)]">
-                        {tech}
-                     </span>
-                   ))}
-                 </div>
-               </div>
-             ))}
-          </div>
+          <Link href="/projects">
+            <motion.span
+              whileHover={{ scale: 1.04 }}
+              whileTap={{ scale: 0.96 }}
+              className="inline-flex items-center gap-3 px-8 py-4 rounded-2xl text-base font-semibold cursor-pointer
+                         bg-white/[0.04] border border-white/[0.08] hover:border-violet-500/30
+                         text-[var(--color-text-secondary)] hover:text-white
+                         transition-all duration-300 group
+                         hover:bg-violet-600/10 hover:shadow-[0_0_30px_rgba(139,92,246,0.15)]"
+            >
+              View All Projects
+              <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+            </motion.span>
+          </Link>
         </motion.div>
+
+        {/* Ongoing Research / Projects */}
+        {ongoing.length > 0 && (
+          <motion.div
+             initial={{ opacity: 0, scale: 0.95 }}
+             whileInView={{ opacity: 1, scale: 1 }}
+             className="p-6 sm:p-12 rounded-2xl sm:rounded-[2.5rem] bg-violet-600/5 border border-violet-500/10 relative overflow-hidden"
+          >
+            <div className="absolute top-0 right-0 p-8">
+               <span className="px-3 sm:px-4 py-1.5 rounded-full bg-violet-500/20 border border-violet-500/20 text-violet-300 text-[9px] sm:text-[10px] font-black uppercase tracking-[0.15em] sm:tracking-[0.2em] animate-pulse">
+                  Ongoing Experiment
+               </span>
+            </div>
+            
+            <div className="max-w-2xl">
+               <h3 className="text-2xl sm:text-3xl font-heading font-black mb-6 mt-10 sm:mt-0">
+                  What&apos;s <span className="gradient-text italic">Brewing?</span>
+               </h3>
+               {ongoing.map(project => (
+                 <div key={project.id}>
+                   <h4 className="text-xl font-bold text-[var(--color-text-primary)] mb-3">{project.title}</h4>
+                   <p className="text-[var(--color-text-secondary)] leading-relaxed mb-6">
+                     {project.description}
+                   </p>
+                   <div className="flex flex-wrap gap-3">
+                     {project.techStack.map(tech => (
+                       <span key={tech} className="px-3 py-1 rounded-lg bg-white/5 border border-white/5 text-[10px] uppercase font-bold text-[var(--color-text-muted)]">
+                          {tech}
+                       </span>
+                     ))}
+                   </div>
+                 </div>
+               ))}
+            </div>
+          </motion.div>
+        )}
       </div>
     </section>
   );
 }
+
