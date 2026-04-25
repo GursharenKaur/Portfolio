@@ -16,7 +16,7 @@ const iconMap: Record<string, React.ReactNode> = {
   ),
 };
 
-const filterTags: ProjectTag[] = ["All", "Full-Stack", "AI", "UI/UX"];
+const filterTags: ProjectTag[] = ["All", "Full-Stack", "ML/DL", "UI/UX"];
 
 export default function AllProjectsPage() {
   const [activeTag, setActiveTag] = useState<ProjectTag>("All");

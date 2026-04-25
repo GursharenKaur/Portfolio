@@ -12,7 +12,7 @@ export interface NavLink {
 export type ProjectTag =
   | "All"
   | "Full-Stack"
-  | "AI"
+  | "ML/DL"
   | "UI/UX"
   | "Open Source";
 

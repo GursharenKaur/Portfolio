@@ -63,7 +63,7 @@ export const projects: Project[] = [
     tagline: "Deep learning model for accurate skin disease classification",
     description:
       "Designed and fine-tuned a Swin Transformer deep learning model for accurate classification of skin diseases. Built pre-processing pipelines and validated model performance through test cases. Worked on software diagrams for proper end-to-end implementation and debugged to improve model accuracy.",
-    tags: ["AI"],
+    tags: ["ML/DL"],
     techStack: ["Python", "SWIN Transformer", "OpenCV", "Deep Learning"],
     image: "/images/skin-detection.png",
     githubUrl: "https://github.com/GursharenKaur/Skin-Disease-Detection-using-SwinTransformer",
@@ -76,7 +76,7 @@ export const projects: Project[] = [
     tagline: "Multi-architecture CNN comparison for satellite imagery",
     description:
       "Implemented and compared multiple architectures including U-Net Lite, U-Net Full, U-Net++, DeepLabV3+ (ResNet-50), HRNet-Small, and SegFormer-B0. Built a custom data preprocessing pipeline including resizing, normalization, binary mask generation, and data augmentation using Albumentations. Optimized training for limited GPU memory using mixed-precision training and efficient batch sizing.",
-    tags: ["AI"],
+    tags: ["ML/DL"],
     techStack: ["Python", "PyTorch", "U-Net", "DeepLabV3+", "SegFormer", "Albumentations"],
     image: "/images/road-segmentation.png",
     githubUrl: "https://github.com/GursharenKaur/Road-Extraction-From-Satellite-Imagery",
@@ -115,7 +115,7 @@ export const projects: Project[] = [
     tagline: "AI model to predict athlete injury risk — 4th semester project",
     description:
       "Built a machine learning system to predict injury risk in athletes using health and performance data. Developed as a 4th semester AI course project, featuring data analysis, model training, and risk scoring with Python and Jupyter Notebooks.",
-    tags: ["AI"],
+    tags: ["ML/DL"],
     techStack: ["Python", "Scikit-learn", "Pandas", "Jupyter Notebook"],
     image: "/images/athlete-injury.png",
     githubUrl: "https://github.com/GursharenKaur/Athlete-Injury-Risk-Prediction-AI-4th-Semester-Project-",
@@ -154,7 +154,7 @@ export const projects: Project[] = [
     tagline: "Collection of OpenCV & computer vision projects",
     description:
       "A collection of computer vision mini-projects using Python and OpenCV, including real-time object detection, image processing, and feature extraction experiments.",
-    tags: ["AI"],
+    tags: ["ML/DL"],
     techStack: ["Python", "OpenCV", "Computer Vision"],
     image: "/images/object-detection.png",
     githubUrl: "https://github.com/GursharenKaur/Object-Detection-MiniProjects",
