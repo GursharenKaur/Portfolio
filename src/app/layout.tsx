@@ -4,6 +4,7 @@ import "./globals.css";
 import SmoothScrollProvider from "@/components/shared/SmoothScrollProvider";
 import Navbar from "@/components/shared/Navbar";
 import CustomCursor from "@/components/shared/CustomCursor";
+import TerminalChat from "@/components/shared/TerminalChat";
 
 /* ─── Fonts ────────────────────────────────────────────────── */
 const outfit = Outfit({
@@ -84,7 +85,11 @@ export default function RootLayout({
         <SmoothScrollProvider>
           {children}
         </SmoothScrollProvider>
+
+        {/* Terminal chatbot — floating, always available */}
+        <TerminalChat />
       </body>
     </html>
   );
 }
+
