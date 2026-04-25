@@ -33,12 +33,12 @@ software solutions.`,
 
 /* ── Navigation ──────────────────────────────────────────── */
 export const navLinks: NavLink[] = [
-  { label: "Home", href: "#home" },
-  { label: "Education", href: "#education" },
-  { label: "Skills", href: "#skills" },
-  { label: "Projects", href: "#work" },
-  { label: "Experience", href: "#experience" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", href: "/#home" },
+  { label: "Education", href: "/#education" },
+  { label: "Skills", href: "/#skills" },
+  { label: "Projects", href: "/#work" },
+  { label: "Experience", href: "/#experience" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 /* ── Social Links ────────────────────────────────────────── */

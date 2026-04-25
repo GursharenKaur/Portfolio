@@ -22,14 +22,14 @@ export default function Navbar() {
   /* ── Active section detection ──────────────────────────── */
   useEffect(() => {
     const sections = navLinks
-      .map((l) => l.href.replace("#", ""))
-      .filter((id) => id !== "/");
+      .map((l) => l.href.replace(/^\/#?/, ""))
+      .filter((id) => id && id !== "/");
 
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            setActiveSection(`#${entry.target.id}`);
+            setActiveSection(`/#${entry.target.id}`);
           }
         });
       },
@@ -107,7 +107,7 @@ export default function Navbar() {
           {/* ── Desktop Nav ───────────────────────────────── */}
           <nav className="hidden md:flex items-center gap-1" aria-label="Main navigation">
             {navLinks.map((link) => {
-              const isActive = activeSection === link.href || (link.href === "/" && activeSection === "/");
+              const isActive = activeSection === link.href || (link.href === "/#home" && activeSection === "/");
               return (
                 <Link
                   key={link.href}
@@ -137,7 +137,7 @@ export default function Navbar() {
 
 
             {/* Resume button */}
-            <Link href="#contact">
+            <Link href="/#contact">
               <motion.span
                 whileHover={{ scale: 1.04 }}
                 whileTap={{ scale: 0.96 }}
@@ -248,7 +248,7 @@ export default function Navbar() {
               <div className="flex flex-col gap-3 pt-4 border-t border-white/[0.06]">
 
                 <Link
-                  href="#contact"
+                  href="/#contact"
                   onClick={() => setMobileOpen(false)}
                   className="flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-violet-600 hover:bg-violet-500 text-white font-semibold text-sm transition-colors cursor-pointer"
                 >
