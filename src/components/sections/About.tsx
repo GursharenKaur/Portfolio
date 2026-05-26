@@ -17,7 +17,7 @@ const fadeUp = {
 
 export default function About() {
   return (
-    <section id="about" className="py-24 relative overflow-hidden">
+    <section id="about" className="py-16 relative overflow-hidden">
       <div className="container-portfolio relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           

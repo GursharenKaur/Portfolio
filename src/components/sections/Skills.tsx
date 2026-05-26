@@ -19,7 +19,7 @@ export default function Skills() {
   const categories = Array.from(new Set(skills.map(s => s.category)));
 
   return (
-    <section id="skills" className="py-24 relative overflow-hidden">
+    <section id="skills" className="py-16 relative overflow-hidden">
       <div className="container-portfolio relative z-10">
         <motion.div
            initial="hidden"

@@ -37,7 +37,7 @@ const iconMap: Record<string, React.ReactNode> = {
 
 export default function Contact() {
   return (
-    <section id="contact" className="py-24 relative overflow-hidden bg-white/[0.01]">
+    <section id="contact" className="py-16 relative overflow-hidden bg-white/[0.01]">
       <div className="container-portfolio relative z-10">
         <motion.div
            initial="hidden"

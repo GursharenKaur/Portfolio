@@ -19,7 +19,7 @@ export default function Education() {
   const education = timeline.filter((item) => item.type === "education");
 
   return (
-    <section id="education" className="py-24 relative overflow-hidden bg-white/[0.01]">
+    <section id="education" className="py-16 relative overflow-hidden bg-white/[0.01]">
       <div className="container-portfolio relative z-10">
         <motion.div
            initial="hidden"

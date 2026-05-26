@@ -19,7 +19,7 @@ export default function Experience() {
   const experiences = timeline.filter((item) => item.type === "work");
 
   return (
-    <section id="experience" className="py-24 relative overflow-hidden bg-white/[0.01]">
+    <section id="experience" className="py-16 relative overflow-hidden bg-white/[0.01]">
       <div className="container-portfolio relative z-10">
         <motion.div
            initial="hidden"

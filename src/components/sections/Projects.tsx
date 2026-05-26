@@ -32,7 +32,7 @@ export default function Projects() {
   const ongoing = projects.filter(p => p.isOngoing);
 
   return (
-    <section id="work" className="py-24 relative overflow-hidden bg-white/[0.01]">
+    <section id="work" className="py-16 relative overflow-hidden bg-white/[0.01]">
       <div className="container-portfolio relative z-10">
         <motion.div
            initial="hidden"
