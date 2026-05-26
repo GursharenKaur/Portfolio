@@ -17,7 +17,7 @@ export const personalInfo = {
   role: "Full Stack Developer",
   roles: ["Full Stack Developer", "ML Engineer", "Research Enthusiast"],
   tagline:
-    "Computer Engineering student skilled in Full Stack Development, driven by a passion for secure, user-focused digital innovation with hands-on expertise in Machine Learning.",
+    "Computer Engineering student passionate about Machine Learning, Deep Learning, and Quantitative Finance — building intelligent, scalable solutions at the intersection of AI and real-world impact.",
   bio: `I'm a Computer Engineering student at Thapar Institute of Engineering and Technology,
 skilled in Full Stack Development. Experienced in building scalable applications using modern
 frameworks and driven by a passion for secure, user-focused digital innovation. I have hands-on
