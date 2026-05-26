@@ -53,6 +53,11 @@ export const socialLinks: SocialLink[] = [
     href: "https://www.linkedin.com/in/gursharen-kaur-suri",
     icon: "linkedin",
   },
+  {
+    label: "LeetCode",
+    href: "https://leetcode.com/u/Gursharen_Kaur",
+    icon: "leetcode",
+  },
 ];
 
 /* ── Projects ────────────────────────────────────────────── */

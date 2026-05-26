@@ -340,6 +340,7 @@ const skillsKnowledge: ChatKnowledgeEntry[] = [
     keywords: [
       "ml skills", "machine learning skills", "deep learning skills",
       "ai skills", "ml frameworks", "ml experience",
+      "your ml", "about ml", "know ml", "ml knowledge",
     ],
     question: "What ML/AI skills do you have?",
     answer:
@@ -437,8 +438,8 @@ const generalKnowledge: ChatKnowledgeEntry[] = [
     id: "gen-who",
     category: "general",
     keywords: [
-      "who are you", "about you", "introduce yourself", "tell me about yourself",
-      "about gursharen", "who is gursharen",
+      "who are you", "about yourself", "introduce yourself", "tell me about yourself",
+      "about gursharen", "who is gursharen", "who is she",
     ],
     question: "Who are you?",
     answer:
