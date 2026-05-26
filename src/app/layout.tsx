@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Outfit, Inter, JetBrains_Mono } from "next/font/google";
+import { Plus_Jakarta_Sans, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import SmoothScrollProvider from "@/components/shared/SmoothScrollProvider";
 import Navbar from "@/components/shared/Navbar";
@@ -7,10 +7,11 @@ import CustomCursor from "@/components/shared/CustomCursor";
 import TerminalChat from "@/components/shared/TerminalChat";
 
 /* ─── Fonts ────────────────────────────────────────────────── */
-const outfit = Outfit({
+const plusJakarta = Plus_Jakarta_Sans({
   variable: "--font-heading",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800", "900"],
+  weight: ["300", "400", "500", "600", "700", "800"],
+  style: ["normal", "italic"],
   display: "swap",
 });
 
@@ -71,7 +72,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${outfit.variable} ${inter.variable} ${jetbrainsMono.variable} dark`}
+      className={`${plusJakarta.variable} ${inter.variable} ${jetbrainsMono.variable} dark`}
       suppressHydrationWarning
     >
       <body className="min-h-screen overflow-x-hidden antialiased bg-[#000000]" suppressHydrationWarning>
