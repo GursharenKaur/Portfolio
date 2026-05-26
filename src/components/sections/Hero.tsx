@@ -1,8 +1,9 @@
 "use client";
 
+import { useEffect, useRef, useState } from "react";
 import dynamic from "next/dynamic";
 import Link from "next/link";
-import { motion, type Variants } from "motion/react";
+import { motion, useMotionValue, useSpring, type Variants } from "motion/react";
 import { ArrowDown, ArrowRight, Sparkles, Eye } from "lucide-react";
 import { personalInfo, socialLinks, marqueeSkills } from "@/lib/data";
 
@@ -81,8 +82,54 @@ const iconMap: Record<string, React.ReactNode> = {
 
 /* ── Hero ────────────────────────────────────────────────── */
 export default function Hero() {
+  /* ── Mouse parallax for hero text ───────────────────────── */
+  const heroRef = useRef<HTMLElement>(null);
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+
+  // Smooth spring physics — feels natural, not robotic
+  const springConfig = { stiffness: 40, damping: 20, mass: 0.8 };
+  const parallaxX = useSpring(mouseX, springConfig);
+  const parallaxY = useSpring(mouseY, springConfig);
+
+  useEffect(() => {
+    // Disable on touch devices
+    const isTouchDevice = window.matchMedia("(pointer: coarse)").matches;
+    if (isTouchDevice) return;
+
+    const handleMouseMove = (e: MouseEvent) => {
+      if (!heroRef.current) return;
+      const rect = heroRef.current.getBoundingClientRect();
+      // Normalize mouse position to -1 … 1 relative to section center
+      const nx = (e.clientX - (rect.left + rect.width / 2)) / (rect.width / 2);
+      const ny = (e.clientY - (rect.top + rect.height / 2)) / (rect.height / 2);
+      // Clamp and scale to max ±12px offset
+      mouseX.set(Math.max(-1, Math.min(1, nx)) * 12);
+      mouseY.set(Math.max(-1, Math.min(1, ny)) * 8);
+    };
+
+    const handleMouseLeave = () => {
+      mouseX.set(0);
+      mouseY.set(0);
+    };
+
+    const section = heroRef.current;
+    if (section) {
+      section.addEventListener("mousemove", handleMouseMove);
+      section.addEventListener("mouseleave", handleMouseLeave);
+    }
+
+    return () => {
+      if (section) {
+        section.removeEventListener("mousemove", handleMouseMove);
+        section.removeEventListener("mouseleave", handleMouseLeave);
+      }
+    };
+  }, [mouseX, mouseY]);
+
   return (
     <section
+      ref={heroRef}
       id="home"
       className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden"
     >
@@ -166,51 +213,57 @@ export default function Hero() {
       >
 
 
-        {/* Greeting */}
-        <motion.p
-          variants={fadeUp}
-          className="text-[var(--color-text-secondary)] text-base sm:text-lg font-light tracking-widest uppercase"
-          style={{ letterSpacing: "0.2em" }}
-        >
-          Hi, I&apos;m
-        </motion.p>
-
-        {/* Name — character-by-character */}
-        <h1
-          className="font-heading gradient-text text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black leading-none tracking-tighter"
-          style={{ perspective: "800px" }}
-        >
-          <AnimatedName text={personalInfo.name} />
-        </h1>
-
-        {/* Role button panel */}
+        {/* ── Parallax-tracked content ─────────────────────── */}
         <motion.div
-          variants={fadeUp}
-          className="flex flex-wrap items-center justify-center gap-3 mt-1"
+          style={{ x: parallaxX, y: parallaxY }}
+          className="flex flex-col items-center text-center gap-4 sm:gap-6"
         >
-          {personalInfo.roles.map((role) => (
-            <div
-              key={role}
-              className="flex items-center gap-2 sm:gap-2.5 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full glass border border-white/5 hover:border-violet-500/30 transition-all duration-300 group hover:-translate-y-0.5"
-            >
-              <span
-                className="w-1.5 h-1.5 rounded-full group-hover:scale-125 transition-transform duration-300 shadow-[0_0_8px_rgba(139,92,246,0.6)]"
-                style={{ background: "#8b5cf6" }}
-              />
-              <span className="text-[var(--color-text-secondary)] group-hover:text-[var(--color-text-primary)] text-[10px] sm:text-[11px] uppercase font-bold tracking-[0.1em] transition-colors">
-                {role}
-              </span>
-            </div>
-          ))}
-        </motion.div>
+          {/* Greeting */}
+          <motion.p
+            variants={fadeUp}
+            className="text-[var(--color-text-secondary)] text-base sm:text-lg font-light tracking-widest uppercase"
+            style={{ letterSpacing: "0.2em" }}
+          >
+            Hi, I&apos;m
+          </motion.p>
 
-        {/* Tagline */}
-        <motion.p
-          variants={fadeUp}
-          className="max-w-xl text-[var(--color-text-secondary)] text-base sm:text-lg leading-relaxed px-2 sm:px-0"
-        >
-          {personalInfo.tagline}
-        </motion.p>
+          {/* Name — character-by-character */}
+          <h1
+            className="font-heading gradient-text text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black leading-none tracking-tighter"
+            style={{ perspective: "800px" }}
+          >
+            <AnimatedName text={personalInfo.name} />
+          </h1>
+
+          {/* Role button panel */}
+          <motion.div
+            variants={fadeUp}
+            className="flex flex-wrap items-center justify-center gap-3 mt-1"
+          >
+            {personalInfo.roles.map((role) => (
+              <div
+                key={role}
+                className="flex items-center gap-2 sm:gap-2.5 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full glass border border-white/5 hover:border-violet-500/30 transition-all duration-300 group hover:-translate-y-0.5"
+              >
+                <span
+                  className="w-1.5 h-1.5 rounded-full group-hover:scale-125 transition-transform duration-300 shadow-[0_0_8px_rgba(139,92,246,0.6)]"
+                  style={{ background: "#8b5cf6" }}
+                />
+                <span className="text-[var(--color-text-secondary)] group-hover:text-[var(--color-text-primary)] text-[10px] sm:text-[11px] uppercase font-bold tracking-[0.1em] transition-colors">
+                  {role}
+                </span>
+              </div>
+            ))}
+          </motion.div>
+
+          {/* Tagline */}
+          <motion.p
+            variants={fadeUp}
+            className="max-w-xl text-[var(--color-text-secondary)] text-base sm:text-lg leading-relaxed px-2 sm:px-0"
+          >
+            {personalInfo.tagline}
+          </motion.p>
+        </motion.div>
 
         {/* CTA Buttons */}
         <motion.div
