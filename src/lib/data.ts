@@ -231,8 +231,6 @@ export const marqueeSkills = [
 
 /* ── Currently Learning ──────────────────────────────────── */
 export const currentlyLearning = [
-  { name: "SWIN Transformer", icon: "🧠" },
-  { name: "Semantic Segmentation", icon: "🖼️" },
   { name: "Three.js / R3F", icon: "🌐" },
   { name: "Advanced ML Architectures", icon: "🔬" },
   { name: "DevOps & CI/CD", icon: "⚙️" },
