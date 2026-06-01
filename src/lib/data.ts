@@ -203,11 +203,11 @@ export const skills: Skill[] = [
   { name: "CNNs", icon: "🧬", level: "Proficient", category: "AI/ML" },
 
   // Tools & Others
-  { name: "Git", icon: "🔀", level: "Expert", category: "DevOps" },
-  { name: "GitHub", icon: "🐙", level: "Expert", category: "DevOps" },
-  { name: "Selenium", icon: "🌐", level: "Proficient", category: "DevOps" },
-  { name: "Excel", icon: "📊", level: "Proficient", category: "DevOps" },
-  { name: "Data Analysis", icon: "📈", level: "Proficient", category: "DevOps" },
+  { name: "Git", icon: "🔀", level: "Expert", category: "Tools & Analytics" },
+  { name: "GitHub", icon: "🐙", level: "Expert", category: "Tools & Analytics" },
+  { name: "Selenium", icon: "🌐", level: "Proficient", category: "Tools & Analytics" },
+  { name: "Excel", icon: "📊", level: "Proficient", category: "Tools & Analytics" },
+  { name: "Data Analysis", icon: "📈", level: "Proficient", category: "Tools & Analytics" },
 
   // Coursework topics (as skills)
   { name: "DSA", icon: "🧮", level: "Proficient", category: "Backend" },

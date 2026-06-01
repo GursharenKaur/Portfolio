@@ -46,7 +46,7 @@ export type SkillCategory =
   | "Frontend"
   | "Backend"
   | "Database"
-  | "DevOps"
+  | "Tools & Analytics"
   | "Design"
   | "AI/ML";
 
