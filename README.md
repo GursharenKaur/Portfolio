@@ -1,1 +1,1 @@
-Checkout my portfolio at: https://gursharenkaursuri.netlify.app/
+Checkout my portfolio at: https://www.gursharenkaursuri.me/
