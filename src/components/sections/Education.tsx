@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { motion } from "motion/react";
 import { timeline } from "@/lib/data";
@@ -19,7 +19,7 @@ export default function Education() {
   const education = timeline.filter((item) => item.type === "education");
 
   return (
-    <section id="education" className="py-16 relative overflow-hidden bg-white/[0.01]">
+    <section id="education" className="py-16 relative overflow-hidden bg-[color-mix(in_srgb,var(--foreground)_1%,transparent)]">
       <div className="container-portfolio relative z-10">
         <motion.div
            initial="hidden"
@@ -43,7 +43,7 @@ export default function Education() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: idx * 0.1, duration: 0.8 }}
-              className="relative p-6 sm:p-8 rounded-2xl sm:rounded-3xl glass border border-white/5 hover:border-violet-500/20 transition-colors group"
+              className="relative p-6 sm:p-8 rounded-2xl sm:rounded-3xl glass border border-[color-mix(in_srgb,var(--foreground)_5%,transparent)] hover:border-[rgba(var(--accent-glow-rgb),0.2)] transition-colors group"
             >
               <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
                  <div>
@@ -53,7 +53,7 @@ export default function Education() {
                    <p className="text-emerald-400 font-medium">{item.organization}</p>
                  </div>
                  <div className="text-right flex flex-col md:items-end">
-                    <span className="text-sm font-semibold px-3 py-1 rounded-full bg-white/5 border border-white/5 text-[var(--color-text-muted)] group-hover:text-emerald-300 transition-colors">
+                    <span className="text-sm font-semibold px-3 py-1 rounded-full bg-[color-mix(in_srgb,var(--foreground)_5%,transparent)] border border-[color-mix(in_srgb,var(--foreground)_5%,transparent)] text-[var(--color-text-muted)] group-hover:text-emerald-300 transition-colors">
                       {item.period}
                     </span>
                     <span className="text-xs text-[var(--color-text-muted)] mt-1">{item.location}</span>
@@ -67,7 +67,7 @@ export default function Education() {
               {item.tags && (
                 <div className="flex flex-wrap gap-2">
                    {item.tags.map(tag => (
-                     <span key={tag} className="text-[10px] uppercase font-bold tracking-widest px-2.5 py-1 rounded-lg bg-black/40 border border-white/5 text-[var(--color-text-muted)] group-hover:border-emerald-500/30 transition-colors">
+                     <span key={tag} className="text-[10px] uppercase font-bold tracking-widest px-2.5 py-1 rounded-lg bg-black/40 border border-[color-mix(in_srgb,var(--foreground)_5%,transparent)] text-[var(--color-text-muted)] group-hover:border-emerald-500/30 transition-colors">
                        {tag}
                      </span>
                    ))}

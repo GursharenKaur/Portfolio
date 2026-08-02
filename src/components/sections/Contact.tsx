@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { motion } from "motion/react";
 import { Mail, Send } from "lucide-react";
@@ -37,7 +37,7 @@ const iconMap: Record<string, React.ReactNode> = {
 
 export default function Contact() {
   return (
-    <section id="contact" className="py-16 relative overflow-hidden bg-white/[0.01]">
+    <section id="contact" className="py-16 relative overflow-hidden bg-[color-mix(in_srgb,var(--foreground)_1%,transparent)]">
       <div className="container-portfolio relative z-10">
         <motion.div
            initial="hidden"
@@ -62,16 +62,16 @@ export default function Contact() {
              transition={{ duration: 0.8 }}
              className="space-y-8"
           >
-            <div className="p-6 sm:p-8 rounded-2xl sm:rounded-3xl glass border border-white/5 space-y-6 sm:space-y-8">
+            <div className="p-6 sm:p-8 rounded-2xl sm:rounded-3xl glass border border-[color-mix(in_srgb,var(--foreground)_5%,transparent)] space-y-6 sm:space-y-8">
                <h3 className="text-xl font-bold font-heading">Direct Contact</h3>
                
                <div className="space-y-6">
                  <a 
                    href={`mailto:${personalInfo.email}`} 
-                   className="flex items-center gap-4 group text-[var(--color-text-secondary)] hover:text-white transition-colors"
+                   className="flex items-center gap-4 group text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] transition-colors"
                  >
-                   <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/5 flex items-center justify-center group-hover:border-violet-500/30 group-hover:bg-violet-500/10 transition-all">
-                      <Mail className="w-5 h-5 text-violet-400" />
+                   <div className="w-12 h-12 rounded-xl bg-[color-mix(in_srgb,var(--foreground)_5%,transparent)] border border-[color-mix(in_srgb,var(--foreground)_5%,transparent)] flex items-center justify-center group-hover:border-[rgba(var(--accent-glow-rgb),0.3)] group-hover:bg-[rgba(var(--accent-glow-rgb),0.1)] transition-all">
+                      <Mail className="w-5 h-5 text-[var(--accent-grad-1)]" />
                    </div>
                    <div>
                       <p className="text-xs uppercase font-bold text-[var(--color-text-muted)] tracking-widest">Email Me</p>
@@ -79,7 +79,7 @@ export default function Contact() {
                    </div>
                  </a>
 
-                 <div className="pt-8 border-t border-white/5">
+                 <div className="pt-8 border-t border-[color-mix(in_srgb,var(--foreground)_5%,transparent)]">
                    <p className="text-sm font-heading font-bold mb-6 text-[var(--color-text-muted)] uppercase tracking-widest">Follow me</p>
                    <div className="flex gap-4">
                       {socialLinks.map(link => {
@@ -90,7 +90,7 @@ export default function Contact() {
                             href={link.href}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="w-12 h-12 rounded-xl bg-white/5 border border-white/5 flex items-center justify-center hover:border-violet-500/30 hover:bg-violet-500/10 transition-all text-white/70 hover:text-white"
+                            className="w-12 h-12 rounded-xl bg-[color-mix(in_srgb,var(--foreground)_5%,transparent)] border border-[color-mix(in_srgb,var(--foreground)_5%,transparent)] flex items-center justify-center hover:border-[rgba(var(--accent-glow-rgb),0.3)] hover:bg-[rgba(var(--accent-glow-rgb),0.1)] transition-all text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)]"
                             aria-label={link.label}
                           >
                              {icon}
@@ -110,7 +110,7 @@ export default function Contact() {
              transition={{ duration: 0.8 }}
              className="flex flex-col justify-center"
           >
-            <div className="p-8 sm:p-12 rounded-2xl sm:rounded-[2.5rem] bg-violet-600/5 border border-violet-500/10 text-center">
+            <div className="p-8 sm:p-12 rounded-2xl sm:rounded-[2.5rem] bg-[rgba(var(--accent-glow-rgb),0.05)] border border-[rgba(var(--accent-glow-rgb),0.1)] text-center">
                <h3 className="text-2xl sm:text-3xl font-heading font-black mb-6 italic gradient-text">
                   Let&apos;s build something <br /> amazing together.
                </h3>
@@ -118,9 +118,10 @@ export default function Contact() {
                   Whether you have a question or just want to say hi, my inbox is always open. 
                   I&apos;ll get back to you as soon as possible!
                </p>
-               <a 
-                 href={`mailto:${personalInfo.email}?subject=Let's Connect — From Your Portfolio`} 
-                 className="inline-flex items-center gap-3 px-8 py-4 rounded-2xl bg-violet-600 hover:bg-violet-500 text-white font-bold transition-all shadow-[0_0_24px_rgba(139,92,246,0.3)] hover:shadow-[0_0_32px_rgba(139,92,246,0.5)] hover:-translate-y-1"
+               <a
+                 href={`mailto:${personalInfo.email}?subject=Let's Connect — From Your Portfolio`}
+                 className="inline-flex items-center gap-3 px-8 py-4 rounded-2xl text-white font-bold transition-all shadow-[0_0_24px_rgba(var(--accent-glow-rgb),0.3)] hover:shadow-[0_0_32px_rgba(var(--accent-glow-rgb),0.5)] hover:brightness-110 hover:-translate-y-1"
+                 style={{ background: "var(--accent-solid)" }}
                >
                   <Mail className="w-4 h-4" />
                   Drop Me a Mail

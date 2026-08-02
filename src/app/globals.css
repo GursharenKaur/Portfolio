@@ -58,9 +58,14 @@
   --color-text-primary: #f4f4f5;
   --color-text-secondary: #a1a1aa;
   --color-text-muted: #52525b;
+
+  /* Accent tokens (driven by data-accent + .dark, see below) */
+  --color-accent-solid: var(--accent-solid);
+  --color-accent-grad-1: var(--accent-grad-1);
+  --color-accent-grad-2: var(--accent-grad-2);
 }
 
-/* ─── Root (Pure Black Portfolio) ─────────────────────────── */
+/* ─── Root (Dark, default) ─────────────────────────────────── */
 :root, .dark {
   color-scheme: dark;
 
@@ -71,7 +76,7 @@
   --card-foreground:         #f4f4f5;
   --popover:                 #0a0a0a;
   --popover-foreground:      #f4f4f5;
-  --primary:                 #7c3aed;
+  --primary:                 var(--accent-solid);
   --primary-foreground:      #ffffff;
   --secondary:               #0a0a0a;
   --secondary-foreground:    #f4f4f5;
@@ -82,16 +87,114 @@
   --destructive:             #ef4444;
   --border:                  rgba(255, 255, 255, 0.1);
   --input:                   rgba(255, 255, 255, 0.05);
-  --ring:                    #7c3aed;
+  --ring:                    var(--accent-solid);
   --radius:                  0.75rem;
   --sidebar:                 #0a0a0a;
   --sidebar-foreground:      #f4f4f5;
-  --sidebar-primary:         #7c3aed;
+  --sidebar-primary:         var(--accent-solid);
   --sidebar-primary-foreground: #ffffff;
   --sidebar-accent:          #0a0a0a;
   --sidebar-accent-foreground: #f4f4f5;
   --sidebar-border:          rgba(255, 255, 255, 0.1);
-  --sidebar-ring:            #7c3aed;
+  --sidebar-ring:            var(--accent-solid);
+
+  --color-text-primary: #f4f4f5;
+  --color-text-secondary: #a1a1aa;
+  --color-text-muted: #52525b;
+  --color-surface-1: #0f0f13;
+  --color-surface-2: #16161d;
+  --color-surface-3: #1e1e28;
+
+  /* Default accent = Cyber Violet (night) */
+  --accent-solid: #7c3aed;
+  --accent-grad-1: #a78bfa;
+  --accent-grad-2: #6366f1;
+  --accent-glow-rgb: 139, 92, 246;
+}
+
+/* ─── Light ("Day") ─────────────────────────────────────────── */
+.light {
+  color-scheme: light;
+
+  --background:              #f7f7fa;
+  --foreground:               #18181b;
+  --card:                    #ffffff;
+  --card-foreground:         #18181b;
+  --popover:                 #ffffff;
+  --popover-foreground:      #18181b;
+  --primary:                 var(--accent-solid);
+  --primary-foreground:      #ffffff;
+  --secondary:               #f0f0f3;
+  --secondary-foreground:    #18181b;
+  --muted:                   #f0f0f3;
+  --muted-foreground:        #52525b;
+  --accent:                  #f0f0f3;
+  --accent-foreground:       #18181b;
+  --destructive:             #dc2626;
+  --border:                  rgba(0, 0, 0, 0.1);
+  --input:                   rgba(0, 0, 0, 0.05);
+  --ring:                    var(--accent-solid);
+  --radius:                  0.75rem;
+  --sidebar:                 #ffffff;
+  --sidebar-foreground:      #18181b;
+  --sidebar-primary:         var(--accent-solid);
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent:          #f0f0f3;
+  --sidebar-accent-foreground: #18181b;
+  --sidebar-border:          rgba(0, 0, 0, 0.1);
+  --sidebar-ring:            var(--accent-solid);
+
+  --color-text-primary: #18181b;
+  --color-text-secondary: #52525b;
+  --color-text-muted: #a1a1aa;
+  --color-surface-1: #ffffff;
+  --color-surface-2: #f4f4f6;
+  --color-surface-3: #ececf0;
+}
+
+/* ─── Accent presets ──────────────────────────────────────────
+   Each preset has a night (dark) look and a day (light) look. */
+
+/* Nav Blue */
+.dark[data-accent="nav-blue"] {
+  --accent-solid: #2563eb;
+  --accent-grad-1: #38bdf8;
+  --accent-grad-2: #2563eb;
+  --accent-glow-rgb: 37, 99, 235;
+}
+.light[data-accent="nav-blue"] {
+  --accent-solid: #1d4ed8;
+  --accent-grad-1: #0ea5e9;
+  --accent-grad-2: #1d4ed8;
+  --accent-glow-rgb: 29, 78, 216;
+}
+
+/* Cyber Violet */
+.dark[data-accent="cyber-violet"] {
+  --accent-solid: #7c3aed;
+  --accent-grad-1: #d946ef;
+  --accent-grad-2: #7c3aed;
+  --accent-glow-rgb: 139, 92, 246;
+}
+.light[data-accent="cyber-violet"] {
+  --accent-solid: #7c3aed;
+  --accent-grad-1: #c026d3;
+  --accent-grad-2: #7c3aed;
+  --accent-glow-rgb: 124, 58, 237;
+}
+
+/* Titanium */
+.dark[data-accent="titanium"] {
+  --accent-solid: #d97706;
+  --accent-grad-1: #fbbf24;
+  --accent-grad-2: #e5e7eb;
+  --accent-glow-rgb: 217, 119, 6;
+}
+.light[data-accent="titanium"] {
+  --accent-solid: #b45309;
+  --accent-grad-1: #f59e0b;
+  --accent-grad-2: #71717a;
+  --accent-glow-rgb: 180, 83, 9;
 }
 
 /* ─── Base Styles ──────────────────────────────────────────── */
@@ -132,8 +235,8 @@
   }
 
   ::selection {
-    background: rgba(139, 92, 246, 0.35);
-    color: #f4f4f5;
+    background: rgba(var(--accent-glow-rgb), 0.35);
+    color: var(--color-text-primary);
   }
 }
 
@@ -149,7 +252,7 @@
   border-radius: 999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #8b5cf6;
+  background: var(--accent-solid);
 }
 
 /* ─── Utility Classes ──────────────────────────────────────── */
@@ -161,7 +264,7 @@
 
   /* Gradient text */
   .gradient-text {
-    background: linear-gradient(135deg, #a78bfa 0%, #8b5cf6 40%, #6366f1 100%);
+    background: linear-gradient(135deg, var(--accent-grad-1) 0%, var(--accent-solid) 40%, var(--accent-grad-2) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -177,34 +280,34 @@
 
   /* Glassmorphism card */
   .glass {
-    background: rgba(255, 255, 255, 0.04);
+    background: color-mix(in srgb, var(--foreground) 4%, transparent);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid color-mix(in srgb, var(--foreground) 8%, transparent);
   }
 
   .glass-strong {
-    background: rgba(255, 255, 255, 0.07);
+    background: color-mix(in srgb, var(--foreground) 7%, transparent);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.12);
+    border: 1px solid color-mix(in srgb, var(--foreground) 12%, transparent);
   }
 
   /* Glow effects */
   .glow-violet {
     box-shadow:
-      0 0 20px rgba(139, 92, 246, 0.3),
-      0 0 60px rgba(139, 92, 246, 0.1);
+      0 0 20px rgba(var(--accent-glow-rgb), 0.3),
+      0 0 60px rgba(var(--accent-glow-rgb), 0.1);
   }
 
   .glow-violet-sm {
-    box-shadow: 0 0 12px rgba(139, 92, 246, 0.25);
+    box-shadow: 0 0 12px rgba(var(--accent-glow-rgb), 0.25);
   }
 
   .text-glow-violet {
     text-shadow:
-      0 0 20px rgba(139, 92, 246, 0.8),
-      0 0 40px rgba(139, 92, 246, 0.4);
+      0 0 20px rgba(var(--accent-glow-rgb), 0.8),
+      0 0 40px rgba(var(--accent-glow-rgb), 0.4);
   }
 
   /* Gradient borders */
@@ -218,7 +321,7 @@
     inset: 0;
     border-radius: inherit;
     padding: 1px;
-    background: linear-gradient(135deg, rgba(139, 92, 246, 0.5), rgba(99, 102, 241, 0.2), rgba(139, 92, 246, 0.1));
+    background: linear-gradient(135deg, rgba(var(--accent-glow-rgb), 0.5), rgba(var(--accent-glow-rgb), 0.2), rgba(var(--accent-glow-rgb), 0.1));
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
@@ -298,7 +401,7 @@
     background: linear-gradient(
       105deg,
       transparent 40%,
-      rgba(139, 92, 246, 0.08) 50%,
+      rgba(var(--accent-glow-rgb), 0.08) 50%,
       transparent 60%
     );
     background-size: 200% 100%;
@@ -314,15 +417,15 @@
     border-radius: 999px;
     font-size: 0.75rem;
     font-weight: 500;
-    background: rgba(139, 92, 246, 0.12);
-    border: 1px solid rgba(139, 92, 246, 0.25);
-    color: #a78bfa;
+    background: rgba(var(--accent-glow-rgb), 0.12);
+    border: 1px solid rgba(var(--accent-glow-rgb), 0.25);
+    color: var(--accent-grad-1);
     letter-spacing: 0.02em;
     transition: all 0.2s;
   }
   .tech-pill:hover {
-    background: rgba(139, 92, 246, 0.22);
-    border-color: rgba(139, 92, 246, 0.5);
+    background: rgba(var(--accent-glow-rgb), 0.22);
+    border-color: rgba(var(--accent-glow-rgb), 0.5);
   }
 
   /* Availability dot */
@@ -402,16 +505,16 @@
   border: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow:
     0 0 40px rgba(0, 0, 0, 0.5),
-    0 0 20px rgba(139, 92, 246, 0.08);
+    0 0 20px rgba(var(--accent-glow-rgb), 0.08);
   transition: all 0.3s ease;
   font-family: var(--font-mono);
 }
 
 .terminal-bar:hover .terminal-bar-inner {
-  border-color: rgba(139, 92, 246, 0.25);
+  border-color: rgba(var(--accent-glow-rgb), 0.25);
   box-shadow:
     0 0 40px rgba(0, 0, 0, 0.5),
-    0 0 30px rgba(139, 92, 246, 0.15);
+    0 0 30px rgba(var(--accent-glow-rgb), 0.15);
 }
 
 .terminal-bar-prompt {
@@ -455,7 +558,7 @@
 /* Blinking cursor */
 .terminal-cursor {
   display: inline-block;
-  color: #8b5cf6;
+  color: var(--accent-solid);
   animation: terminal-blink 1s steps(1) infinite;
   font-size: 0.75em;
   line-height: 1;
@@ -496,7 +599,7 @@
   border: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow:
     0 24px 80px rgba(0, 0, 0, 0.7),
-    0 0 40px rgba(139, 92, 246, 0.08),
+    0 0 40px rgba(var(--accent-glow-rgb), 0.08),
     inset 0 1px 0 rgba(255, 255, 255, 0.04);
   overflow: hidden;
 }
@@ -548,7 +651,7 @@
 }
 
 .terminal-msg-user .terminal-msg-prefix {
-  color: #a78bfa;
+  color: var(--accent-grad-1);
 }
 
 .terminal-msg-user .terminal-msg-content {
@@ -581,8 +684,8 @@
   font-size: 0.65rem;
   padding: 0.3rem 0.6rem;
   border-radius: 0.5rem;
-  background: rgba(139, 92, 246, 0.06);
-  border: 1px solid rgba(139, 92, 246, 0.12);
+  background: rgba(var(--accent-glow-rgb), 0.06);
+  border: 1px solid rgba(var(--accent-glow-rgb), 0.12);
   color: var(--color-text-secondary);
   cursor: pointer;
   transition: all 0.2s ease;
@@ -590,8 +693,8 @@
 }
 
 .terminal-chip:hover:not(:disabled) {
-  background: rgba(139, 92, 246, 0.15);
-  border-color: rgba(139, 92, 246, 0.3);
+  background: rgba(var(--accent-glow-rgb), 0.15);
+  border-color: rgba(var(--accent-glow-rgb), 0.3);
   color: var(--color-text-primary);
 }
 
@@ -618,7 +721,7 @@
   font-family: var(--font-mono);
   font-size: 0.8rem;
   color: var(--color-text-primary);
-  caret-color: #8b5cf6;
+  caret-color: var(--accent-solid);
 }
 
 .terminal-input::placeholder {

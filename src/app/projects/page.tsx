@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Link from "next/link";
 import { useState } from "react";
@@ -28,7 +28,7 @@ export default function AllProjectsPage() {
       : allProjects.filter((p) => p.tags.includes(activeTag));
 
   return (
-    <main className="relative bg-black min-h-screen">
+    <main className="relative bg-background min-h-screen">
       {/* Grid background overlay */}
       <div
         className="fixed inset-0 pointer-events-none z-0 opacity-[0.03]"
@@ -52,8 +52,8 @@ export default function AllProjectsPage() {
                 whileHover={{ scale: 1.04 }}
                 whileTap={{ scale: 0.96 }}
                 className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-medium cursor-pointer
-                           bg-white/[0.04] border border-white/[0.08] hover:border-violet-500/30
-                           text-[var(--color-text-secondary)] hover:text-white
+                           bg-[color-mix(in_srgb,var(--foreground)_4%,transparent)] border border-[color-mix(in_srgb,var(--foreground)_8%,transparent)] hover:border-[rgba(var(--accent-glow-rgb),0.3)]
+                           text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)]
                            transition-all duration-300 group"
               >
                 <ArrowLeft className="w-4 h-4 transition-transform duration-300 group-hover:-translate-x-1" />
@@ -96,8 +96,8 @@ export default function AllProjectsPage() {
                     relative px-5 py-2 rounded-xl text-sm font-semibold transition-all duration-300 cursor-pointer
                     ${
                       isActive
-                        ? "bg-violet-600/20 text-violet-300 border border-violet-500/30 shadow-[0_0_16px_rgba(139,92,246,0.2)]"
-                        : "bg-white/[0.04] text-[var(--color-text-secondary)] border border-white/[0.08] hover:border-white/[0.15] hover:text-white"
+                        ? "bg-[rgba(var(--accent-glow-rgb),0.2)] text-[var(--accent-grad-1)] border border-[rgba(var(--accent-glow-rgb),0.3)] shadow-[0_0_16px_rgba(var(--accent-glow-rgb),0.2)]"
+                        : "bg-[color-mix(in_srgb,var(--foreground)_4%,transparent)] text-[var(--color-text-secondary)] border border-[color-mix(in_srgb,var(--foreground)_8%,transparent)] hover:border-[color-mix(in_srgb,var(--foreground)_15%,transparent)] hover:text-[var(--color-text-primary)]"
                     }
                   `}
                 >
@@ -123,7 +123,7 @@ export default function AllProjectsPage() {
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: idx * 0.08, duration: 0.6 }}
-                  className="p-6 rounded-2xl glass border border-white/5 group hover:border-violet-500/20 transition-all flex flex-col h-full overflow-hidden"
+                  className="p-6 rounded-2xl glass border border-[color-mix(in_srgb,var(--foreground)_5%,transparent)] group hover:border-[rgba(var(--accent-glow-rgb),0.2)] transition-all flex flex-col h-full overflow-hidden"
                 >
                   {/* Header */}
                   <div className="mb-6 flex items-start justify-between gap-3">
@@ -141,7 +141,7 @@ export default function AllProjectsPage() {
                           href={project.githubUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="p-2 rounded-lg bg-white/5 border border-white/5 hover:border-violet-500/30 transition-all text-[var(--color-text-secondary)] hover:text-white"
+                          className="p-2 rounded-lg bg-[color-mix(in_srgb,var(--foreground)_5%,transparent)] border border-[color-mix(in_srgb,var(--foreground)_5%,transparent)] hover:border-[rgba(var(--accent-glow-rgb),0.3)] transition-all text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)]"
                         >
                           {iconMap.github}
                         </a>
@@ -155,11 +155,11 @@ export default function AllProjectsPage() {
                   </p>
 
                   {/* Tags + Year */}
-                  <div className="flex flex-wrap items-center gap-2 pt-5 border-t border-white/5">
+                  <div className="flex flex-wrap items-center gap-2 pt-5 border-t border-[color-mix(in_srgb,var(--foreground)_5%,transparent)]">
                     {project.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="px-2 py-0.5 rounded-md bg-violet-500/10 border border-violet-500/15 text-violet-300 text-[10px] uppercase font-bold"
+                        className="px-2 py-0.5 rounded-md bg-[rgba(var(--accent-glow-rgb),0.1)] border border-[rgba(var(--accent-glow-rgb),0.15)] text-[var(--accent-grad-1)] text-[10px] uppercase font-bold"
                       >
                         {tag}
                       </span>

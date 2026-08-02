@@ -1,16 +1,18 @@
-"use client";
+﻿"use client";
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "motion/react";
-import { Menu, X, MessageSquare, Sparkles } from "lucide-react";
+import { Menu, X, MessageSquare, Sparkles, SlidersHorizontal } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { navLinks, personalInfo } from "@/lib/data";
+import SettingsPanel from "@/components/shared/SettingsPanel";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("/");
+  const [settingsOpen, setSettingsOpen] = useState(false);
 
   /* ── Scroll detection ──────────────────────────────────── */
   useEffect(() => {
@@ -69,7 +71,7 @@ export default function Navbar() {
         className={cn(
           "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
           scrolled
-            ? "py-3 bg-black/80 backdrop-blur-xl border-b border-white/[0.06] shadow-[0_8px_32px_rgba(0,0,0,0.4)]"
+            ? "py-3 bg-background/80 backdrop-blur-xl border-b border-[var(--border)] shadow-[0_8px_32px_rgba(0,0,0,0.15)]"
             : "py-5 bg-transparent"
         )}
       >
@@ -87,8 +89,8 @@ export default function Navbar() {
               whileTap={{ scale: 0.94 }}
               className="relative w-9 h-9 rounded-lg flex items-center justify-center overflow-hidden"
               style={{
-                background: "linear-gradient(135deg, #7c3aed, #6366f1)",
-                boxShadow: "0 0 16px rgba(139,92,246,0.45)",
+                background: "linear-gradient(135deg, var(--accent-grad-1), var(--accent-grad-2))",
+                boxShadow: "0 0 16px rgba(var(--accent-glow-rgb),0.45)",
               }}
             >
               <span className="font-heading font-black text-white text-sm tracking-tight select-none">
@@ -122,7 +124,7 @@ export default function Navbar() {
                   {isActive && (
                     <motion.span
                       layoutId="active-nav-pill"
-                      className="absolute inset-0 rounded-lg bg-white/[0.07] border border-white/[0.08]"
+                      className="absolute inset-0 rounded-lg bg-[color-mix(in_srgb,var(--foreground)_7%,transparent)] border border-[color-mix(in_srgb,var(--foreground)_8%,transparent)]"
                       transition={{ type: "spring", bounce: 0.25, duration: 0.4 }}
                     />
                   )}
@@ -135,57 +137,76 @@ export default function Navbar() {
           {/* ── Desktop CTA ──────────────────────────────── */}
           <div className="hidden md:flex items-center gap-3">
 
-
             {/* Resume button */}
             <Link href="/#contact">
               <motion.span
                 whileHover={{ scale: 1.04 }}
                 whileTap={{ scale: 0.96 }}
                 className={cn(
-                  "flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-semibold cursor-pointer",
-                  "bg-violet-600 hover:bg-violet-500 text-white",
-                  "transition-colors duration-200",
-                  "shadow-[0_0_16px_rgba(139,92,246,0.35)] hover:shadow-[0_0_24px_rgba(139,92,246,0.55)]"
+                  "flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-semibold cursor-pointer text-white",
+                  "transition-colors duration-200"
                 )}
+                style={{
+                  background: "var(--accent-solid)",
+                  boxShadow: "0 0 16px rgba(var(--accent-glow-rgb), 0.35)",
+                }}
               >
                 <MessageSquare className="w-3.5 h-3.5" />
                 Let&apos;s Talk
               </motion.span>
             </Link>
+
           </div>
 
-          {/* ── Mobile hamburger ─────────────────────────── */}
-          <motion.button
-            whileTap={{ scale: 0.9 }}
-            onClick={() => setMobileOpen((v) => !v)}
-            className="md:hidden p-2 rounded-lg text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] hover:bg-white/[0.06] transition-colors"
-            aria-label="Toggle menu"
-            aria-expanded={mobileOpen}
-          >
-            <AnimatePresence mode="wait" initial={false}>
-              {mobileOpen ? (
-                <motion.span
-                  key="close"
-                  initial={{ rotate: -90, opacity: 0 }}
-                  animate={{ rotate: 0, opacity: 1 }}
-                  exit={{ rotate: 90, opacity: 0 }}
-                  transition={{ duration: 0.15 }}
-                >
-                  <X className="w-5 h-5" />
-                </motion.span>
-              ) : (
-                <motion.span
-                  key="menu"
-                  initial={{ rotate: 90, opacity: 0 }}
-                  animate={{ rotate: 0, opacity: 1 }}
-                  exit={{ rotate: -90, opacity: 0 }}
-                  transition={{ duration: 0.15 }}
-                >
-                  <Menu className="w-5 h-5" />
-                </motion.span>
-              )}
-            </AnimatePresence>
-          </motion.button>
+          {/* ── Settings (theme) trigger — shared across breakpoints ── */}
+          <div className="relative flex items-center order-3 md:order-none">
+            <motion.button
+              whileHover={{ scale: 1.06 }}
+              whileTap={{ scale: 0.94 }}
+              onClick={() => setSettingsOpen((v) => !v)}
+              className="p-2.5 rounded-full text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] bg-[color-mix(in_srgb,var(--foreground)_4%,transparent)] hover:bg-[color-mix(in_srgb,var(--foreground)_8%,transparent)] border border-[var(--border)] transition-colors"
+              aria-label="Open appearance settings"
+              aria-expanded={settingsOpen}
+            >
+              <SlidersHorizontal className="w-4 h-4" />
+            </motion.button>
+            <SettingsPanel open={settingsOpen} onClose={() => setSettingsOpen(false)} anchorClassName="right-0" />
+          </div>
+
+          {/* ── Mobile hamburger ─────────────────────────────── */}
+          <div className="md:hidden flex items-center gap-1">
+            <motion.button
+              whileTap={{ scale: 0.9 }}
+              onClick={() => setMobileOpen((v) => !v)}
+              className="p-2 rounded-lg text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] hover:bg-[color-mix(in_srgb,var(--foreground)_6%,transparent)] transition-colors"
+              aria-label="Toggle menu"
+              aria-expanded={mobileOpen}
+            >
+              <AnimatePresence mode="wait" initial={false}>
+                {mobileOpen ? (
+                  <motion.span
+                    key="close"
+                    initial={{ rotate: -90, opacity: 0 }}
+                    animate={{ rotate: 0, opacity: 1 }}
+                    exit={{ rotate: 90, opacity: 0 }}
+                    transition={{ duration: 0.15 }}
+                  >
+                    <X className="w-5 h-5" />
+                  </motion.span>
+                ) : (
+                  <motion.span
+                    key="menu"
+                    initial={{ rotate: 90, opacity: 0 }}
+                    animate={{ rotate: 0, opacity: 1 }}
+                    exit={{ rotate: -90, opacity: 0 }}
+                    transition={{ duration: 0.15 }}
+                  >
+                    <Menu className="w-5 h-5" />
+                  </motion.span>
+                )}
+              </AnimatePresence>
+            </motion.button>
+          </div>
         </div>
       </motion.header>
 
@@ -213,8 +234,8 @@ export default function Navbar() {
               transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
               className="fixed top-0 left-0 right-0 z-40 pt-20 pb-8 px-6 md:hidden"
               style={{
-                background: "rgba(0,0,0,0.97)",
-                borderBottom: "1px solid rgba(255,255,255,0.08)",
+                background: "color-mix(in srgb, var(--background) 97%, transparent)",
+                borderBottom: "1px solid var(--border)",
                 backdropFilter: "blur(24px)",
               }}
             >
@@ -233,8 +254,8 @@ export default function Navbar() {
                       className={cn(
                         "flex items-center gap-3 px-4 py-3 rounded-xl text-base font-medium transition-colors",
                         activeSection === link.href
-                          ? "bg-violet-600/15 text-violet-300 border border-violet-500/20"
-                          : "text-[var(--color-text-secondary)] hover:bg-white/[0.06] hover:text-white"
+                          ? "bg-[rgba(var(--accent-glow-rgb),0.15)] text-[var(--accent-grad-1)] border border-[rgba(var(--accent-glow-rgb),0.2)]"
+                          : "text-[var(--color-text-secondary)] hover:bg-[color-mix(in_srgb,var(--foreground)_6%,transparent)] hover:text-[var(--color-text-primary)]"
                       )}
                     >
                       <Sparkles className="w-4 h-4 opacity-50" />
@@ -245,12 +266,13 @@ export default function Navbar() {
               </nav>
 
               {/* Availability + resume */}
-              <div className="flex flex-col gap-3 pt-4 border-t border-white/[0.06]">
+              <div className="flex flex-col gap-3 pt-4 border-t border-[color-mix(in_srgb,var(--foreground)_6%,transparent)]">
 
                 <Link
                   href="/#contact"
                   onClick={() => setMobileOpen(false)}
-                  className="flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-violet-600 hover:bg-violet-500 text-white font-semibold text-sm transition-colors cursor-pointer"
+                  className="flex items-center justify-center gap-2 px-4 py-3 rounded-xl text-white font-semibold text-sm transition-colors cursor-pointer"
+                  style={{ background: "var(--accent-solid)" }}
                 >
                   <MessageSquare className="w-4 h-4" />
                   Let&apos;s Talk

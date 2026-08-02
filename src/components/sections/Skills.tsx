@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { motion } from "motion/react";
 import { skills, currentlyLearning } from "@/lib/data";
@@ -43,11 +43,11 @@ export default function Skills() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: idx * 0.1, duration: 0.8 }}
-              className="p-6 sm:p-8 rounded-2xl sm:rounded-3xl glass border border-white/5 hover:border-violet-500/20 transition-all group"
+              className="p-6 sm:p-8 rounded-2xl sm:rounded-3xl glass border border-[color-mix(in_srgb,var(--foreground)_5%,transparent)] hover:border-[rgba(var(--accent-glow-rgb),0.2)] transition-all group"
             >
-              <h3 className="text-xl font-bold font-heading text-violet-400 mb-6 flex items-center justify-between">
+              <h3 className="text-xl font-bold font-heading text-[var(--accent-grad-1)] mb-6 flex items-center justify-between">
                 {cat}
-                <span className="text-[10px] uppercase tracking-widest text-[var(--color-text-muted)] group-hover:text-violet-300 transition-colors">
+                <span className="text-[10px] uppercase tracking-widest text-[var(--color-text-muted)] group-hover:text-[var(--accent-grad-1)] transition-colors">
                   {skills.filter(s => s.category === cat).length} Tools
                 </span>
               </h3>
@@ -56,7 +56,7 @@ export default function Skills() {
                 {skills.filter(s => s.category === cat).map(skill => (
                   <div 
                     key={skill.name}
-                    className="flex items-center gap-2 px-3 py-2 rounded-xl bg-white/5 border border-white/5 hover:border-violet-500/30 transition-all hover:scale-105 cursor-default"
+                    className="flex items-center gap-2 px-3 py-2 rounded-xl bg-[color-mix(in_srgb,var(--foreground)_5%,transparent)] border border-[color-mix(in_srgb,var(--foreground)_5%,transparent)] hover:border-[rgba(var(--accent-glow-rgb),0.3)] transition-all hover:scale-105 cursor-default"
                   >
                     <span className="text-sm">{skill.icon}</span>
                     <span className="text-[var(--color-text-primary)] text-sm font-medium">{skill.name}</span>
@@ -71,7 +71,7 @@ export default function Skills() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.8 }}
-              className="p-8 rounded-3xl glass border border-white/5 hover:border-emerald-500/20 transition-all group lg:col-span-1"
+              className="p-8 rounded-3xl glass border border-[color-mix(in_srgb,var(--foreground)_5%,transparent)] hover:border-emerald-500/20 transition-all group lg:col-span-1"
             >
               <h3 className="text-xl font-bold font-heading text-emerald-400 mb-6">
                  Currently Exploring
@@ -80,7 +80,7 @@ export default function Skills() {
                 {currentlyLearning.map(skill => (
                   <div 
                     key={skill.name}
-                    className="flex items-center gap-2 px-3 py-2 rounded-xl bg-white/5 border border-white/5 hover:border-emerald-500/30 transition-all hover:scale-105 cursor-default"
+                    className="flex items-center gap-2 px-3 py-2 rounded-xl bg-[color-mix(in_srgb,var(--foreground)_5%,transparent)] border border-[color-mix(in_srgb,var(--foreground)_5%,transparent)] hover:border-emerald-500/30 transition-all hover:scale-105 cursor-default"
                   >
                     <span className="text-sm">{skill.icon}</span>
                     <span className="text-[var(--color-text-primary)] text-sm font-medium">{skill.name}</span>

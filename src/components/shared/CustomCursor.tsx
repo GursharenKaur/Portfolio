@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useEffect, useRef, useState } from "react";
 import { motion, useMotionValue, useSpring } from "motion/react";
@@ -91,7 +91,7 @@ export default function CustomCursor() {
         transition={{ duration: 0.15 }}
       >
         <div
-          className="w-full h-full rounded-full border border-white/70"
+          className="w-full h-full rounded-full border border-[color-mix(in_srgb,var(--foreground)_70%,transparent)]"
           style={{
             boxShadow: isHovering
               ? "0 0 12px rgba(167,139,250,0.6)"

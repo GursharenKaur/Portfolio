@@ -7,7 +7,7 @@ import Contact from "@/components/sections/Contact";
 
 export default function Home() {
   return (
-    <main className="relative bg-black">
+    <main className="relative bg-background">
       <Hero />
       
       <div className="space-y-12">

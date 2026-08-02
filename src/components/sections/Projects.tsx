@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Link from "next/link";
 import { motion } from "motion/react";
@@ -32,7 +32,7 @@ export default function Projects() {
   const ongoing = projects.filter(p => p.isOngoing);
 
   return (
-    <section id="work" className="py-16 relative overflow-hidden bg-white/[0.01]">
+    <section id="work" className="py-16 relative overflow-hidden bg-[color-mix(in_srgb,var(--foreground)_1%,transparent)]">
       <div className="container-portfolio relative z-10">
         <motion.div
            initial="hidden"
@@ -57,7 +57,7 @@ export default function Projects() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: idx * 0.1, duration: 0.8 }}
-              className="p-6 sm:p-8 rounded-2xl sm:rounded-[2rem] glass border border-white/5 group hover:border-violet-500/20 transition-all flex flex-col h-full overflow-hidden"
+              className="p-6 sm:p-8 rounded-2xl sm:rounded-[2rem] glass border border-[color-mix(in_srgb,var(--foreground)_5%,transparent)] group hover:border-[rgba(var(--accent-glow-rgb),0.2)] transition-all flex flex-col h-full overflow-hidden"
             >
               <div className="mb-8 flex items-center justify-between">
                 <div>
@@ -66,7 +66,7 @@ export default function Projects() {
                 </div>
                 <div className="flex gap-2">
                    {project.githubUrl && (
-                     <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="p-2 rounded-lg bg-white/5 border border-white/5 hover:border-violet-500/30 transition-all text-[var(--color-text-secondary)] hover:text-white">
+                     <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="p-2 rounded-lg bg-[color-mix(in_srgb,var(--foreground)_5%,transparent)] border border-[color-mix(in_srgb,var(--foreground)_5%,transparent)] hover:border-[rgba(var(--accent-glow-rgb),0.3)] transition-all text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)]">
                         {iconMap.github}
                      </a>
                    )}
@@ -77,7 +77,7 @@ export default function Projects() {
                  {project.description}
               </p>
 
-              <div className="flex flex-wrap gap-2 pt-6 border-t border-white/5">
+              <div className="flex flex-wrap gap-2 pt-6 border-t border-[color-mix(in_srgb,var(--foreground)_5%,transparent)]">
                 {project.techStack.map(tech => (
                   <span key={tech} className="text-[10px] uppercase font-bold opacity-60 group-hover:opacity-100 transition-opacity">
                     {tech}
@@ -101,10 +101,10 @@ export default function Projects() {
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.96 }}
               className="inline-flex items-center gap-3 px-8 py-4 rounded-2xl text-base font-semibold cursor-pointer
-                         bg-white/[0.04] border border-white/[0.08] hover:border-violet-500/30
-                         text-[var(--color-text-secondary)] hover:text-white
+                         bg-[color-mix(in_srgb,var(--foreground)_4%,transparent)] border border-[color-mix(in_srgb,var(--foreground)_8%,transparent)] hover:border-[rgba(var(--accent-glow-rgb),0.3)]
+                         text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)]
                          transition-all duration-300 group
-                         hover:bg-violet-600/10 hover:shadow-[0_0_30px_rgba(139,92,246,0.15)]"
+                         hover:bg-[rgba(var(--accent-glow-rgb),0.1)] hover:shadow-[0_0_30px_rgba(var(--accent-glow-rgb),0.15)]"
             >
               View All Projects
               <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
@@ -117,10 +117,10 @@ export default function Projects() {
           <motion.div
              initial={{ opacity: 0, scale: 0.95 }}
              whileInView={{ opacity: 1, scale: 1 }}
-             className="p-6 sm:p-12 rounded-2xl sm:rounded-[2.5rem] bg-violet-600/5 border border-violet-500/10 relative overflow-hidden"
+             className="p-6 sm:p-12 rounded-2xl sm:rounded-[2.5rem] bg-[rgba(var(--accent-glow-rgb),0.05)] border border-[rgba(var(--accent-glow-rgb),0.1)] relative overflow-hidden"
           >
             <div className="absolute top-0 right-0 p-8">
-               <span className="px-3 sm:px-4 py-1.5 rounded-full bg-violet-500/20 border border-violet-500/20 text-violet-300 text-[9px] sm:text-[10px] font-black uppercase tracking-[0.15em] sm:tracking-[0.2em] animate-pulse">
+               <span className="px-3 sm:px-4 py-1.5 rounded-full bg-[rgba(var(--accent-glow-rgb),0.2)] border border-[rgba(var(--accent-glow-rgb),0.2)] text-[var(--accent-grad-1)] text-[9px] sm:text-[10px] font-black uppercase tracking-[0.15em] sm:tracking-[0.2em] animate-pulse">
                   Ongoing Experiment
                </span>
             </div>
@@ -137,7 +137,7 @@ export default function Projects() {
                    </p>
                    <div className="flex flex-wrap gap-3">
                      {project.techStack.map(tech => (
-                       <span key={tech} className="px-3 py-1 rounded-lg bg-white/5 border border-white/5 text-[10px] uppercase font-bold text-[var(--color-text-muted)]">
+                       <span key={tech} className="px-3 py-1 rounded-lg bg-[color-mix(in_srgb,var(--foreground)_5%,transparent)] border border-[color-mix(in_srgb,var(--foreground)_5%,transparent)] text-[10px] uppercase font-bold text-[var(--color-text-muted)]">
                           {tech}
                        </span>
                      ))}

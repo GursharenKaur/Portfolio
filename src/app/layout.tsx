@@ -5,6 +5,7 @@ import SmoothScrollProvider from "@/components/shared/SmoothScrollProvider";
 import Navbar from "@/components/shared/Navbar";
 import CustomCursor from "@/components/shared/CustomCursor";
 import TerminalChat from "@/components/shared/TerminalChat";
+import { ThemeProvider, THEME_INIT_SCRIPT } from "@/lib/theme-context";
 
 /* ─── Fonts ────────────────────────────────────────────────── */
 const plusJakarta = Plus_Jakarta_Sans({
@@ -73,22 +74,28 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${plusJakarta.variable} ${inter.variable} ${jetbrainsMono.variable} dark`}
+      data-accent="cyber-violet"
       suppressHydrationWarning
     >
-      <body className="min-h-screen overflow-x-hidden antialiased bg-[#000000]" suppressHydrationWarning>
-        {/* Custom cursor — desktop only, client component */}
-        <CustomCursor />
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />
+      </head>
+      <body className="min-h-screen overflow-x-hidden antialiased bg-background" suppressHydrationWarning>
+        <ThemeProvider>
+          {/* Custom cursor — desktop only, client component */}
+          <CustomCursor />
 
-        {/* Global navigation */}
-        <Navbar />
+          {/* Global navigation */}
+          <Navbar />
 
-        {/* Lenis smooth scroll + GSAP sync wrapper */}
-        <SmoothScrollProvider>
-          {children}
-        </SmoothScrollProvider>
+          {/* Lenis smooth scroll + GSAP sync wrapper */}
+          <SmoothScrollProvider>
+            {children}
+          </SmoothScrollProvider>
 
-        {/* Terminal chatbot — floating, always available */}
-        <TerminalChat />
+          {/* Terminal chatbot — floating, always available */}
+          <TerminalChat />
+        </ThemeProvider>
       </body>
     </html>
   );

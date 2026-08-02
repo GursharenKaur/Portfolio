@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "motion/react";
@@ -203,9 +203,9 @@ export default function TerminalChat() {
             aria-label="Open terminal chat"
           >
             <div className="terminal-bar-inner">
-              <Search className="w-3.5 h-3.5 text-violet-400/70" />
+              <Search className="w-3.5 h-3.5 text-[var(--accent-grad-1)]/70" />
               <span className="terminal-bar-prompt">
-                <span className="text-violet-400/70">›</span>{" "}
+                <span className="text-[var(--accent-grad-1)]/70">›</span>{" "}
                 <span className="text-[var(--color-text-muted)]">
                   ask me anything
                 </span>
@@ -253,12 +253,12 @@ export default function TerminalChat() {
                   <span className="w-2.5 h-2.5 rounded-full bg-green-500/80" />
                 </div>
                 <span className="text-[11px] font-mono text-[var(--color-text-muted)] ml-2">
-                  gursharen@portfolio <span className="text-violet-400/60">~</span> /chat
+                  gursharen@portfolio <span className="text-[var(--accent-grad-1)]/60">~</span> /chat
                 </span>
               </div>
               <button
                 onClick={() => setIsOpen(false)}
-                className="p-1 rounded-md hover:bg-white/10 transition-colors text-[var(--color-text-muted)] hover:text-white"
+                className="p-1 rounded-md hover:bg-[color-mix(in_srgb,var(--foreground)_10%,transparent)] transition-colors text-[var(--color-text-muted)] hover:text-[var(--color-text-primary)]"
                 aria-label="Close terminal"
               >
                 <X className="w-3.5 h-3.5" />
@@ -270,7 +270,7 @@ export default function TerminalChat() {
               {/* Welcome message if no messages */}
               {messages.length === 0 && (
                 <div className="terminal-welcome">
-                  <p className="text-violet-400/80 text-xs font-mono mb-1">
+                  <p className="text-[var(--accent-grad-1)]/80 text-xs font-mono mb-1">
                     // welcome to gursharen&apos;s terminal
                   </p>
                   <p className="text-[var(--color-text-muted)] text-xs font-mono">
@@ -317,7 +317,7 @@ export default function TerminalChat() {
                     disabled={typingIndex !== null}
                     className="terminal-chip"
                   >
-                    <span className="text-violet-400/60">$</span> {suggestion}
+                    <span className="text-[var(--accent-grad-1)]/60">$</span> {suggestion}
                   </button>
                 )
               )}
@@ -331,7 +331,7 @@ export default function TerminalChat() {
               }}
               className="terminal-input-area"
             >
-              <span className="text-violet-400 font-mono text-sm font-bold">$</span>
+              <span className="text-[var(--accent-grad-1)] font-mono text-sm font-bold">$</span>
               <input
                 ref={inputRef}
                 type="text"

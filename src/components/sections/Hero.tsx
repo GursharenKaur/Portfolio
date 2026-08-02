@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useEffect, useRef, useState } from "react";
 import dynamic from "next/dynamic";
@@ -162,7 +162,7 @@ export default function Hero() {
         className="absolute bottom-[-5%] left-[-5%] w-[250px] h-[250px] sm:w-[500px] sm:h-[500px] rounded-full pointer-events-none"
         style={{
           background:
-            "radial-gradient(circle, rgba(139,92,246,0.1) 0%, transparent 70%)",
+            "radial-gradient(circle, rgba(var(--accent-glow-rgb),0.1) 0%, transparent 70%)",
           filter: "blur(80px)",
         }}
       />
@@ -195,13 +195,13 @@ export default function Hero() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label={s.label}
-            className="p-2 rounded-lg text-[var(--color-text-muted)] hover:text-violet-400 hover:bg-violet-500/10 transition-all duration-200 hover:-translate-y-0.5"
+            className="p-2 rounded-lg text-[var(--color-text-muted)] hover:text-[var(--accent-grad-1)] hover:bg-[rgba(var(--accent-glow-rgb),0.1)] transition-all duration-200 hover:-translate-y-0.5"
           >
             {iconMap[s.icon]}
           </a>
         ))}
         {/* Connecting line */}
-        <div className="w-px h-16 bg-gradient-to-b from-white/15 to-transparent" />
+        <div className="w-px h-16 bg-gradient-to-b from-[color-mix(in_srgb,var(--foreground)_15%,transparent)] to-transparent" />
       </motion.div>
 
       {/* ── Main content ─────────────────────────────────── */}
@@ -243,11 +243,11 @@ export default function Hero() {
             {personalInfo.roles.map((role) => (
               <div
                 key={role}
-                className="flex items-center gap-2 sm:gap-2.5 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full glass border border-white/5 hover:border-violet-500/30 transition-all duration-300 group hover:-translate-y-0.5"
+                className="flex items-center gap-2 sm:gap-2.5 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full glass border border-[color-mix(in_srgb,var(--foreground)_5%,transparent)] hover:border-[rgba(var(--accent-glow-rgb),0.3)] transition-all duration-300 group hover:-translate-y-0.5"
               >
                 <span
-                  className="w-1.5 h-1.5 rounded-full group-hover:scale-125 transition-transform duration-300 shadow-[0_0_8px_rgba(139,92,246,0.6)]"
-                  style={{ background: "#8b5cf6" }}
+                  className="w-1.5 h-1.5 rounded-full group-hover:scale-125 transition-transform duration-300 shadow-[0_0_8px_rgba(var(--accent-glow-rgb),0.6)]"
+                  style={{ background: "var(--accent-solid)" }}
                 />
                 <span className="text-[var(--color-text-secondary)] group-hover:text-[var(--color-text-primary)] text-[10px] sm:text-[11px] uppercase font-bold tracking-[0.1em] transition-colors">
                   {role}
@@ -277,8 +277,8 @@ export default function Hero() {
               whileTap={{ scale: 0.96 }}
               className="inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-3 sm:py-3.5 rounded-xl font-semibold text-white text-sm cursor-pointer w-full sm:w-auto"
               style={{
-                background: "linear-gradient(135deg, #7c3aed, #6366f1)",
-                boxShadow: "0 0 28px rgba(124,58,237,0.45), 0 4px 16px rgba(0,0,0,0.3)",
+                background: "linear-gradient(135deg, var(--accent-grad-1), var(--accent-grad-2))",
+                boxShadow: "0 0 28px rgba(var(--accent-glow-rgb),0.45), 0 4px 16px rgba(0,0,0,0.3)",
               }}
             >
               View My Work
@@ -293,7 +293,7 @@ export default function Hero() {
             rel="noopener noreferrer"
             whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.96 }}
-            className="inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-3 sm:py-3.5 rounded-xl font-semibold text-[var(--color-text-primary)] text-sm glass border border-white/10 hover:border-violet-500/40 transition-colors cursor-pointer w-full sm:w-auto"
+            className="inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-3 sm:py-3.5 rounded-xl font-semibold text-[var(--color-text-primary)] text-sm glass border border-[color-mix(in_srgb,var(--foreground)_10%,transparent)] hover:border-[rgba(var(--accent-glow-rgb),0.4)] transition-colors cursor-pointer w-full sm:w-auto"
           >
             <Eye className="w-4 h-4" />
             View Resume
@@ -323,7 +323,7 @@ export default function Hero() {
             {[...marqueeSkills, ...marqueeSkills, ...marqueeSkills, ...marqueeSkills].map((skill, i) => (
               <div
                 key={`${skill.name}-${i}`}
-                className="flex items-center gap-3 px-5 py-2.5 rounded-xl glass border border-white/5 whitespace-nowrap hover:border-violet-500/30 transition-colors"
+                className="flex items-center gap-3 px-5 py-2.5 rounded-xl glass border border-[color-mix(in_srgb,var(--foreground)_5%,transparent)] whitespace-nowrap hover:border-[rgba(var(--accent-glow-rgb),0.3)] transition-colors"
                 style={{ background: "rgba(255,255,255,0.03)" }}
               >
                 <img
