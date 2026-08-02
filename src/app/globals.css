@@ -113,43 +113,44 @@
 }
 
 /* ─── Light ("Day") ─────────────────────────────────────────── */
+/* Backgrounds are tinted from the active accent color, not plain white/grey. */
 .light {
   color-scheme: light;
 
-  --background:              #f7f7fa;
+  --background:              color-mix(in srgb, var(--accent-solid) 7%, #fbfbfd);
   --foreground:               #18181b;
-  --card:                    #ffffff;
+  --card:                    color-mix(in srgb, var(--accent-solid) 3%, #ffffff);
   --card-foreground:         #18181b;
-  --popover:                 #ffffff;
+  --popover:                 color-mix(in srgb, var(--accent-solid) 3%, #ffffff);
   --popover-foreground:      #18181b;
   --primary:                 var(--accent-solid);
   --primary-foreground:      #ffffff;
-  --secondary:               #f0f0f3;
+  --secondary:               color-mix(in srgb, var(--accent-solid) 6%, #f0f0f3);
   --secondary-foreground:    #18181b;
-  --muted:                   #f0f0f3;
+  --muted:                   color-mix(in srgb, var(--accent-solid) 6%, #f0f0f3);
   --muted-foreground:        #52525b;
-  --accent:                  #f0f0f3;
+  --accent:                  color-mix(in srgb, var(--accent-solid) 6%, #f0f0f3);
   --accent-foreground:       #18181b;
   --destructive:             #dc2626;
-  --border:                  rgba(0, 0, 0, 0.1);
-  --input:                   rgba(0, 0, 0, 0.05);
+  --border:                  color-mix(in srgb, var(--accent-solid) 12%, transparent);
+  --input:                   color-mix(in srgb, var(--accent-solid) 6%, transparent);
   --ring:                    var(--accent-solid);
   --radius:                  0.75rem;
-  --sidebar:                 #ffffff;
+  --sidebar:                 color-mix(in srgb, var(--accent-solid) 3%, #ffffff);
   --sidebar-foreground:      #18181b;
   --sidebar-primary:         var(--accent-solid);
   --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent:          #f0f0f3;
+  --sidebar-accent:          color-mix(in srgb, var(--accent-solid) 6%, #f0f0f3);
   --sidebar-accent-foreground: #18181b;
-  --sidebar-border:          rgba(0, 0, 0, 0.1);
+  --sidebar-border:          color-mix(in srgb, var(--accent-solid) 12%, transparent);
   --sidebar-ring:            var(--accent-solid);
 
   --color-text-primary: #18181b;
   --color-text-secondary: #52525b;
   --color-text-muted: #a1a1aa;
-  --color-surface-1: #ffffff;
-  --color-surface-2: #f4f4f6;
-  --color-surface-3: #ececf0;
+  --color-surface-1: color-mix(in srgb, var(--accent-solid) 3%, #ffffff);
+  --color-surface-2: color-mix(in srgb, var(--accent-solid) 5%, #f4f4f6);
+  --color-surface-3: color-mix(in srgb, var(--accent-solid) 7%, #ececf0);
 }
 
 /* ─── Accent presets ──────────────────────────────────────────
@@ -387,10 +388,10 @@
   .animated-bg {
     background: linear-gradient(
       -45deg,
-      #000000,
-      #050505,
-      #000000,
-      #030308
+      var(--background),
+      color-mix(in srgb, var(--accent-solid) 6%, var(--background)),
+      var(--background),
+      color-mix(in srgb, var(--accent-solid) 4%, var(--background))
     );
     background-size: 400% 400%;
     animation: gradient-shift 15s ease infinite;

@@ -138,12 +138,12 @@ export default function Hero() {
       {/* Deep gradient base */}
       <div className="absolute inset-0 animated-bg" />
 
-      {/* Radial violet glow behind content */}
+      {/* Radial accent glow behind content */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "radial-gradient(ellipse 80% 60% at 50% 40%, rgba(109,40,217,0.18) 0%, transparent 70%)",
+            "radial-gradient(ellipse 80% 60% at 50% 40%, rgba(var(--accent-glow-rgb),0.18) 0%, transparent 70%)",
         }}
       />
 
@@ -152,7 +152,7 @@ export default function Hero() {
         className="absolute top-[-10%] right-[-5%] w-[300px] h-[300px] sm:w-[600px] sm:h-[600px] rounded-full pointer-events-none"
         style={{
           background:
-            "radial-gradient(circle, rgba(99,102,241,0.12) 0%, transparent 70%)",
+            "radial-gradient(circle, rgba(var(--accent-glow-rgb),0.12) 0%, transparent 70%)",
           filter: "blur(60px)",
         }}
       />
