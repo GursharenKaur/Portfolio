@@ -2,6 +2,7 @@
 
 import { motion } from "motion/react";
 import { skills, currentlyLearning } from "@/lib/data";
+import { useLanguage } from "@/lib/i18n-context";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 20 },
@@ -16,6 +17,7 @@ const fadeUp = {
 };
 
 export default function Skills() {
+  const { t } = useLanguage();
   const categories = Array.from(new Set(skills.map(s => s.category)));
 
   return (
@@ -29,10 +31,10 @@ export default function Skills() {
            className="text-center mb-16"
         >
           <h2 className="font-heading font-black text-3xl sm:text-4xl md:text-5xl leading-tight">
-            My <span className="gradient-text italic">Toolkit</span>
+            <span className="gradient-text italic">{t("skills.heading")}</span>
           </h2>
           <p className="max-w-xl mx-auto mt-4 text-[var(--color-text-secondary)] text-lg">
-            The technologies and tools I use to bring ideas to life.
+            {t("skills.subtitle")}
           </p>
         </motion.div>
 
@@ -46,9 +48,9 @@ export default function Skills() {
               className="p-6 sm:p-8 rounded-2xl sm:rounded-3xl glass border border-[color-mix(in_srgb,var(--foreground)_5%,transparent)] hover:border-[rgba(var(--accent-glow-rgb),0.2)] transition-all group"
             >
               <h3 className="text-xl font-bold font-heading text-[var(--accent-grad-1)] mb-6 flex items-center justify-between">
-                {cat}
+                {t(`skills.categories.${cat}`)}
                 <span className="text-[10px] uppercase tracking-widest text-[var(--color-text-muted)] group-hover:text-[var(--accent-grad-1)] transition-colors">
-                  {skills.filter(s => s.category === cat).length} Tools
+                  {t("skills.toolsCount", { count: skills.filter(s => s.category === cat).length })}
                 </span>
               </h3>
               
@@ -74,7 +76,7 @@ export default function Skills() {
               className="p-8 rounded-3xl glass border border-[color-mix(in_srgb,var(--foreground)_5%,transparent)] hover:border-emerald-500/20 transition-all group lg:col-span-1"
             >
               <h3 className="text-xl font-bold font-heading text-emerald-400 mb-6">
-                 Currently Exploring
+                 {t("skills.currentlyExploring")}
               </h3>
               <div className="flex flex-wrap gap-3">
                 {currentlyLearning.map(skill => (

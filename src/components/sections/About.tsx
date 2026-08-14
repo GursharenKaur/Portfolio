@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
-import { personalInfo } from "@/lib/data";
+import { useLanguage } from "@/lib/i18n-context";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 20 },
@@ -16,6 +16,7 @@ const fadeUp = {
 };
 
 export default function About() {
+  const { t } = useLanguage();
   return (
     <section id="about" className="py-16 relative overflow-hidden">
       <div className="container-portfolio relative z-10">
@@ -30,17 +31,15 @@ export default function About() {
               variants={fadeUp}
             >
               <h2 className="font-heading font-black text-3xl sm:text-4xl md:text-5xl mb-8 leading-tight">
-                My <span className="gradient-text italic">Story</span>
+                <span className="gradient-text italic">{t("about.heading")}</span>
               </h2>
-              
+
               <div className="space-y-6 text-[var(--color-text-secondary)] text-lg leading-relaxed text-justify sm:text-center">
                 <p>
-                  {personalInfo.bio}
+                  {t("data.personalInfo.bio")}
                 </p>
                 <p>
-                  My journey is driven by a deep curiosity for how things work. Whether it&apos;s architecting a 
-                  robust backend system or fine-tuning the motion of a 3D interface, I find beauty in the 
-                  balance between complexity and simplicity.
+                  {t("about.paragraph2")}
                 </p>
               </div>
             </motion.div>

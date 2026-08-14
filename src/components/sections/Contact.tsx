@@ -3,6 +3,7 @@
 import { motion } from "motion/react";
 import { Mail, Send } from "lucide-react";
 import { socialLinks, personalInfo } from "@/lib/data";
+import { useLanguage } from "@/lib/i18n-context";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 20 },
@@ -36,6 +37,7 @@ const iconMap: Record<string, React.ReactNode> = {
 };
 
 export default function Contact() {
+  const { t } = useLanguage();
   return (
     <section id="contact" className="py-16 relative overflow-hidden bg-[color-mix(in_srgb,var(--foreground)_1%,transparent)]">
       <div className="container-portfolio relative z-10">
@@ -47,10 +49,10 @@ export default function Contact() {
            className="text-center mb-16"
         >
           <h2 className="font-heading font-black text-3xl sm:text-4xl md:text-5xl leading-tight">
-            Say <span className="gradient-text italic">Hello</span>
+            <span className="gradient-text italic">{t("contact.heading")}</span>
           </h2>
           <p className="max-w-xl mx-auto mt-4 text-[var(--color-text-secondary)] text-lg">
-            I&apos;m always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
+            {t("contact.subtitle")}
           </p>
         </motion.div>
 
@@ -63,7 +65,7 @@ export default function Contact() {
              className="space-y-8"
           >
             <div className="p-6 sm:p-8 rounded-2xl sm:rounded-3xl glass border border-[color-mix(in_srgb,var(--foreground)_5%,transparent)] space-y-6 sm:space-y-8">
-               <h3 className="text-xl font-bold font-heading">Direct Contact</h3>
+               <h3 className="text-xl font-bold font-heading">{t("contact.directContact")}</h3>
                
                <div className="space-y-6">
                  <a 
@@ -74,13 +76,13 @@ export default function Contact() {
                       <Mail className="w-5 h-5 text-[var(--accent-grad-1)]" />
                    </div>
                    <div>
-                      <p className="text-xs uppercase font-bold text-[var(--color-text-muted)] tracking-widest">Email Me</p>
+                      <p className="text-xs uppercase font-bold text-[var(--color-text-muted)] tracking-widest">{t("contact.emailMe")}</p>
                       <p className="text-lg font-medium">{personalInfo.email}</p>
                    </div>
                  </a>
 
                  <div className="pt-8 border-t border-[color-mix(in_srgb,var(--foreground)_5%,transparent)]">
-                   <p className="text-sm font-heading font-bold mb-6 text-[var(--color-text-muted)] uppercase tracking-widest">Follow me</p>
+                   <p className="text-sm font-heading font-bold mb-6 text-[var(--color-text-muted)] uppercase tracking-widest">{t("contact.followMe")}</p>
                    <div className="flex gap-4">
                       {socialLinks.map(link => {
                         const icon = iconMap[link.icon.toLowerCase()] || <Send className="w-5 h-5" />;
@@ -112,19 +114,18 @@ export default function Contact() {
           >
             <div className="p-8 sm:p-12 rounded-2xl sm:rounded-[2.5rem] bg-[rgba(var(--accent-glow-rgb),0.05)] border border-[rgba(var(--accent-glow-rgb),0.1)] text-center">
                <h3 className="text-2xl sm:text-3xl font-heading font-black mb-6 italic gradient-text">
-                  Let&apos;s build something <br /> amazing together.
+                  {t("contact.ctaHeading")}
                </h3>
                <p className="text-[var(--color-text-secondary)] mb-10 leading-relaxed text-lg">
-                  Whether you have a question or just want to say hi, my inbox is always open. 
-                  I&apos;ll get back to you as soon as possible!
+                  {t("contact.ctaParagraph")}
                </p>
                <a
-                 href={`mailto:${personalInfo.email}?subject=Let's Connect — From Your Portfolio`}
+                 href={`mailto:${personalInfo.email}?subject=${encodeURIComponent(t("contact.mailSubject"))}`}
                  className="inline-flex items-center gap-3 px-8 py-4 rounded-2xl text-white font-bold transition-all shadow-[0_0_24px_rgba(var(--accent-glow-rgb),0.3)] hover:shadow-[0_0_32px_rgba(var(--accent-glow-rgb),0.5)] hover:brightness-110 hover:-translate-y-1"
                  style={{ background: "var(--accent-solid)" }}
                >
                   <Mail className="w-4 h-4" />
-                  Drop Me a Mail
+                  {t("contact.dropMail")}
                </a>
             </div>
           </motion.div>

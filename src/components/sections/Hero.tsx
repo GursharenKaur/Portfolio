@@ -6,6 +6,7 @@ import Link from "next/link";
 import { motion, useMotionValue, useSpring, type Variants } from "motion/react";
 import { ArrowDown, ArrowRight, Sparkles, Eye } from "lucide-react";
 import { personalInfo, socialLinks, marqueeSkills } from "@/lib/data";
+import { useLanguage } from "@/lib/i18n-context";
 
 /* Lazy-load 3D canvas — never SSR */
 const ParticleCanvas = dynamic(
@@ -82,6 +83,7 @@ const iconMap: Record<string, React.ReactNode> = {
 
 /* ── Hero ────────────────────────────────────────────────── */
 export default function Hero() {
+  const { t } = useLanguage();
   /* ── Mouse parallax for hero text ───────────────────────── */
   const heroRef = useRef<HTMLElement>(null);
   const mouseX = useMotionValue(0);
@@ -224,7 +226,7 @@ export default function Hero() {
             className="text-[var(--color-text-secondary)] text-base sm:text-lg font-light tracking-widest uppercase"
             style={{ letterSpacing: "0.2em" }}
           >
-            Hi, I&apos;m
+            {t("hero.greeting")}
           </motion.p>
 
           {/* Name — character-by-character */}
@@ -240,7 +242,9 @@ export default function Hero() {
             variants={fadeUp}
             className="flex flex-wrap items-center justify-center gap-3 mt-1"
           >
-            {personalInfo.roles.map((role) => (
+            {t("data.personalInfo.roles")
+              .split("|")
+              .map((role) => (
               <div
                 key={role}
                 className="flex items-center gap-2 sm:gap-2.5 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full glass border border-[color-mix(in_srgb,var(--foreground)_5%,transparent)] hover:border-[rgba(var(--accent-glow-rgb),0.3)] transition-all duration-300 group hover:-translate-y-0.5"
@@ -261,7 +265,7 @@ export default function Hero() {
             variants={fadeUp}
             className="max-w-xl text-[var(--color-text-secondary)] text-base sm:text-lg leading-relaxed px-2 sm:px-0"
           >
-            {personalInfo.tagline}
+            {t("data.personalInfo.tagline")}
           </motion.p>
         </motion.div>
 
@@ -281,7 +285,7 @@ export default function Hero() {
                 boxShadow: "0 0 28px rgba(var(--accent-glow-rgb),0.45), 0 4px 16px rgba(0,0,0,0.3)",
               }}
             >
-              View My Work
+              {t("hero.viewWork")}
               <ArrowRight className="w-4 h-4" />
             </motion.span>
           </Link>
@@ -296,7 +300,7 @@ export default function Hero() {
             className="inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-3 sm:py-3.5 rounded-xl font-semibold text-[var(--color-text-primary)] text-sm glass border border-[color-mix(in_srgb,var(--foreground)_10%,transparent)] hover:border-[rgba(var(--accent-glow-rgb),0.4)] transition-colors cursor-pointer w-full sm:w-auto"
           >
             <Eye className="w-4 h-4" />
-            View Resume
+            {t("hero.viewResume")}
           </motion.a>
         </motion.div>
 
@@ -354,7 +358,7 @@ export default function Hero() {
         className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
       >
         <span className="text-[10px] uppercase tracking-[0.3em] text-[var(--color-text-muted)]">
-          scroll
+          {t("hero.scroll")}
         </span>
         <motion.div
           animate={{ y: [0, 6, 0] }}

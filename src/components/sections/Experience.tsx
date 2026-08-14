@@ -2,6 +2,7 @@
 
 import { motion } from "motion/react";
 import { timeline } from "@/lib/data";
+import { useLanguage } from "@/lib/i18n-context";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 20 },
@@ -16,6 +17,7 @@ const fadeUp = {
 };
 
 export default function Experience() {
+  const { t, td } = useLanguage();
   const experiences = timeline.filter((item) => item.type === "work");
 
   return (
@@ -29,10 +31,10 @@ export default function Experience() {
            className="text-center mb-16"
         >
           <h2 className="font-heading font-black text-3xl sm:text-4xl md:text-5xl leading-tight">
-            My <span className="gradient-text italic">Journey</span>
+            <span className="gradient-text italic">{t("experience.heading")}</span>
           </h2>
           <p className="max-w-xl mx-auto mt-4 text-[var(--color-text-secondary)] text-lg">
-            Professional roles and positions I&apos;ve held over the years.
+            {t("experience.subtitle")}
           </p>
         </motion.div>
 
@@ -48,9 +50,9 @@ export default function Experience() {
               <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
                  <div>
                    <h3 className="text-xl font-bold font-heading text-[var(--color-text-primary)]">
-                     {exp.title}
+                     {td(`timeline.items.${exp.id}.title`, exp.title)}
                    </h3>
-                   <p className="text-[var(--accent-grad-1)] font-medium">{exp.organization}</p>
+                   <p className="text-[var(--accent-grad-1)] font-medium">{td(`timeline.items.${exp.id}.organization`, exp.organization)}</p>
                  </div>
                  <div className="text-right flex flex-col md:items-end">
                     <span className="text-sm font-semibold px-3 py-1 rounded-full bg-[color-mix(in_srgb,var(--foreground)_5%,transparent)] border border-[color-mix(in_srgb,var(--foreground)_5%,transparent)] text-[var(--color-text-muted)] group-hover:text-[var(--accent-grad-1)] transition-colors">
@@ -61,7 +63,7 @@ export default function Experience() {
               </div>
               
               <p className="text-[var(--color-text-secondary)] leading-relaxed mb-6">
-                {exp.description}
+                {td(`timeline.items.${exp.id}.description`, exp.description)}
               </p>
               
               {exp.tags && (

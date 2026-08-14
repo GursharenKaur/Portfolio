@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "motion/react";
 import { Moon, Sun, Check } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useTheme, ACCENTS } from "@/lib/theme-context";
+import { useLanguage } from "@/lib/i18n-context";
 
 export default function SettingsPanel({
   open,
@@ -16,6 +17,7 @@ export default function SettingsPanel({
   anchorClassName?: string;
 }) {
   const { mode, accent, setMode, setAccent } = useTheme();
+  const { t } = useLanguage();
   const panelRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -55,12 +57,12 @@ export default function SettingsPanel({
         >
           {/* Section label */}
           <p className="text-[11px] font-semibold tracking-widest text-[var(--color-text-muted)] uppercase mb-4">
-            Appearance
+            {t("settings.appearance")}
           </p>
 
           {/* Color theme */}
           <p className="text-sm font-semibold text-[var(--color-text-primary)] mb-2">
-            Color theme
+            {t("settings.colorTheme")}
           </p>
           <div className="grid grid-cols-3 gap-2 mb-5">
             {ACCENTS.map((a) => {
@@ -96,7 +98,7 @@ export default function SettingsPanel({
 
           {/* Mode */}
           <p className="text-sm font-semibold text-[var(--color-text-primary)] mb-2">
-            Mode
+            {t("settings.mode")}
           </p>
           <div className="grid grid-cols-2 gap-2">
             <button
@@ -109,7 +111,7 @@ export default function SettingsPanel({
               )}
             >
               <Moon className="w-3.5 h-3.5" />
-              Dark
+              {t("settings.dark")}
             </button>
             <button
               onClick={() => setMode("light")}
@@ -121,14 +123,14 @@ export default function SettingsPanel({
               )}
             >
               <Sun className="w-3.5 h-3.5" />
-              Light
+              {t("settings.light")}
             </button>
           </div>
 
           {/* Active summary check (subtle, mirrors reference screenshot's checkmark language pattern) */}
           <div className="flex items-center gap-1.5 mt-4 pt-4 border-t border-[var(--border)] text-[11px] text-[var(--color-text-muted)]">
             <Check className="w-3 h-3 text-[var(--accent-solid)]" />
-            {ACCENTS.find((a) => a.id === accent)?.label} · {mode === "dark" ? "Dark" : "Light"}
+            {ACCENTS.find((a) => a.id === accent)?.label} · {mode === "dark" ? t("settings.dark") : t("settings.light")}
           </div>
         </motion.div>
       )}

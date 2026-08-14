@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from "motion/react";
 import { projects } from "@/lib/data";
 import { ArrowLeft, Filter } from "lucide-react";
 import type { ProjectTag } from "@/types";
+import { useLanguage } from "@/lib/i18n-context";
 
 /* ── Social icon map ── */
 const iconMap: Record<string, React.ReactNode> = {
@@ -19,6 +20,7 @@ const iconMap: Record<string, React.ReactNode> = {
 const filterTags: ProjectTag[] = ["All", "Full-Stack", "ML/DL", "UI/UX"];
 
 export default function AllProjectsPage() {
+  const { t, td } = useLanguage();
   const [activeTag, setActiveTag] = useState<ProjectTag>("All");
 
   const allProjects = projects.filter((p) => !p.isOngoing);
@@ -57,7 +59,7 @@ export default function AllProjectsPage() {
                            transition-all duration-300 group"
               >
                 <ArrowLeft className="w-4 h-4 transition-transform duration-300 group-hover:-translate-x-1" />
-                Back to Home
+                {t("projects.backToHome")}
               </motion.span>
             </Link>
           </motion.div>
@@ -70,12 +72,10 @@ export default function AllProjectsPage() {
             className="text-center mb-16"
           >
             <h1 className="font-heading font-black text-4xl sm:text-5xl md:text-6xl leading-tight">
-              All{" "}
-              <span className="gradient-text italic">Projects</span>
+              <span className="gradient-text italic">{t("projects.allHeading")}</span>
             </h1>
             <p className="max-w-2xl mx-auto mt-4 text-[var(--color-text-secondary)] text-lg">
-              Every project I&apos;ve built — from full-stack apps to deep
-              learning experiments.
+              {t("projects.allSubtitle")}
             </p>
           </motion.div>
 
@@ -101,7 +101,7 @@ export default function AllProjectsPage() {
                     }
                   `}
                 >
-                  {tag}
+                  {t(`projects.filters.${tag}`)}
                 </button>
               );
             })}
@@ -129,10 +129,10 @@ export default function AllProjectsPage() {
                   <div className="mb-6 flex items-start justify-between gap-3">
                     <div className="flex-1 min-w-0">
                       <h3 className="text-lg font-bold font-heading mb-1.5 leading-snug">
-                        {project.title}
+                        {td(`projects.items.${project.id}.title`, project.title)}
                       </h3>
                       <p className="text-[var(--color-text-muted)] text-xs tracking-wide uppercase font-bold leading-relaxed">
-                        {project.tagline}
+                        {td(`projects.items.${project.id}.tagline`, project.tagline)}
                       </p>
                     </div>
                     <div className="flex gap-2 flex-shrink-0">
@@ -151,7 +151,7 @@ export default function AllProjectsPage() {
 
                   {/* Description */}
                   <p className="text-[var(--color-text-secondary)] text-sm leading-relaxed mb-6 flex-grow">
-                    {project.description}
+                    {td(`projects.items.${project.id}.description`, project.description)}
                   </p>
 
                   {/* Tags + Year */}
@@ -161,7 +161,7 @@ export default function AllProjectsPage() {
                         key={tag}
                         className="px-2 py-0.5 rounded-md bg-[rgba(var(--accent-glow-rgb),0.1)] border border-[rgba(var(--accent-glow-rgb),0.15)] text-[var(--accent-grad-1)] text-[10px] uppercase font-bold"
                       >
-                        {tag}
+                        {t(`projects.filters.${tag}`)}
                       </span>
                     ))}
                     <span className="ml-auto text-[10px] text-[var(--color-text-muted)] font-mono">
@@ -192,7 +192,7 @@ export default function AllProjectsPage() {
               animate={{ opacity: 1 }}
               className="text-center text-[var(--color-text-muted)] py-20 text-lg"
             >
-              No projects found for this category.
+              {t("projects.noProjects")}
             </motion.p>
           )}
         </div>

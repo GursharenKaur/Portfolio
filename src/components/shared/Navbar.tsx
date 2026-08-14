@@ -5,14 +5,27 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "motion/react";
 import { Menu, X, MessageSquare, Sparkles, SlidersHorizontal } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { navLinks, personalInfo } from "@/lib/data";
+import { navLinks } from "@/lib/data";
 import SettingsPanel from "@/components/shared/SettingsPanel";
+import LanguageSwitcher from "@/components/shared/LanguageSwitcher";
+import { useLanguage } from "@/lib/i18n-context";
+
+const navKeyByHref: Record<string, string> = {
+  "/#home": "nav.home",
+  "/#education": "nav.education",
+  "/#skills": "nav.skills",
+  "/#work": "nav.projects",
+  "/#experience": "nav.experience",
+  "/#contact": "nav.contact",
+};
 
 export default function Navbar() {
+  const { t } = useLanguage();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("/");
   const [settingsOpen, setSettingsOpen] = useState(false);
+  const [langOpen, setLangOpen] = useState(false);
 
   /* ── Scroll detection ──────────────────────────────────── */
   useEffect(() => {
@@ -128,7 +141,7 @@ export default function Navbar() {
                       transition={{ type: "spring", bounce: 0.25, duration: 0.4 }}
                     />
                   )}
-                  <span className="relative z-10">{link.label}</span>
+                  <span className="relative z-10">{t(navKeyByHref[link.href] ?? "")}</span>
                 </Link>
               );
             })}
@@ -152,25 +165,33 @@ export default function Navbar() {
                 }}
               >
                 <MessageSquare className="w-3.5 h-3.5" />
-                Let&apos;s Talk
+                {t("nav.letsTalk")}
               </motion.span>
             </Link>
 
           </div>
 
-          {/* ── Settings (theme) trigger — shared across breakpoints ── */}
-          <div className="relative flex items-center order-3 md:order-none">
-            <motion.button
-              whileHover={{ scale: 1.06 }}
-              whileTap={{ scale: 0.94 }}
-              onClick={() => setSettingsOpen((v) => !v)}
-              className="p-2.5 rounded-full text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] bg-[color-mix(in_srgb,var(--foreground)_4%,transparent)] hover:bg-[color-mix(in_srgb,var(--foreground)_8%,transparent)] border border-[var(--border)] transition-colors"
-              aria-label="Open appearance settings"
-              aria-expanded={settingsOpen}
-            >
-              <SlidersHorizontal className="w-4 h-4" />
-            </motion.button>
-            <SettingsPanel open={settingsOpen} onClose={() => setSettingsOpen(false)} anchorClassName="right-0" />
+          {/* ── Language + Settings (theme) triggers — shared across breakpoints ── */}
+          <div className="flex items-center gap-2 order-3 md:order-none">
+            <LanguageSwitcher
+              open={langOpen}
+              onToggle={() => setLangOpen((v) => !v)}
+              onClose={() => setLangOpen(false)}
+              anchorClassName="right-0"
+            />
+            <div className="relative flex items-center">
+              <motion.button
+                whileHover={{ scale: 1.06 }}
+                whileTap={{ scale: 0.94 }}
+                onClick={() => setSettingsOpen((v) => !v)}
+                className="p-2.5 rounded-full text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] bg-[color-mix(in_srgb,var(--foreground)_4%,transparent)] hover:bg-[color-mix(in_srgb,var(--foreground)_8%,transparent)] border border-[var(--border)] transition-colors"
+                aria-label={t("nav.openSettings")}
+                aria-expanded={settingsOpen}
+              >
+                <SlidersHorizontal className="w-4 h-4" />
+              </motion.button>
+              <SettingsPanel open={settingsOpen} onClose={() => setSettingsOpen(false)} anchorClassName="right-0" />
+            </div>
           </div>
 
           {/* ── Mobile hamburger ─────────────────────────────── */}
@@ -179,7 +200,7 @@ export default function Navbar() {
               whileTap={{ scale: 0.9 }}
               onClick={() => setMobileOpen((v) => !v)}
               className="p-2 rounded-lg text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] hover:bg-[color-mix(in_srgb,var(--foreground)_6%,transparent)] transition-colors"
-              aria-label="Toggle menu"
+              aria-label={t("nav.toggleMenu")}
               aria-expanded={mobileOpen}
             >
               <AnimatePresence mode="wait" initial={false}>
@@ -275,7 +296,7 @@ export default function Navbar() {
                   style={{ background: "var(--accent-solid)" }}
                 >
                   <MessageSquare className="w-4 h-4" />
-                  Let&apos;s Talk
+                  {t("nav.letsTalk")}
                 </Link>
               </div>
             </motion.div>

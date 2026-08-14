@@ -2,6 +2,7 @@
 
 import { motion } from "motion/react";
 import { timeline } from "@/lib/data";
+import { useLanguage } from "@/lib/i18n-context";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 20 },
@@ -16,6 +17,7 @@ const fadeUp = {
 };
 
 export default function Education() {
+  const { t, td } = useLanguage();
   const education = timeline.filter((item) => item.type === "education");
 
   return (
@@ -29,10 +31,10 @@ export default function Education() {
            className="text-center mb-16"
         >
           <h2 className="font-heading font-black text-3xl sm:text-4xl md:text-5xl leading-tight">
-            My <span className="gradient-text italic">Education</span>
+            <span className="gradient-text italic">{t("education.heading")}</span>
           </h2>
           <p className="max-w-xl mx-auto mt-4 text-[var(--color-text-secondary)] text-lg">
-            Academic background and learning milestones.
+            {t("education.subtitle")}
           </p>
         </motion.div>
 
@@ -48,9 +50,9 @@ export default function Education() {
               <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
                  <div>
                    <h3 className="text-xl font-bold font-heading text-[var(--color-text-primary)]">
-                     {item.title}
+                     {td(`timeline.items.${item.id}.title`, item.title)}
                    </h3>
-                   <p className="text-emerald-400 font-medium">{item.organization}</p>
+                   <p className="text-emerald-400 font-medium">{td(`timeline.items.${item.id}.organization`, item.organization)}</p>
                  </div>
                  <div className="text-right flex flex-col md:items-end">
                     <span className="text-sm font-semibold px-3 py-1 rounded-full bg-[color-mix(in_srgb,var(--foreground)_5%,transparent)] border border-[color-mix(in_srgb,var(--foreground)_5%,transparent)] text-[var(--color-text-muted)] group-hover:text-emerald-300 transition-colors">
@@ -61,7 +63,7 @@ export default function Education() {
               </div>
               
               <p className="text-[var(--color-text-secondary)] leading-relaxed mb-6">
-                {item.description}
+                {td(`timeline.items.${item.id}.description`, item.description)}
               </p>
               
               {item.tags && (

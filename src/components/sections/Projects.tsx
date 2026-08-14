@@ -4,6 +4,7 @@ import Link from "next/link";
 import { motion } from "motion/react";
 import { projects } from "@/lib/data";
 import { ArrowRight } from "lucide-react";
+import { useLanguage } from "@/lib/i18n-context";
 
 /* ── Social icon map (using same SVG style as Hero) ── */
 const iconMap: Record<string, React.ReactNode> = {
@@ -27,6 +28,7 @@ const fadeUp = {
 };
 
 export default function Projects() {
+  const { t, td } = useLanguage();
   /* Show only the top 4 featured projects on the main page */
   const featuredProjects = projects.filter(p => p.featured && !p.isOngoing).slice(0, 4);
   const ongoing = projects.filter(p => p.isOngoing);
@@ -42,10 +44,10 @@ export default function Projects() {
            className="text-center mb-16"
         >
           <h2 className="font-heading font-black text-3xl sm:text-4xl md:text-5xl leading-tight">
-            My <span className="gradient-text italic">Projects</span>
+            <span className="gradient-text italic">{t("projects.heading")}</span>
           </h2>
           <p className="max-w-xl mx-auto mt-4 text-[var(--color-text-secondary)] text-lg">
-            A selection of my best work and current experiments.
+            {t("projects.subtitle")}
           </p>
         </motion.div>
 
@@ -61,8 +63,8 @@ export default function Projects() {
             >
               <div className="mb-8 flex items-center justify-between">
                 <div>
-                   <h3 className="text-lg sm:text-2xl font-bold font-heading mb-2">{project.title}</h3>
-                   <p className="text-[var(--color-text-muted)] text-sm tracking-wide uppercase font-bold">{project.tagline}</p>
+                   <h3 className="text-lg sm:text-2xl font-bold font-heading mb-2">{td(`projects.items.${project.id}.title`, project.title)}</h3>
+                   <p className="text-[var(--color-text-muted)] text-sm tracking-wide uppercase font-bold">{td(`projects.items.${project.id}.tagline`, project.tagline)}</p>
                 </div>
                 <div className="flex gap-2">
                    {project.githubUrl && (
@@ -74,7 +76,7 @@ export default function Projects() {
               </div>
 
               <p className="text-[var(--color-text-secondary)] text-sm leading-relaxed mb-8 flex-grow">
-                 {project.description}
+                 {td(`projects.items.${project.id}.description`, project.description)}
               </p>
 
               <div className="flex flex-wrap gap-2 pt-6 border-t border-[color-mix(in_srgb,var(--foreground)_5%,transparent)]">
@@ -106,7 +108,7 @@ export default function Projects() {
                          transition-all duration-300 group
                          hover:bg-[rgba(var(--accent-glow-rgb),0.1)] hover:shadow-[0_0_30px_rgba(var(--accent-glow-rgb),0.15)]"
             >
-              View All Projects
+              {t("projects.viewAll")}
               <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
             </motion.span>
           </Link>
@@ -121,19 +123,19 @@ export default function Projects() {
           >
             <div className="absolute top-0 right-0 p-8">
                <span className="px-3 sm:px-4 py-1.5 rounded-full bg-[rgba(var(--accent-glow-rgb),0.2)] border border-[rgba(var(--accent-glow-rgb),0.2)] text-[var(--accent-grad-1)] text-[9px] sm:text-[10px] font-black uppercase tracking-[0.15em] sm:tracking-[0.2em] animate-pulse">
-                  Ongoing Experiment
+                  {t("projects.ongoingExperiment")}
                </span>
             </div>
-            
+
             <div className="max-w-2xl">
                <h3 className="text-2xl sm:text-3xl font-heading font-black mb-6 mt-10 sm:mt-0">
-                  What&apos;s <span className="gradient-text italic">Brewing?</span>
+                  <span className="gradient-text italic">{t("projects.brewing")}</span>
                </h3>
                {ongoing.map(project => (
                  <div key={project.id}>
-                   <h4 className="text-xl font-bold text-[var(--color-text-primary)] mb-3">{project.title}</h4>
+                   <h4 className="text-xl font-bold text-[var(--color-text-primary)] mb-3">{td(`projects.items.${project.id}.title`, project.title)}</h4>
                    <p className="text-[var(--color-text-secondary)] leading-relaxed mb-6">
-                     {project.description}
+                     {td(`projects.items.${project.id}.description`, project.description)}
                    </p>
                    <div className="flex flex-wrap gap-3">
                      {project.techStack.map(tech => (

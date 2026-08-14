@@ -6,6 +6,7 @@ import { Search, Command, X } from "lucide-react";
 import type { ChatMessage } from "@/types";
 import { processQuery, getProjectIntro, suggestedQueries } from "@/lib/chat-engine";
 import { projectSuggestedQueries } from "@/lib/chat-knowledge";
+import { useLanguage } from "@/lib/i18n-context";
 
 /* ── Animation easing ────────────────────────────────────── */
 const EASE = [0.22, 1, 0.36, 1] as const;
@@ -57,6 +58,7 @@ function TypewriterMessage({
 
 /* ── Main Component ──────────────────────────────────────── */
 export default function TerminalChat() {
+  const { t } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [input, setInput] = useState("");
@@ -200,14 +202,14 @@ export default function TerminalChat() {
             transition={{ duration: 0.5, ease: EASE }}
             onClick={() => setIsOpen(true)}
             className="terminal-bar"
-            aria-label="Open terminal chat"
+            aria-label={t("terminal.openChat")}
           >
             <div className="terminal-bar-inner">
               <Search className="w-3.5 h-3.5 text-[var(--accent-grad-1)]/70" />
               <span className="terminal-bar-prompt">
                 <span className="text-[var(--accent-grad-1)]/70">›</span>{" "}
                 <span className="text-[var(--color-text-muted)]">
-                  ask me anything
+                  {t("terminal.askMeAnything")}
                 </span>
                 <span className="terminal-cursor">▊</span>
               </span>
@@ -259,7 +261,7 @@ export default function TerminalChat() {
               <button
                 onClick={() => setIsOpen(false)}
                 className="p-1 rounded-md hover:bg-[color-mix(in_srgb,var(--foreground)_10%,transparent)] transition-colors text-[var(--color-text-muted)] hover:text-[var(--color-text-primary)]"
-                aria-label="Close terminal"
+                aria-label={t("terminal.closeChat")}
               >
                 <X className="w-3.5 h-3.5" />
               </button>
@@ -271,10 +273,10 @@ export default function TerminalChat() {
               {messages.length === 0 && (
                 <div className="terminal-welcome">
                   <p className="text-[var(--accent-grad-1)]/80 text-xs font-mono mb-1">
-                    // welcome to gursharen&apos;s terminal
+                    {t("terminal.welcomeLine1")}
                   </p>
                   <p className="text-[var(--color-text-muted)] text-xs font-mono">
-                    // type a question or click a suggestion below
+                    {t("terminal.welcomeLine2")}
                   </p>
                 </div>
               )}
@@ -337,10 +339,10 @@ export default function TerminalChat() {
                 type="text"
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
-                placeholder="type your question..."
+                placeholder={t("terminal.inputPlaceholder")}
                 disabled={typingIndex !== null}
                 className="terminal-input"
-                aria-label="Chat input"
+                aria-label={t("terminal.chatInput")}
               />
               <kbd className="terminal-kbd-sm">
                 esc
