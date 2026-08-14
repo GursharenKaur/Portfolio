@@ -33,11 +33,22 @@ const fadeIn: Variants = {
   show:   { opacity: 1, transition: { duration: 0.6 } },
 };
 
+/* Split into grapheme clusters (not raw UTF-16 code units) so base
+   characters stay attached to combining marks — e.g. Devanagari/Gurmukhi
+   matras — instead of being animated as separate, visually detached glyphs. */
+function splitGraphemes(text: string): string[] {
+  if (typeof Intl !== "undefined" && "Segmenter" in Intl) {
+    const segmenter = new Intl.Segmenter(undefined, { granularity: "grapheme" });
+    return Array.from(segmenter.segment(text), (s) => s.segment);
+  }
+  return Array.from(text);
+}
+
 /* ── Character-split name reveal ─────────────────────────── */
 function AnimatedName({ text }: { text: string }) {
   return (
     <span aria-label={text} className="inline-flex flex-wrap justify-center">
-      {text.split("").map((char, i) => (
+      {splitGraphemes(text).map((char, i) => (
         <motion.span
           key={i}
           initial={{ opacity: 0, y: 48, rotateX: -90 }}
