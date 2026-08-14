@@ -199,6 +199,7 @@ const en = {
   },
   data: {
     personalInfo: {
+      name: "Gursharen Kaur Suri",
       roles: "Full Stack Developer|ML Engineer|Research Enthusiast|Finance Enthusiast",
       tagline:
         "Computer Engineering student passionate about Machine Learning, Deep Learning, and Quantitative Finance — building intelligent, scalable solutions at the intersection of AI and real-world impact.",

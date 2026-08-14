@@ -234,7 +234,7 @@ export default function Hero() {
             className="font-heading gradient-text text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black leading-none tracking-tighter"
             style={{ perspective: "800px" }}
           >
-            <AnimatedName text={personalInfo.name} />
+            <AnimatedName text={t("data.personalInfo.name")} />
           </h1>
 
           {/* Role button panel */}

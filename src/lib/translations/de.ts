@@ -200,6 +200,7 @@ const de: Translations = {
   },
   data: {
     personalInfo: {
+      name: "Gursharen Kaur Suri",
       roles: "Full-Stack-Entwickler|ML-Ingenieur|Forschungsbegeistert|Finanzbegeistert",
       tagline:
         "Computer-Engineering-Student mit Leidenschaft für Machine Learning, Deep Learning und Quantitative Finance — Entwicklung intelligenter, skalierbarer Lösungen an der Schnittstelle von KI und realer Wirkung.",

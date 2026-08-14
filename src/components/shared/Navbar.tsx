@@ -114,8 +114,16 @@ export default function Navbar() {
             </motion.div>
 
             <span className="font-heading font-semibold text-[var(--color-text-primary)] text-sm hidden sm:block tracking-tight">
-              Gursharen Kaur
-              <span className="gradient-text"> Suri</span>
+              {(() => {
+                const nameParts = t("data.personalInfo.name").split(" ");
+                const lastWord = nameParts.pop();
+                return (
+                  <>
+                    {nameParts.join(" ")}
+                    <span className="gradient-text"> {lastWord}</span>
+                  </>
+                );
+              })()}
             </span>
           </Link>
 
