@@ -206,7 +206,7 @@ const en = {
       availabilityNote: "Open to opportunities — 2026",
     },
   },
-} as const;
+};
 
 export default en;
 export type Translations = typeof en;
