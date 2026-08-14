@@ -44,8 +44,29 @@ function splitGraphemes(text: string): string[] {
   return Array.from(text);
 }
 
+/* Devanagari (U+0900–U+097F) and Gurmukhi (U+0A00–U+0A7F) glyphs rely on
+   mark-to-base positioning (matras) that browsers fail to shape correctly
+   once a glyph is wrapped in its own 3D-transformed, GPU-composited box —
+   the mark renders detached as a dotted-circle placeholder. Scripts that
+   need that positioning skip the per-character 3D flip entirely. */
+const COMBINING_MARK_SCRIPT = /[ऀ-ॿ਀-੿]/;
+
 /* ── Character-split name reveal ─────────────────────────── */
 function AnimatedName({ text }: { text: string }) {
+  if (COMBINING_MARK_SCRIPT.test(text)) {
+    return (
+      <motion.span
+        aria-label={text}
+        initial={{ opacity: 0, y: 32 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
+        className="inline-block"
+      >
+        {text}
+      </motion.span>
+    );
+  }
+
   return (
     <span aria-label={text} className="inline-flex flex-wrap justify-center">
       {splitGraphemes(text).map((char, i) => (
