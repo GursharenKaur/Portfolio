@@ -280,7 +280,7 @@ export default function Navbar() {
                       )}
                     >
                       <Sparkles className="w-4 h-4 opacity-50" />
-                      {link.label}
+                      {t(navKeyByHref[link.href] ?? "")}
                     </Link>
                   </motion.div>
                 ))}
