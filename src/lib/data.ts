@@ -63,6 +63,113 @@ export const socialLinks: SocialLink[] = [
 /* ── Projects ────────────────────────────────────────────── */
 export const projects: Project[] = [
   {
+    id: "ai-settlement-controller",
+    title: "AI Settlement Controller",
+    tagline: "AI-assisted financial reconciliation and settlement control platform",
+    description:
+      "Built a payment settlement control system that detects settlement discrepancies, quantifies financial exposure, prioritizes operational risks, and supports controlled remediation. Implemented deterministic reconciliation for missing settlements, amount mismatches, currency mismatches, and invalid states. Integrated Google Gemini for evidence-grounded investigation insights while keeping financial calculations, decisions, and action authorization deterministic and auditable.",
+    tags: ["AI/Full-Stack", "FinTech"],
+    techStack: [
+      "Python",
+      "FastAPI",
+      "React",
+      "TypeScript",
+      "PostgreSQL",
+      "SQLAlchemy",
+      "Alembic",
+      "Google Gemini",
+      "Docker"
+    ],
+    image: "/images/ai-settlement-controller.png",
+    githubUrl: "https://github.com/GursharenKaur/AI_Settlement_Controller",
+    liveUrl: "https://ai-settlement-controller-ui.vercel.app/",
+    featured: true,
+    year: 2026,
+  },
+
+  {
+    id: "hackforge",
+    title: "HackForge — Hackathon Management Platform",
+    tagline: "Customizable end-to-end hackathon hosting SaaS platform",
+    description:
+      "Developed backend services for a full-stack hackathon management platform supporting the complete event lifecycle. Implemented 35+ secure REST APIs using FastAPI and PostgreSQL, with asynchronous database operations through SQLAlchemy and schema migrations using Alembic. The platform supports hackathon creation, customizable registration forms, participant and team management, project submissions, judging workflows, automated leaderboards, certificate generation, and organizer analytics.",
+    tags: ["Full-Stack", "Backend"],
+    techStack: [
+      "Python",
+      "FastAPI",
+      "PostgreSQL",
+      "SQLAlchemy",
+      "Alembic",
+      "React",
+      "TypeScript",
+      "JWT",
+      "Cloudinary"
+    ],
+    image: "/images/hackforge.png",
+    githubUrl: "https://github.com/GursharenKaur/Hackforge",
+    featured: true,
+    year: 2026,
+  },
+
+  {
+    id: "neurofusion-qa",
+    title: "NeuroFusion-QA — IdentityGuard-BIDS",
+    tagline: "Research framework for detecting subject identity collisions in multimodal biomedical imaging",
+    description:
+      "Developed a research-oriented quality assurance framework for auditing subject identity, acquisition relationships, derivative provenance, analysis splits, and metric-denominator consistency in BIDS-based multimodal biomedical imaging pipelines. Implemented automated identity and data-integrity checks, six synthetic corruption scenarios, benchmark execution and reporting workflows. Built a command-line auditing interface with reproducible configurations, automated tests, and structured audit reports to identify data integrity risks before multimodal analysis.",
+    tags: ["Research", "ML/DL"],
+    techStack: [
+      "Python",
+      "PyBIDS",
+      "BIDS",
+      "NumPy",
+      "Pytest",
+      "JSON",
+      "YAML",
+      "CLI"
+    ],
+    image: "/images/neurofusion-qa.png",
+    githubUrl: "https://github.com/GursharenKaur/NeuroFusion-QA",
+    featured: true,
+    year: 2026,
+  },
+
+  {
+    id: "private-cloud-drone",
+    title: "Private Cloud Drone",
+    tagline: "Secure private cloud infrastructure for real-time drone monitoring and media management",
+    description:
+      "Designed and developed a secure private cloud platform for video transmission, recording, telemetry monitoring, and media storage, initially using an Android device as the streaming source with an architecture extensible to drones. Implemented a modular FastAPI backend, HTTPS communication, Docker-based deployment, and Nginx reverse proxy. Developed WebRTC peer-connection and WebSocket signaling workflows for camera-to-dashboard communication, including SDP offer-answer negotiation and ICE candidate exchange.",
+    tags: ["Full-Stack", "IoT"],
+    techStack: [
+      "Python",
+      "FastAPI",
+      "WebRTC",
+      "WebSockets",
+      "PostgreSQL",
+      "Docker",
+      "Nginx",
+      "FFmpeg",
+      "JavaScript"
+    ],
+    image: "/images/private-cloud-drone.png",
+    githubUrl: "https://github.com/GursharenKaur/Private-Cloud-Drone",
+    featured: true,
+    year: 2026,
+  },
+  {
+    id: "road-segmentation",
+    title: "Road Segmentation from Satellite Images",
+    tagline: "Multi-architecture CNN comparison for satellite imagery",
+    description: "Implemented and compared multiple architectures including U-Net Lite, U-Net Full, U-Net++, DeepLabV3+ (ResNet-50), HRNet-Small, and SegFormer-B0. Built a custom data preprocessing pipeline including resizing, normalization, binary mask generation, and data augmentation using Albumentations. Optimized training for limited GPU memory using mixed-precision training and efficient batch sizing.",
+    tags: ["ML/DL"],
+    techStack: ["Python", "PyTorch", "U-Net", "DeepLabV3+", "SegFormer", "Albumentations"],
+    image: "/images/road-segmentation.png",
+    githubUrl: "https://github.com/GursharenKaur/Road-Extraction-From-Satellite-Imagery",
+    featured: true,
+    year: 2025,
+  },
+  {
     id: "skin-disease-detection",
     title: "AI-based Skin Disease Detection System",
     tagline: "Deep learning model for accurate skin disease classification",
@@ -75,22 +182,10 @@ export const projects: Project[] = [
     featured: true,
     year: 2025,
   },
-  {
-    id: "road-segmentation",
-    title: "Road Segmentation from Satellite Images",
-    tagline: "Multi-architecture CNN comparison for satellite imagery",
-    description:
-      "Implemented and compared multiple architectures including U-Net Lite, U-Net Full, U-Net++, DeepLabV3+ (ResNet-50), HRNet-Small, and SegFormer-B0. Built a custom data preprocessing pipeline including resizing, normalization, binary mask generation, and data augmentation using Albumentations. Optimized training for limited GPU memory using mixed-precision training and efficient batch sizing.",
-    tags: ["ML/DL"],
-    techStack: ["Python", "PyTorch", "U-Net", "DeepLabV3+", "SegFormer", "Albumentations"],
-    image: "/images/road-segmentation.png",
-    githubUrl: "https://github.com/GursharenKaur/Road-Extraction-From-Satellite-Imagery",
-    featured: true,
-    year: 2025,
-  },
+
   {
     id: "scholar-logic",
-    title: "ScholarLogic — Scholarship Portal",
+    title: "ScholarLogic - Scholarship Portal",
     tagline: "AI-powered scholarship discovery and management platform",
     description:
       "A full-stack scholarship management platform built with Next.js and TypeScript. Features include AI-driven PDF parsing for bulk scholarship uploads, document management for student profiles, and a smart matching algorithm. Developed as a collaborative project with a team.",
@@ -140,19 +235,7 @@ export const projects: Project[] = [
     featured: false,
     year: 2025,
   },
-  {
-    id: "web-scraping-selenium",
-    title: "Web Scraping with Selenium",
-    tagline: "Automated web data extraction using Selenium & Python",
-    description:
-      "Built an automated web scraping tool using Python and Selenium for extracting structured data from websites. Demonstrates browser automation, data parsing, and handling dynamic content.",
-    tags: ["Full-Stack"],
-    techStack: ["Python", "Selenium", "BeautifulSoup", "Automation"],
-    image: "/images/web-scraping.png",
-    githubUrl: "https://github.com/GursharenKaur/Web-Scraping-Selenium",
-    featured: false,
-    year: 2025,
-  },
+  
   {
     id: "object-detection",
     title: "Object Detection",
