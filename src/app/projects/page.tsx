@@ -31,7 +31,7 @@ const filterTags: (ProjectTag | "All")[] = [
 
 export default function AllProjectsPage() {
   const { t, td } = useLanguage();
-  const [activeTag, setActiveTag] = useState<ProjectTag>("All");
+  const [activeTag, setActiveTag] = useState<ProjectTag | "All">("All");
 
   const allProjects = projects.filter((p) => !p.isOngoing);
   const filteredProjects =
