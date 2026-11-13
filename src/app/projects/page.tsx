@@ -17,17 +17,29 @@ const iconMap: Record<string, React.ReactNode> = {
   ),
 };
 
-const filterTags: ProjectTag[] = ["All", "Full-Stack", "ML/DL", "UI/UX"];
+const filterTags: (ProjectTag | "All")[] = [
+  "All",
+  "Full-Stack",
+  "ML/DL",
+  "UI/UX",
+  "AI/Full-Stack",
+  "FinTech",
+  "Research",
+  "IoT",
+  "Backend",
+];
 
 export default function AllProjectsPage() {
   const { t, td } = useLanguage();
   const [activeTag, setActiveTag] = useState<ProjectTag>("All");
 
   const allProjects = projects.filter((p) => !p.isOngoing);
-  const filtered =
-    activeTag === "All"
-      ? allProjects
-      : allProjects.filter((p) => p.tags.includes(activeTag));
+  const filteredProjects =
+  activeTag === "All"
+    ? projects
+    : projects.filter((project) =>
+        project.tags.includes(activeTag)
+      );
 
   return (
     <main className="relative bg-background min-h-screen">
