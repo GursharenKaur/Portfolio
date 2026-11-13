@@ -10,11 +10,14 @@ export interface NavLink {
 
 /* ── Projects ────────────────────────────────────────────── */
 export type ProjectTag =
-  | "All"
   | "Full-Stack"
   | "ML/DL"
   | "UI/UX"
-  | "Open Source";
+  | "AI/Full-Stack"
+  | "FinTech"
+  | "Research"
+  | "IoT"
+  | "Backend";
 
 export interface Project {
   id: string;
