@@ -35,12 +35,13 @@ export default function AllProjectsPage() {
   const [activeTag, setActiveTag] = useState<ProjectTag | "All">("All");
 
   const allProjects = projects.filter((p) => !p.isOngoing);
+
   const filteredProjects =
-  activeTag === "All"
-    ? projects
-    : projects.filter((project) =>
-        project.tags.includes(activeTag)
-      );
+    activeTag === "All"
+      ? allProjects
+      : allProjects.filter((project) =>
+          project.tags.includes(activeTag)
+        );
 
   return (
     <main className="relative bg-background min-h-screen">
@@ -130,7 +131,7 @@ export default function AllProjectsPage() {
               transition={{ duration: 0.4 }}
               className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
             >
-              {filtered.map((project, idx) => (
+              {filteredProjects.map((project, idx) => (
                 <motion.div
                   key={project.id}
                   initial={{ opacity: 0, y: 30 }}
@@ -199,7 +200,7 @@ export default function AllProjectsPage() {
           </AnimatePresence>
 
           {/* Empty state */}
-          {filtered.length === 0 && (
+          {filteredProjects.length === 0 && (
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
