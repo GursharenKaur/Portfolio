@@ -29,6 +29,7 @@ const filterTags: (ProjectTag | "All")[] = [
   "Backend",
 ];
 
+
 export default function AllProjectsPage() {
   const { t, td } = useLanguage();
   const [activeTag, setActiveTag] = useState<ProjectTag | "All">("All");
