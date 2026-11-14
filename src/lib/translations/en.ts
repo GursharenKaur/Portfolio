@@ -73,6 +73,11 @@ const en = {
       "ML/DL": "ML/DL",
       "UI/UX": "UI/UX",
       "Open Source": "Open Source",
+      "AI/Full-Stack": "AI / Full-Stack",
+      "FinTech": "FinTech",
+      "Research": "Research",
+      "IoT": "IoT",
+      "Backend": "Backend",
     },
     items: {
       "skin-disease-detection": {

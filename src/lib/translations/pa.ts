@@ -74,6 +74,11 @@ const pa: Translations = {
       "ML/DL": "ML/DL",
       "UI/UX": "UI/UX",
       "Open Source": "Open Source",
+      "AI/Full-Stack": "AI / Full-Stack",
+      FinTech: "ਫਿਨਟੈਕ",
+      Research: "ਖੋਜ",
+      IoT: "IoT",
+      Backend: "ਬੈਕਐਂਡ",
     },
     items: {
       "skin-disease-detection": {

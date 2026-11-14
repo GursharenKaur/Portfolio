@@ -74,6 +74,11 @@ const hi: Translations = {
       "ML/DL": "ML/DL",
       "UI/UX": "UI/UX",
       "Open Source": "Open Source",
+      "AI/Full-Stack": "AI / Full-Stack",
+      FinTech: "फिनटेक",
+      Research: "रिसर्च",
+      IoT: "IoT",
+      Backend: "बैकएंड",
     },
     items: {
       "skin-disease-detection": {
